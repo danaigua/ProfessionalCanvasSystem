@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ProfessionalCanvasSystem:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProfessionalCanvasSystem_war</output-path>
+    <root id="archive" name="ProfessionalCanvasSystem_war.war">
+      <element id="artifact" artifact-name="ProfessionalCanvasSystem:war exploded" />
+    </root>
+  </artifact>
+</component>

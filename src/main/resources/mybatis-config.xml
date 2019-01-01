@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局映射器启用缓存  -->
+        <setting name="cacheEnabled" value="true" />
+        <!-- 允许 JDBC 支持自动生成主键，需要驱动兼容。 如果设置为 true 则这个设置强制使用自动生成主键，尽管一些驱动不能兼容但仍可正常工作（比如 Derby）。 默认值false   -->
+        <setting name="useGeneratedKeys" value="true" />
+        <!--  配置默认的执行器。SIMPLE 就是普通的执行器；REUSE 执行器会重用预处理语句（prepared statements）； BATCH 执行器将重用语句并执行批量更新。默认SIMPLE   -->
+        <setting name="defaultExecutorType" value="REUSE" />
+    </settings>
+    <typeAliases>
+        <package name="com.job.pojo" />
+    </typeAliases>
+</configuration>

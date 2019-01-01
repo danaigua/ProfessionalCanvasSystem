@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="dm.plan" name="dm Plan for 'ProfessionalCanvasSystem'">
+    <output-path>$PROJECT_DIR$/out/artifacts/dm_Plan_for__ProfessionalCanvasSystem_</output-path>
+    <root id="root">
+      <element id="packaging-for-dm-composite" module="ProfessionalCanvasSystem" />
+    </root>
+  </artifact>
+</component>

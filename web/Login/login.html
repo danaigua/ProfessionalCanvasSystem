@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>用户登陆</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/login.min.css">
+<link href='css/login.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="wrapper">
+  <form id="documentSub" class="login" action="login" method="post">
+    <p class="title">Log in</p>
+    <input type="text" name="user.telephone" placeholder="请输入号码" autofocus/>
+    <i class="fa fa-user"></i>
+    <input type="password" name="user.userPassword" placeholder="请输入密码" />
+    <i class="fa fa-key"></i>
+    <a href="ForgetPassword.html">忘记密码</a>
+		<a href="Register.html">注册</a>
+    <button type="submit" onclick="javascript:form.submit();">
+      <i class="spinner"></i>
+      <span class="state">登陆</span>
+    </button>
+  </form>
+
+ <div style="text-align:center;clear:both;margin-top:80px">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+
+  </p>
+</div>
+  <script src='js/loginjquery.min.js'></script>
+
+    <script  src="js/login.js"></script>
+
+</body>
+</html>
