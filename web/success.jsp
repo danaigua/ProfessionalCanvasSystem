@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>HelloWorld</h1>
+当前用户：${currentUser.telephone}
 </body>
 </html>

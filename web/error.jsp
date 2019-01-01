@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>登陆失败</h1>
+错误信息：${error}  <a href="login.html">登录</a>
 </body>
 </html>
