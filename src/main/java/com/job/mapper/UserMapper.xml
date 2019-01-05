@@ -17,4 +17,7 @@
     <insert id="Register" parameterType="User" useGeneratedKeys="true" keyProperty="user_id">
         insert into user (user_name,user_password,Email,telephone)values (#{userName},#{userPassword},#{email},#{telephone})
     </insert>
+    <update id="ForgetPassword" parameterType="User">
+        update user set user_password = #{userPassword} where telephone=#{telephone}
+    </update>
 </mapper>

@@ -21,4 +21,8 @@ public class UserServiceImpl implements IUserService {
         return userDao.Register(user);
     }
 
+    public int ForgetPassword(User user) {
+        return userDao.ForgetPassword(user);
+    }
+
 }

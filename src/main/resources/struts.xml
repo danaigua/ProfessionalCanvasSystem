@@ -16,5 +16,8 @@
         <action name="Register" class="com.job.controller.RegisterController">
             <result name="success">/success.jsp</result>
         </action>
+        <action name="ForgetPassword" class="com.job.controller.ForgetPasswordController">
+            <result name="success">/success.jsp</result>
+        </action>
     </package>
 </struts>
