@@ -5,4 +5,5 @@ import com.job.pojo.User;
 
 public interface IUserDao {
     public User login(User user);
+    public int Register(User user);
 }

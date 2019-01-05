@@ -6,4 +6,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface IUserService {
    User login(User user);
+   int Register(User user);
 }

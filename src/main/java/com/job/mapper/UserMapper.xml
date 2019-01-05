@@ -14,5 +14,7 @@
     <select id="login" parameterType="User" resultMap="BaseResultMap">
 		select * from user where telephone=#{telephone} and user_password=#{userPassword}
 	</select>
-
+    <insert id="Register" parameterType="User" useGeneratedKeys="true" keyProperty="user_id">
+        insert into user (user_name,user_password,Email,telephone)values (#{userName},#{userPassword},#{email},#{telephone})
+    </insert>
 </mapper>

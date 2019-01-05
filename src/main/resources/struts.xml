@@ -5,10 +5,16 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+
     <package name="Welcome" extends="struts-default">
+        <global-results>
+            <result name="error">error.jsp</result>
+        </global-results>
         <action name="login" class="com.job.controller.LoginController">
             <result name="success">/success.jsp</result>
-            <result name="error">/error.jsp</result>
+        </action>
+        <action name="Register" class="com.job.controller.RegisterController">
+            <result name="success">/success.jsp</result>
         </action>
     </package>
 </struts>
