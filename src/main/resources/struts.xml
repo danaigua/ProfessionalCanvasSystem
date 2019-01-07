@@ -8,15 +8,15 @@
 
     <package name="Welcome" extends="struts-default">
         <global-results>
-            <result name="error">error.jsp</result>
+            <result name="error">/error.jsp</result>
         </global-results>
-        <action name="login" class="com.job.controller.LoginController">
+        <action name="login" class="com.job.controller.UserController" method="login">
             <result name="success">/success.jsp</result>
         </action>
-        <action name="Register" class="com.job.controller.RegisterController">
+        <action name="Register" class="com.job.controller.UserController" method="Register">
             <result name="success">/success.jsp</result>
         </action>
-        <action name="ForgetPassword" class="com.job.controller.ForgetPasswordController">
+        <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
             <result name="success">/success.jsp</result>
         </action>
     </package>

@@ -18,6 +18,6 @@
         insert into user (user_name,user_password,Email,telephone)values (#{userName},#{userPassword},#{email},#{telephone})
     </insert>
     <update id="ForgetPassword" parameterType="User">
-        update user set user_password = #{userPassword} where telephone=#{telephone}
+        update user set user_password = #{userPassword} where telephone=#{telephone} and Email=#{email}
     </update>
 </mapper>
