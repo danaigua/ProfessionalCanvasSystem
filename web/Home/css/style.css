@@ -1263,6 +1263,35 @@ footer {
 	font-size: 18px;
 }
 /*
+
+个人信息页面样式
+
+
+*/
+#single .category .wrapper .aboutMy{
+	width: 500px;
+	position: relative;
+	left: 10%;
+
+
+
+}
+#single .category .wrapper .aboutMy fieldset{
+
+	display: block;
+	margin-inline-start: 2px;
+	margin-inline-end: 2px;
+	padding-block-start: 0.35em;
+	padding-inline-start: 0.75em;
+	padding-inline-end: 0.75em;
+	padding-block-end: 0.625em;
+	min-inline-size: min-content;
+	border-width: 2px;
+	border-style: groove;
+	border-color: threedface;
+	border-image: initial;
+}
+/*
 	大数据视图修改
 */
 #single .category .wrapper{
@@ -1290,6 +1319,9 @@ footer {
 /*
 大数据视图
 */
+
+
+
 #newslist .news {
 	padding: 15px 0;
 }
@@ -1439,7 +1471,14 @@ footer {
 #single #detailed .slide {
 	display: none;
 }
+/*
 
+修改about的字体
+*/
+#single .serv_detailed .aboutFont{
+	position: relative;
+	left: 13%;
+}
 /*SubPage Service*/
 .pdl250 {
 	padding-left: 250px;
