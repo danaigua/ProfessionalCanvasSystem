@@ -23,7 +23,10 @@
         <result name="successLogin" type="redirect"></result>
         <result name="errorLogin" type="redirect"></result>
     </action>
-
+    <action name="AnalyzeJurisdiction" class="com.job.controller.JurisdictionController" method="AnalyzeJurisdictionManger">
+        <result name="NOJURISDICTION" type="redirect">/Login/login.html</result>
+        <result name="PASS" type="redirect">/Home/service/index.htm</result>
+    </action>
 </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
