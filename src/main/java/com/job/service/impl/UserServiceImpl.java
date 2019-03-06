@@ -25,4 +25,8 @@ public class UserServiceImpl implements IUserService {
         return userDao.ForgetPassword(user);
     }
 
+    public boolean LoginHomeIndex(User user) {
+        return false;
+    }
+
 }

@@ -8,4 +8,5 @@ public interface IUserService {
    User login(User user);
    int Register(User user);
    int ForgetPassword(User user);
+   boolean LoginHomeIndex(User user);
 }

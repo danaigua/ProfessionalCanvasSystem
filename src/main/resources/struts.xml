@@ -6,18 +6,22 @@
 
 <struts>
 
-    <package name="Welcome" extends="struts-default">
-        <global-results>
-            <result name="error">/error.jsp</result>
-        </global-results>
-        <action name="login" class="com.job.controller.UserController" method="login">
-            <result name="success">/success.jsp</result>
-        </action>
-        <action name="Register" class="com.job.controller.UserController" method="Register">
-            <result name="success">/success.jsp</result>
-        </action>
-        <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
-            <result name="success">/success.jsp</result>
-        </action>
-    </package>
+<package name="Welcome" extends="struts-default">
+    <global-results>
+        <result name="error">/error.jsp</result>
+    </global-results>
+    <action name="login" class="com.job.controller.UserController" method="login">
+        <result name="success" type="redirect">/Home/index.htm</result>
+    </action>
+    <action name="Register" class="com.job.controller.UserController" method="Register">
+        <result name="success" type="redirect">/Home/index.htm</result>
+    </action>
+    <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
+        <result name="success" type="redirect">/Home/index.htm</result>
+    </action>
+    <action name="LoginHomeIndex" class="com.job.controller.UserController" method="LoginHomeIndex">
+        <result name="successLogin" type="redirect"></result>
+        <result name="errorLogin" type="redirect"></result>
+    </action>
+</package>
 </struts>
