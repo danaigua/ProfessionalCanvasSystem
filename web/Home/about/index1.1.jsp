@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,9 +10,6 @@
 		<!--[if lt IE 9]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
 	</head>
 	<body>
-
-
-
 		<header>
 			<div id="navbg"></div>
 			<div class="wrapper">
@@ -41,7 +38,6 @@
 						margin: 0 auto;
 						position: relative;
 					-->
-
 					<!--  
 						  margin: 0 auto;
 						  *margin-top: 20px;

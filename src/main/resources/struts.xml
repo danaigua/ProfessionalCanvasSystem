@@ -31,7 +31,7 @@
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
             <result name="NULLLOGIN" type="redirect">/Login/login.html</result>
-            <result name="ALREADYLOGIN" type="redirect">/Home/about/index1.1.htm</result>
+            <result name="ALREADYLOGIN" type="redirect">/Home/about/index1.1.jsp</result>
         </action>
     </package>
 

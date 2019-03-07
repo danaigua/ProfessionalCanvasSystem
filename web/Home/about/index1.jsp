@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,6 +37,7 @@
 			<div class="cat_title">
 				<div class="wrapper">
 					<h2><strong>我的资料</strong></h2>
+
 				</div>
 			</div>
 			<div class="category">
@@ -53,7 +54,14 @@
 						  *margin-left: 5px
 						  -->
 						  您还没有登陆，请先<a href="../../Login/login.html">登陆</a>
-						
+					<fieldset>
+						<legend>${currentUser.telephone}你好修改我的信息</legend>
+						昵称：<input type="text" size="29" value="${currentUser.userName}"><a href="">修改</a><br>
+						E-mail: <input type="text" size="28" value="${currentUser.email}"><a href="">修改</a><br>
+						电话号码：<input type="text" size="25" value="${currentUser.telephone}"><a href="">修改</a><br>
+						我的编号：<input type="text" size="25" value="${currentUser.userId}"><br>
+						<input type="button" value="注销这个账号" href="" />
+					</fieldset>
 					
 				</div>
 			</div>
