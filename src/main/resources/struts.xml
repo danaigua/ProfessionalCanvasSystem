@@ -31,6 +31,19 @@
         <result name="success" type="redirect">/Home/about/index1.1.jsp</result>
         <result name="error" type="redirect">/Home/about/index1.1.jsp</result>
     </action>
+
+
+    <!-- 管理员登陆 -->
+    <action name="loginBackstage" class="com.job.controller.AdminController" method="loginBackstage">
+        <result name="loginOri" type="redirect">/Manger/General_Manger/ordinaryMember.html</result>
+        <result name="loginSuper" type="redirect">/Manger/Super_Admin/superMember.html</result>
+        <result name="error" type="redirect">/error2.jsp</result>
+    </action>
+
+
+
+
+
 </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">

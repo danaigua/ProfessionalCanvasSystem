@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IAdminDao">
+    <resultMap id="BaseResultMap" type="com.job.pojo.Admin">
+        <result column="admin_id" jdbcType="VARCHAR" property="adminId"/>
+        <result column="admin_password" jdbcType="VARCHAR" property="adminPassword"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+    </resultMap>
+
+    <select id="loginBackstage" parameterType="Admin" resultMap="BaseResultMap">
+		select * from admin where admin_id=#{adminId} and admin_password=#{adminPassword}
+	</select>
+    <!--
+    <select id="SelectOne" parameterType="int" resultMap="BaseResultMap">
+        select * from user where telephone=#{telephone} and user_password=#{userPassword}
+    </select>
+    -->
+
+
+</mapper>

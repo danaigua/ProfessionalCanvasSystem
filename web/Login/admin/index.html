@@ -28,13 +28,14 @@
         <span>管理员登录</span>
     </div>
     <div class='login_fields'>
-        <form method="post" action="">
+        <form method="post" action="loginBackstage.action">
             <div class='login_fields__user'>
                 <div class='icon'>
 
                     <img alt="" src='loginSpecial/img/user_icon_copy.png'>
                 </div>
-                <input name="admin.adminId" placeholder='用户ID' maxlength="16" class="username" type='text' autocomplete="off" value="admin"/>
+                <input name="admin.adminId" placeholder='用户ID' maxlength="16" class="username" type='text'
+                       autocomplete="off" value="admin"/>
                 <div class='validation'>
                     <img alt="" src='loginSpecial/img/tick.png'>
                 </div>
@@ -43,7 +44,7 @@
                 <div class='icon'>
                     <img alt="" src='loginSpecial/img/lock_icon_copy.png'>
                 </div>
-                <input name="admin.adminpassword" type="password" class="passwordNumder" placeholder='密码' maxlength="16" type='text' autocomplete="off">
+                <input name="admin.adminPassword" type="password" class="passwordNumder" placeholder='密码' maxlength="16" type='text' autocomplete="off">
                 <div class='validation'>
                     <img alt="" src='loginSpecial/img/tick.png'>
                 </div>
@@ -60,7 +61,7 @@
             </div>
             -->
             <div class='login_fields__submit'>
-                <input type='button'  value='登录'  onclick="javascript:form.submit();">
+                <input type='button' value='登录' onclick="javascript:form.submit();">
             </div>
         </form>
     </div>

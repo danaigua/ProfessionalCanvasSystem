@@ -4,7 +4,7 @@ public class Admin {
     private String adminId;
 
 
-    private String adminpassword;
+    private String adminPassword;
 
 
     private String type;
@@ -18,12 +18,12 @@ public class Admin {
         this.adminId = adminId;
     }
 
-    public String getAdminpassword() {
-        return adminpassword;
+    public String getAdminPassword() {
+        return adminPassword;
     }
 
-    public void setAdminpassword(String adminpassword) {
-        this.adminpassword = adminpassword;
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
     }
 
     public String getType() {
