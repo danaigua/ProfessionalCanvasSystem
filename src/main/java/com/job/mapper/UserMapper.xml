@@ -20,4 +20,19 @@
     <update id="ForgetPassword" parameterType="User">
         update user set user_password = #{userPassword} where telephone=#{telephone} and Email=#{email}
     </update>
+    <update id="UpdateInfo" parameterType="User">
+        update user set user_name = #{userName} ,telephone = #{telephone},Email = #{email} where user_id = #{userId}
+    </update>
+    <!--
+    <select id="SelectOne" parameterType="int" resultMap="BaseResultMap">
+        select * from user where telephone=#{telephone} and user_password=#{userPassword}
+    </select>
+    -->
+
+
+
+
+
+
+
 </mapper>

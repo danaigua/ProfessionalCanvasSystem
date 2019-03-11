@@ -7,6 +7,8 @@ import com.job.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService {
@@ -28,5 +30,16 @@ public class UserServiceImpl implements IUserService {
     public boolean LoginHomeIndex(User user) {
         return false;
     }
+
+
+    //修改数据
+    public int UpdateInfo(User user) {
+        return userDao.UpdateInfo(user);
+    }
+
+//    public int SelectOne(User user) {
+//        return userDao.SelectOne(user);
+//    }
+
 
 }

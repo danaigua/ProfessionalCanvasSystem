@@ -6,11 +6,22 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 public class UserController extends ActionSupport {
     private User user;
     private String error;
+    private String Info;
+
+    public String getInfo() {
+        return Info;
+    }
+
+    public void setInfo(String info) {
+        Info = info;
+    }
+
     @Resource
     private UserServiceImpl userService;
     public User getUser() {
@@ -28,15 +39,30 @@ public class UserController extends ActionSupport {
     public void setError(String error) {
         this.error = error;
     }
+
+    //修改数据
+    public String ChangeInfo(){
+        int i = userService.UpdateInfo(user);
+        if (i>0){
+            Info = "成功修改";
+            System.out.println(Info);
+            return "success";
+        }else{
+            Info = "修改失败";
+            System.out.println(Info);
+            return "error";
+        }
+    }
     public String login(){
         User user1 = userService.login(user);
         if (user1==null){
             this.error = "用户名密码错误";
             return "error";
         }else{
+
             ActionContext actionContext = ActionContext.getContext();
             Map<String, Object> session = actionContext.getSession();
-            session.put("currentUser",user);
+            session.put("currentUser",user1);
             return "success";
         }
     }

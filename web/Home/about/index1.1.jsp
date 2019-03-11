@@ -44,12 +44,13 @@
 						  *margin-left: 5px
 						  -->
 					<div class="aboutMy">
+
 						<fieldset>
 							<legend>修改我的信息</legend>
-								昵称：<input type="text" size="29" value="${currentUser.userName}"><a href="">修改</a><br>
-								E-mail: <input type="text" size="28" value="${currentUser.email}"><a href="">修改</a><br>
-								电话号码：<input type="text" size="25" value="${currentUser.telephone}"><a href="">修改</a><br>
-								我的编号：<input type="text" size="25" value="${currentUser.userId}"><br>
+								昵称：<input type="text" size="29" value="${currentUser.userName}" name="user.userName"><br>
+								E-mail: <input type="text" size="28" value="${currentUser.email}" name="user.email"><br>
+								电话号码：<input type="text" size="25" value="${currentUser.telephone}" name="user.telephone"><br>
+								我的编号：<input type="text" size="25" value="${currentUser.userId}" name="user.userId"><br>
 							<input type="button" value="注销这个账号" href="" />
 						</fieldset>
 					</div>

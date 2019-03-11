@@ -1,33 +1,36 @@
 package com.job.pojo;
 
 public class Admin {
-    private String adminName;
+    private String adminId;
 
-    private Integer adminId;
 
-    private String adminPassword;
+    private String adminpassword;
 
-    public String getAdminName() {
-        return adminName;
-    }
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
-    }
+    private String type;
 
-    public Integer getAdminId() {
+
+    public String getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(Integer adminId) {
+    public void setAdminId(String adminId) {
         this.adminId = adminId;
     }
 
-    public String getAdminPassword() {
-        return adminPassword;
+    public String getAdminpassword() {
+        return adminpassword;
     }
 
-    public void setAdminPassword(String adminPassword) {
-        this.adminPassword = adminPassword;
+    public void setAdminpassword(String adminpassword) {
+        this.adminpassword = adminpassword;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

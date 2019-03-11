@@ -27,6 +27,10 @@
         <result name="NOJURISDICTION" type="redirect">/Login/login.html</result>
         <result name="PASS" type="redirect">/Home/service/index.htm</result>
     </action>
+    <action name="ChangeInfo" class="com.job.controller.UserController" method="ChangeInfo">
+        <result name="success" type="redirect">/Home/about/index1.1.jsp</result>
+        <result name="error" type="redirect">/Home/about/index1.1.jsp</result>
+    </action>
 </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
