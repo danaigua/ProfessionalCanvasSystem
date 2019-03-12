@@ -6,49 +6,59 @@
 
 <struts>
 
-<package name="Welcome" extends="struts-default">
-    <global-results>
-        <result name="error">/error.jsp</result>
-    </global-results>
-    <action name="login" class="com.job.controller.UserController" method="login">
-        <result name="success" type="redirect">/Home/index.htm</result>
-    </action>
-    <action name="Register" class="com.job.controller.UserController" method="Register">
-        <result name="success" type="redirect">/Home/index.htm</result>
-    </action>
-    <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
-        <result name="success" type="redirect">/Home/index.htm</result>
-    </action>
-    <action name="LoginHomeIndex" class="com.job.controller.UserController" method="LoginHomeIndex">
-        <result name="successLogin" type="redirect"></result>
-        <result name="errorLogin" type="redirect"></result>
-    </action>
-    <action name="AnalyzeJurisdiction" class="com.job.controller.JurisdictionController" method="AnalyzeJurisdictionManger">
-        <result name="NOJURISDICTION" type="redirect">/Login/login.html</result>
-        <result name="PASS" type="redirect">/Home/service/index.htm</result>
-    </action>
-    <action name="ChangeInfo" class="com.job.controller.UserController" method="ChangeInfo">
-        <result name="success" type="redirect">/Home/about/index1.1.jsp</result>
-        <result name="error" type="redirect">/Home/about/index1.1.jsp</result>
-    </action>
+    <package name="Welcome" extends="struts-default">
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+        <action name="login" class="com.job.controller.UserController" method="login">
+            <result name="success" type="redirect">/Home/index.htm</result>
+        </action>
+        <action name="Register" class="com.job.controller.UserController" method="Register">
+            <result name="success" type="redirect">/Home/index.htm</result>
+        </action>
+        <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
+            <result name="success" type="redirect">/Home/index.htm</result>
+        </action>
+        <action name="LoginHomeIndex" class="com.job.controller.UserController" method="LoginHomeIndex">
+            <result name="successLogin" type="redirect"></result>
+            <result name="errorLogin" type="redirect"></result>
+        </action>
+        <action name="AnalyzeJurisdiction" class="com.job.controller.JurisdictionController"
+                method="AnalyzeJurisdictionManger">
+            <result name="NOJURISDICTION" type="redirect">/Login/login.html</result>
+            <result name="PASS" type="redirect">/Home/service/index.htm</result>
+        </action>
+        <action name="ChangeInfo" class="com.job.controller.UserController" method="ChangeInfo">
+            <result name="success" type="redirect">/Home/about/index1.1.jsp</result>
+            <result name="error" type="redirect">/Home/about/index1.1.jsp</result>
+        </action>
 
 
-    <!-- 管理员登陆 -->
-    <action name="loginBackstage" class="com.job.controller.AdminController" method="loginBackstage">
-        <result name="loginOri" type="redirect">/Manger/General_Manger/ordinaryMember.html</result>
-        <result name="loginSuper" type="redirect">/Manger/Super_Admin/superMember.html</result>
-        <result name="error" type="redirect">/error2.jsp</result>
-    </action>
+        <!-- 管理员登陆 -->
+        <action name="loginBackstage" class="com.job.controller.AdminController" method="loginBackstage">
+            <result name="loginOri" type="redirect">/Manger/General_Manger/ordinaryMember.jsp</result>
+            <result name="loginSuper" type="redirect">/Manger/Super_Admin/superMember.jsp</result>
+            <result name="error" type="redirect">/error2.jsp</result>
+        </action>
 
 
-
-
-
-</package>
+    </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
             <result name="NULLLOGIN" type="redirect">/Login/login.html</result>
             <result name="ALREADYLOGIN" type="redirect">/Home/about/index1.1.jsp</result>
+        </action>
+    </package>
+    
+    
+    <!-- 管理员 -->
+    <!--  职业资料 -->
+    <package name="jobInfo" extends="struts-default">
+        <action name="AddJob" class="com.job.controller.AddJobInfoController" method="AddJob">
+            <!--
+            <result name="success">/Manger/Super_Admin/superMember.jsp</result>
+            <result name="error">/Manger/Super_Admin/superMember.jsp</result>
+            -->
         </action>
     </package>
 

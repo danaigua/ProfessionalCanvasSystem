@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -10,13 +10,13 @@
 	<div class="dataBox">    <!-- 外部大盒子 -->
 		<h2 class="dataBox_theme">普通会员</h2>   <!-- 普通会员标题 -->
 		<div class="dataBox_nav">     <!-- 左边导航栏 -->
-             <i class="dataBoxNav_theme">求职信息</i>
+             <i class="dataBoxNav_theme">求职资料</i>
 	  </div> 
 		<div class="dataBox_information">     <!-- 右边基本信息 -->
               <div class="dataBoxInp_box">
               	   <i class="dataBoxInp_text">薪资区间</i>
               	   <input type="text" class="salary dataBoxInp_input">
-              	   <a href="javascript:" class="delete">删除</a>
+              	   <a href="" class="delete">删除</a>
               	   <a href="javascript:" class="modify">修改</a>
               </div>
               <div class="dataBoxInp_box">

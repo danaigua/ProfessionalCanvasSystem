@@ -4,7 +4,6 @@ import com.job.pojo.Admin;
 import com.job.service.impl.AdminServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-
 import javax.annotation.Resource;
 import java.util.Map;
 
@@ -30,10 +29,10 @@ public class AdminController extends ActionSupport {
             session.put("currentAdmin",admin1);
             System.out.println(admin1.getType());
             if (admin1.getType().equals("admin")) {
-                System.out.println(1);
+//                System.out.println(1);
                 return "loginOri";
             }else{
-                System.out.println(2);
+//                System.out.println(2);
                 return "loginSuper";
 
             }

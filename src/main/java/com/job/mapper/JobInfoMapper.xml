@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IJobInfoDao">
+    <resultMap id="BaseResultMap" type="com.job.pojo.JobInfo">
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="Company" jdbcType="VARCHAR" property="Company"/>
+        <result column="Department" jdbcType="VARCHAR" property="Department"/>
+        <result column="Job" jdbcType="VARCHAR" property="Job"/>
+        <result column="Welfare" jdbcType="VARCHAR" property="Welfare"/>
+        <result column="Academic" jdbcType="VARCHAR" property="Academic"/>
+        <result column="Descrive" jdbcType="VARCHAR" property="Descrive"/>
+        <result column="Address" jdbcType="VARCHAR" property="Address"/>
+    </resultMap>
+    <insert id="addJobInfo" parameterType="JobInfo" >
+        insert into JobInfo (Company,Department,Job,Welfare,Academic,Descrive,Address,type) values (#{Company},#{Department},#{Job},#{Welfare},#{Academic}
+         ,#{Descrive},#{Address},#{type})
+    </insert>
+
+</mapper>
