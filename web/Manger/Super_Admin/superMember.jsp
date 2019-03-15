@@ -1,10 +1,12 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@taglib prefix="s" uri="/struts-tags" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>大数据后台管理系统</title>
     <link rel="stylesheet" href="superMenber.css">
 </head>
 <body>
@@ -58,19 +60,19 @@
                 <div class="dataBoxInp_box">
                     <i class="dataBoxInp_text">
                         工作类型：</i><select name="jobInfo.type">
-                    <option value="" name="">JAVA</option>
-                    <option value="" name="">PYTHON</option>
-                    <option value="" name="">JAVASCRIPT</option>
-                    <option value="" name="">大数据</option>
-                    <option value="" name="">人工智能</option>
-                    <option value="" name="">PHP</option>
-                    <option value="" name="">C</option>
-                    <option value="" name="">运维</option>
-                    <option value="" name="">区块链</option>
-                    <option value="" name="">SHELL</option>
-                    <option value="" name="">VB</option>
-                    <option value="" name="">RUBY</option>
-                    <option value="" name="">其他</option>
+                    <option value="" name="jobInfo.type">JAVA</option>
+                    <option value="" name="jobInfo.type">PYTHON</option>
+                    <option value="" name="jobInfo.type">JAVASCRIPT</option>
+                    <option value="" name="jobInfo.type">大数据</option>
+                    <option value="" name="jobInfo.type">人工智能</option>
+                    <option value="" name="jobInfo.type">PHP</option>
+                    <option value="" name="jobInfo.type">C</option>
+                    <option value="" name="jobInfo.type">运维</option>
+                    <option value="" name="jobInfo.type">区块链</option>
+                    <option value="" name="jobInfo.type">SHELL</option>
+                    <option value="" name="jobInfo.type">VB</option>
+                    <option value="" name="jobInfo.type">RUBY</option>
+                    <option value="" name="jobInfo.type">其他</option>
                 </select>
 
 
@@ -99,10 +101,32 @@
             </div>
         </form>
         <!-- 右边用户管理信息 -->
-        <div class="dataBox_userInformation dataBox_information">
+        <%--<div class="dataBox_userInformation dataBox_information">--%>
+            <%--<script type="text/javascript">--%>
+                <%--var a = document.getElementsByClassName("a")[0];--%>
+                <%--function getInformation(url) {--%>
+                    <%--var demo;--%>
+                    <%--if(window.XMLHttpRequest) {--%>
+                        <%--demo = new XMLHttpRequest();--%>
+                    <%--}else{--%>
+                        <%--demo = new ActiveXOject("Microsoft.XMLHTTP");--%>
+                    <%--};--%>
+                    <%--demo.onreadystatechange = function () {--%>
+                        <%--if(demo.readyState == 4 && demo.status == 200) {--%>
+                            <%--a.innerHTML = demo.responseText;--%>
+                        <%--}--%>
+                    <%--}--%>
+                    <%--demo.open("", url, true);--%>
+                    <%--demo.send();--%>
+                <%--}--%>
+                <%--for(var i in json) {--%>
+                    <%--console.log(json[i])--%>
+                <%--}--%>
+            <%--</script>--%>
             <!-- 张三 -->
-            <div class="dataBoxUser_name">张三
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
+            <!--
+            <div class="dataBoxUser_name">
+                <a href="DeleteUser.action" class="dataBoxUser_delete" name="">删除</a>
             </div>
             <div class="dataBoxUser_box">
                 <div class="dataBoxInp_box">
@@ -155,392 +179,8 @@
                 </div>
                 <input type="submit" value="提交" class="dataBoxInp_sub">
             </div>
-            <!-- 李四 -->
-            <div class="dataBoxUser_name">李四
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- 章家宝 -->
-            <div class="dataBoxUser_name">章家宝
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- 梁东海 -->
-            <div class="dataBoxUser_name">梁东海
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- 习近平 -->
-            <div class="dataBoxUser_name">习近平
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- 小明 -->
-            <div class="dataBoxUser_name">小明
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- 小刚 -->
-            <div class="dataBoxUser_name">小刚
-                <a href="javascript:" class="dataBoxUser_delete">删除</i>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- 小红 -->
-            <div class="dataBoxUser_name dataBoxUser_xiao">小红
-                <a href="javascript:" class="dataBoxUser_delete">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-            <!-- <input type="submit" class="dataBoxUser_sub" value="添加用户····"> -->
+             -->
+
             <button type="submit" class="dataBoxUser_sub">添加用户</button>
         </div>
         <!-- 右边会员管理信息 -->

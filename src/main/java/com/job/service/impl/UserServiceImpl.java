@@ -37,6 +37,14 @@ public class UserServiceImpl implements IUserService {
         return userDao.UpdateInfo(user);
     }
 
+    public int DeleteUser(User user) {
+        return userDao.DeleteUser(user);
+    }
+
+    public List<User> selectAll() {
+        return userDao.selectAll();
+    }
+
 //    public int SelectOne(User user) {
 //        return userDao.SelectOne(user);
 //    }

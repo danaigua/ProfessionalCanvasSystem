@@ -28,9 +28,14 @@
         select * from user where telephone=#{telephone} and user_password=#{userPassword}
     </select>
     -->
+    <delete id="DeleteUser" parameterType="User" >
+        delete user where user_name = #{userName}
+    </delete>
 
-
-
+    <!--  查询所有的用户     -->
+    <select id="selectAll" parameterType="User" resultMap="BaseResultMap">
+        select * from user;
+    </select>
 
 
 

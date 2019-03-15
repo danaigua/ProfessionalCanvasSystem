@@ -3,6 +3,8 @@ package com.job.dao;
 
 import com.job.pojo.User;
 
+import java.util.List;
+
 
 public interface IUserDao {
 
@@ -14,4 +16,12 @@ public interface IUserDao {
 //    public int SelectOne(User user);
 
     public int UpdateInfo(User user);
+
+    //删除用户
+    public int DeleteUser(User user);
+
+    //列出所有的用户来增删改查
+    public List<User> selectAll();
+
+
 }

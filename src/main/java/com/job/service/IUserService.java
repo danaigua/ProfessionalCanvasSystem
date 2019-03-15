@@ -3,6 +3,7 @@ package com.job.service;
 import com.job.pojo.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 
 @Service
@@ -17,4 +18,10 @@ public interface IUserService {
 
    //更新数据
    int UpdateInfo(User user);
+
+   //删除用户
+   int DeleteUser(User user);
+
+   //查询所有用户
+   List<User> selectAll();
 }

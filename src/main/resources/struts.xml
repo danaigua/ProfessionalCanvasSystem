@@ -4,9 +4,15 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
+<!--suppress ALL -->
 <struts>
-
-    <package name="Welcome" extends="struts-default">
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="true" />-->
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>-->
+    <!--&lt;!&ndash;&lt;!&ndash;<constant name="struts.devMode" value="true" />&ndash;&gt;&ndash;&gt;-->
+    <!--<constant name="struts.devMode" value="true"></constant>-->
+    <!--&lt;!&ndash;&lt;!&ndash;<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>&ndash;&gt;&ndash;&gt;-->
+    <!--<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>-->
+    <package name="Welcome"  extends="struts-default">
         <global-results>
             <result name="error">/error.jsp</result>
         </global-results>
@@ -41,6 +47,16 @@
             <result name="error" type="redirect">/error2.jsp</result>
         </action>
 
+        <!--  删除操作    -->
+        <action name="DeleteUser" class="com.job.controller.UserController" method="DeleteUser">
+
+        </action>
+        <!--查询所有    -->
+        <!--测试的时候使用-->
+        <action name="selectAll" class="com.job.controller.UserController" method="selectAll">
+            <result name="success">/test/test2.jsp</result>
+        </action>
+
 
     </package>
     <package name="About" extends="struts-default">
@@ -60,6 +76,8 @@
             <result name="error">/Manger/Super_Admin/superMember.jsp</result>
             -->
         </action>
+        <!--  普通管理员     -->
+        <action name="AddJobOri" class="com.job.controller.AddJobInfoController" method="AddJobOri">
+        </action>
     </package>
-
 </struts>
