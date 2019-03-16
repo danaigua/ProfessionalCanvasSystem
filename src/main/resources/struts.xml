@@ -6,11 +6,8 @@
 
 <!--suppress ALL -->
 <struts>
-    <!--<constant name="struts.enable.DynamicMethodInvocation" value="true" />-->
     <!--<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>-->
-    <!--&lt;!&ndash;&lt;!&ndash;<constant name="struts.devMode" value="true" />&ndash;&gt;&ndash;&gt;-->
     <!--<constant name="struts.devMode" value="true"></constant>-->
-    <!--&lt;!&ndash;&lt;!&ndash;<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>&ndash;&gt;&ndash;&gt;-->
     <!--<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>-->
     <package name="Welcome"  extends="struts-default">
         <global-results>
@@ -80,4 +77,20 @@
         <action name="AddJobOri" class="com.job.controller.AddJobInfoController" method="AddJobOri">
         </action>
     </package>
+
+
+    <!--测试用Ajax来传递json-->
+    <package name="showDataController" extends="json-default">
+        <action name="showData" class="com.job.controller.showDataController" method="showData">
+            <result name="success" type="json">
+                <param name="users"></param>
+            </result>
+        </action>
+    </package>
+
+
+
+
+
+
 </struts>

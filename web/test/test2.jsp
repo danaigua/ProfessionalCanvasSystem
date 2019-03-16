@@ -26,6 +26,7 @@
         <td>${email}</td>
         <td>${telephone}</td>
         <td><a href="sa">删除</a></td>
+        <td><a href="sa">编辑</a></td>
     </tr>
     </s:iterator>
     </tr>

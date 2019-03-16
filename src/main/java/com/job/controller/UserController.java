@@ -145,7 +145,7 @@ public class UserController extends ActionSupport implements ServletResponseAwar
         }
     }
 
-    //查询所有
+    //查询所有，测试的时候用
     public String selectAll() throws IOException {
          userList = userService.selectAll();
         return SUCCESS;

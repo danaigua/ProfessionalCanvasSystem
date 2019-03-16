@@ -101,7 +101,7 @@
             </div>
         </form>
         <!-- 右边用户管理信息 -->
-        <%--<div class="dataBox_userInformation dataBox_information">--%>
+        <div class="dataBox_userInformation dataBox_information">
             <%--<script type="text/javascript">--%>
                 <%--var a = document.getElementsByClassName("a")[0];--%>
                 <%--function getInformation(url) {--%>
@@ -124,7 +124,7 @@
                 <%--}--%>
             <%--</script>--%>
             <!-- 张三 -->
-            <!--
+
             <div class="dataBoxUser_name">
                 <a href="DeleteUser.action" class="dataBoxUser_delete" name="">删除</a>
             </div>
@@ -179,7 +179,7 @@
                 </div>
                 <input type="submit" value="提交" class="dataBoxInp_sub">
             </div>
-             -->
+
 
             <button type="submit" class="dataBoxUser_sub">添加用户</button>
         </div>
