@@ -71,12 +71,15 @@ a:hover {
 	outline: none;
 	color: #666;
 }
-
+.singleImg{
+	background:url(../images/我的资料2.jpg);
+	background-size:100% 100%;
+}
 .cat_title {
 	overflow: hidden;
 	padding: 35px 0;
 	height: 120px;
-	border-bottom: 1px solid #d8d9d8;
+	border-bottom: 2px solid #fff;
 }
 
 .cat_title h2 {
@@ -109,7 +112,7 @@ a:hover {
 	font-size: 60px;
 	font-family: Arial;
 	font-weight: bold;
-	color: #333;
+	color: #fff;
 	margin-right: 6px;
 	vertical-align: middle;
 }
@@ -911,6 +914,9 @@ footer {
 }
 
 #case_footer {
+	position:absolute;
+	left:0;
+	bottom:0;
 	background: #f5f4f4;
 	border-top: 1px solid #d8d9d8;
 	padding: 15px 0;
@@ -1017,10 +1023,6 @@ footer {
 	background-attachment: fixed
 }
 
-* html #login {
-	position: absolute;
-	top: expression(eval(document.documentElement.scrollTop+150));
-}
 
 /*SubPage caseDetailed*/
 #show_cases article {
@@ -1198,7 +1200,7 @@ footer {
 .category {
 	height: 68px;
 	line-height: 68px;
-	border-bottom: 1px solid #d8d9d8;
+	border-bottom: 2px solid #fff;
 }
 
 .category .wrapper {
@@ -1253,10 +1255,10 @@ footer {
 	top: 25px;
 	right: 5px;
 }
+/* 修改过 */
 #single .category{
-	margin: 0 auto;
 	height: 500px;
-	width: 1200px;
+	width: 100%;
 }
 #single .category .wrapper{
 	margin: 0 auto;
@@ -1272,24 +1274,24 @@ footer {
 	width: 500px;
 	position: relative;
 	left: 10%;
-
-
-
+	
+	
+	
 }
 #single .category .wrapper .aboutMy fieldset{
 
-	display: block;
-	margin-inline-start: 2px;
-	margin-inline-end: 2px;
-	padding-block-start: 0.35em;
-	padding-inline-start: 0.75em;
-	padding-inline-end: 0.75em;
-	padding-block-end: 0.625em;
-	min-inline-size: min-content;
-	border-width: 2px;
-	border-style: groove;
-	border-color: threedface;
-	border-image: initial;
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 5px;
+    border-style: groove;
+    border-color: #fff;
+    border-image: initial;
 }
 /*
 	大数据视图修改
@@ -1319,9 +1321,6 @@ footer {
 /*
 大数据视图
 */
-
-
-
 #newslist .news {
 	padding: 15px 0;
 }
@@ -1446,10 +1445,10 @@ footer {
 #single #detailed {
 	line-height: 1.8;
 	text-align: justify;
-	color: #666;
+	color: #333;
 	padding: 20px 0;
 	position: relative;
-	min-height: 500px;
+	min-height: 250px;
 	_height: 500px
 }
 
@@ -1471,14 +1470,7 @@ footer {
 #single #detailed .slide {
 	display: none;
 }
-/*
 
-修改about的字体
-*/
-#single .serv_detailed .aboutFont{
-	position: relative;
-	left: 13%;
-}
 /*SubPage Service*/
 .pdl250 {
 	padding-left: 250px;
@@ -1486,6 +1478,13 @@ footer {
 #single .pro_detailed #detailed {
 	width:  986px;
 	margin: 0 auto;
+}
+/*
+
+修改about的字体
+*/
+#single .serv_detailed .aboutFont{
+		padding-left: 10%;
 }
 #single .serv_detailed #detailed {
 	width:  100%;
@@ -1676,4 +1675,83 @@ footer {
 	display: block;
 	background: #ccc;
 	color: #999
+}
+               /*补充*/
+#single .aboutMy .myData_title{
+	position:relative;
+	color:#fff;
+	font-size: 20px;
+	font-weight: 540;
+}
+.myData_box{
+	margin-left: 30px;
+	position:relative;
+}
+.myDataBox_name{
+	display: inline-block;
+	width:50px;
+	color:#fff;
+	position:relative;
+	/*transition:all 0.5s;
+	-webkit-transition:all 0.5s;*/
+}
+.myDataBox_input{
+	width:250px;
+	height:26px;
+	padding:5px;
+	background:rgba(255,255,255,0.7);
+}
+.myDataBox_link{
+	margin-left: 10px;
+	font-size: 17px;
+	color:#f00;
+}
+.myData_input{
+	margin: 40px 0 20px 30px;
+	width:150px;
+	height:40px;
+	line-height: 40px;
+	text-align:center;
+	border-radius: 40px;
+	border:2px solid #fff;
+    background:#a11e21;
+    color:#fff;
+    cursor:pointer;
+    font-weight:550;
+    transition:all 0.3s;
+    -webkit-transition:all .3s;
+		margin-bottom:40px ;
+}
+.myData_home{
+	display: inline-block;
+	width:60px;
+	height:60px;
+	position:fixed;
+	top:90px;
+	left:15px;
+	cursor:pointer;
+	border-radius:100%;
+	background:url(../images/搜索小图标.jpg);
+	background-size:100% 100%;
+	z-index: 20000;
+	transition:all 1s;
+	-webkit-transition:all 1s;
+	-ms-transition:all 1s;
+}
+.myDataHome_input{
+	width:0;
+	height:40px;
+    border:none;
+	background: rgba(255,255,255);
+	position:fixed;
+	top:100px;
+	left:15px;
+	z-index:20000;
+	font-size:16px;
+	transition:all 1s;
+	-webkit-transition:all 1s;
+	-ms-transition:all 1s;
+}
+.datailedColor{
+	color:#fff!important;
 }

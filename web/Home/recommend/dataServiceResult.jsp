@@ -3,13 +3,16 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=1024" />
-		<title>关于_基于大数据的智能求职系统</title>
+		<title>智能推荐_基于大数据的智能求职系统</title>
 		<meta name="keywords" content="这里填写关键词" />
 		<meta name="description" content="这里填写描述" />
 		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
 		<!--[if lt IE 9]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
 	</head>
 	<body>
+
+
+
 		<header>
 			<div id="navbg"></div>
 			<div class="wrapper">
@@ -28,53 +31,26 @@
 		<section id="single">
 			<div class="cat_title">
 				<div class="wrapper">
-					<h2><strong>我的资料</strong></h2>
+					<h2>分析结果</h2>
+					<p>大数据分析系统<br />Big data analysis system</p>
 				</div>
 			</div>
 			<div class="category">
 				<div class="wrapper">
-					<!--  
-						width: 986px;
-						margin: 0 auto;
-						position: relative;
-					-->
-					<!--  
-						  margin: 0 auto;
-						  *margin-top: 20px;
-						  *margin-left: 5px
-						  -->
-					<div class="aboutMy">
 
-						<fieldset>
-							<legend>修改我的信息</legend>
-								昵称：<input type="text" size="29" value="${currentUser.userName}" name="user.userName"><br>
-								E-mail: <input type="text" size="28" value="${currentUser.email}" name="user.email"><br>
-								电话号码：<input type="text" size="25" value="${currentUser.telephone}" name="user.telephone"><br>
-								我的编号：<input type="text" size="25" value="${currentUser.userId}" name="user.userId"><br>
-							<input type="button" value="注销这个账号" href="" />
-						</fieldset>
-					</div>
 				</div>
 			</div>
-			<article class="serv_detailed">
-				<div id="detailed">
-					<div class="aboutFont">
-					<p class="t4">[专业+专注]</p>
-					<div class="t4Content">
-						<ul>
-							<li>我们致力于为顾客提供通过大数据分析出就业的期望工作，以及期望工资</li>
-							<li>我们专注于在大量数据种爬取出有用的数据进行分析</li>
-						</ul>
-					</div>
-					<p class="t4">做大数据分析就业前景以及期望工资的网站并不多</p>
-					<div class="t4Content">
-						<ul>
-							<li>我们通过python爬虫以及hadoop大数据框架在网上爬取大量的数据进行许多道清洗数据之后得到了比较可靠的期望值，然而这个值可能误差。但是我们会尽量地减少误差，让我们的网站变得更加的可靠</li>
-							<li>网址：<a href="" target="_blank">http://www.xxxx.com/</a></li>
-						</ul>
-					</div>
+			<div class="cat_title">
+				<div class="wrapper">
+					<h2>智能推荐</h2>
+					<p>大数据分析系统<br />Big data analysis system</p>
 				</div>
-			</article>
+			</div>
+			<div class="category">
+				<div class="wrapper">
+
+				</div>
+			</div>
 		</section>
 		<footer>
 			<div id="footerlink">

@@ -16,18 +16,16 @@
 		<header>
 			<div id="navbg"></div>
 			<div class="wrapper">
-				<h1 class="logo"><a href="../index.htm" title=""><img src="../images/logo.png" width="213"
-						 height="36" alt="" /></a></h1>
+				<h1 class="logo"><a href="../index.htm" title=""><img src="../images/logo.png" width="213" height="36" alt="" /></a></h1>
 				<nav>
 					<ul>
 						<li class="home"><a href="../index.htm">首页<span>网站首页！</span></a></li>
 						<li class="service"><a href="AnalyzeJurisdiction.action" title="网站建设">分析<span>大数据分析</span></a></li>
 						<li class="cases"><a href="../case/index.htm" title="网页制作">公司<span>社会招聘</span></a></li>
 						<li class="client"><a href="../fangan/index.htm" title="解决方案">学校<span>校园招聘</span></a></li>
-						/**
-						刚刚修改的是这里
-						<li class="about"><a href="../about/index.htm">我的<span>登陆注册</span></a></li>
-						*/
+
+						<%--刚刚修改的是这里--%>
+						<%--<li class="about"><a href="../about/index.htm">我的<span>登陆注册</span></a></li>--%>
 						<li class="about"><a href="AboutLogin.action">我的<span>登陆注册</span></a></li>
 					</ul>
 				</nav>
@@ -47,13 +45,13 @@
 						margin: 0 auto;
 						position: relative;
 					-->
-					
-						<!--  
+
+					<!--  
 						  margin: 0 auto;
 						  *margin-top: 20px;
 						  *margin-left: 5px
 						  -->
-						  您还没有登陆，请先<a href="../../Login/login.html">登陆</a>
+					您还没有登陆，请先<a href="../../Login/login.html">登陆</a>
 					<fieldset>
 						<legend>${currentUser.telephone}你好修改我的信息</legend>
 						昵称：<input type="text" size="29" value="${currentUser.userName}"><a href="">修改</a><br>
@@ -62,7 +60,7 @@
 						我的编号：<input type="text" size="25" value="${currentUser.userId}"><br>
 						<input type="button" value="注销这个账号" href="" />
 					</fieldset>
-					
+
 				</div>
 			</div>
 			<article class="serv_detailed">
