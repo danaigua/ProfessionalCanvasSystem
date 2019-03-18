@@ -51,9 +51,10 @@
                         alert("加载数据失败");
                     }
                 });
-                window.location.reload();
+
             })
-        })
+        });
+        window.location.load();
     </script>
 </head>
 <body>

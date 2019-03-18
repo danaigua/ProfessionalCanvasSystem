@@ -4,7 +4,6 @@ import com.job.pojo.User;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import net.sf.json.JSONArray;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import javax.annotation.Resource;

@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-
+1
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,12 @@
 </head>
 <body>
 <div class="dataBox">    <!-- 外部大盒子 -->
-    <h2 class="dataBox_theme">超级管理员</h2>   <!-- 超级会员标题 -->
+    <h2 class="dataBox_theme">大数据求职系统后台</h2>   <!-- 超级会员标题 -->
+    <h4 class="">超级管理员</h4>
     <div class="dataBox_nav">     <!-- 左边导航栏 -->
         <span class="dataBoxNav_theme dataBoxNavTheme_first">
+             <i class="dataBoxNav_letter">添</i>
+             <i class="dataBoxNav_letter">加</i>
              <i class="dataBoxNav_letter">求</i>
              <i class="dataBoxNav_letter">职</i>
              <i class="dataBoxNav_letter">资</i>
@@ -38,6 +41,12 @@
              <i class="dataBoxNav_letter">分</i>
              <i class="dataBoxNav_letter">析</i>
           </span>
+        <span class="dataBoxNav_theme">
+            <i class="dataBoxNav_letter">求</i>
+            <i class="dataBoxNav_letter">职</i>
+            <i class="dataBoxNav_letter">资</i>
+            <i class="dataBoxNav_letter">料</i>
+        </span>
     </div>
     <!-- 右边信息显示 -->
     <div class="dataBox_right">
@@ -102,119 +111,53 @@
         </form>
         <!-- 右边用户管理信息 -->
         <div class="dataBox_userInformation dataBox_information">
-            <%--<script type="text/javascript">--%>
-                <%--var a = document.getElementsByClassName("a")[0];--%>
-                <%--function getInformation(url) {--%>
-                    <%--var demo;--%>
-                    <%--if(window.XMLHttpRequest) {--%>
-                        <%--demo = new XMLHttpRequest();--%>
-                    <%--}else{--%>
-                        <%--demo = new ActiveXOject("Microsoft.XMLHTTP");--%>
-                    <%--};--%>
-                    <%--demo.onreadystatechange = function () {--%>
-                        <%--if(demo.readyState == 4 && demo.status == 200) {--%>
-                            <%--a.innerHTML = demo.responseText;--%>
-                        <%--}--%>
-                    <%--}--%>
-                    <%--demo.open("", url, true);--%>
-                    <%--demo.send();--%>
-                <%--}--%>
-                <%--for(var i in json) {--%>
-                    <%--console.log(json[i])--%>
-                <%--}--%>
-            <%--</script>--%>
-            <!-- 张三 -->
-
-            <div class="dataBoxUser_name">
-                <a href="DeleteUser.action" class="dataBoxUser_delete" name="">删除</a>
-            </div>
-            <div class="dataBoxUser_box">
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">ID</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">姓名</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">E-mail</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">电话</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                    <a href="javascript:" class="delete">删除</a>
-                    <a href="javascript:" class="modify">修改</a>
-                </div>
-                <input type="submit" value="提交" class="dataBoxInp_sub">
-            </div>
-
-
-            <button type="submit" class="dataBoxUser_sub">添加用户</button>
+            <button type="button" id="shuaxin">点击</button>
+            <table class="dataBoxUser_table">
+                <tr class="dataBoxUser_title">
+                    <th class="dataBoxUser_value"></th>
+                    <th class="dataBoxUser_value"></th>
+                    <th class="dataBoxUser_value"></th>
+                    <th class="dataBoxUser_value"></th>
+                    <th class="dataBoxUser_value"></th>
+                </tr>
+            </table>
         </div>
         <!-- 右边会员管理信息 -->
         <div class="dataBox_menberInformation dataBox_information">
-            <div class="dataBoxInp_ordinary">
-                <h2 class="dataBoxInp_theme">普通会员</h2>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">用户名</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">密码</i>
-                    <input type="text" class="address dataBoxInp_input">
-                </div>
-                <input type="submit" class="dataBoxInp_sub" value="添加会员">
-                <input type="submit" class="dataBoxInp_sub" value="提交">
+            <%--添加普通管理员--%>
+            <form action="addAdmin.action" method="post">
+                <div class="dataBoxInp_ordinary">
+                    <h2 class="dataBoxInp_theme">添加普通管理员</h2>
+                    <div class="dataBoxInp_box">
+                        <i class="dataBoxInp_text">账号</i>
+                        <input type="text" class="describe dataBoxInp_input">
+                    </div>
+                    <div class="dataBoxInp_box">
+                        <i class="dataBoxInp_text">密码</i>
+                        <input type="text" class="address dataBoxInp_input">
+                    </div>
+                    <input type="submit" class="dataBoxInp_sub" value="添加会员">
+            </form>
+            <%--<input type="submit" class="dataBoxInp_sub" value="提交">--%>
 
+        </div>
+        <div class="dataBoxInp_super">
+            <h2 class="dataBoxInp_theme">超级管理员</h2>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">账号</i>
+                <input type="text" class="describe dataBoxInp_input" readonly="readonly" value="${currentAdmin.adminId}">
             </div>
-            <div class="dataBoxInp_super">
-                <h2 class="dataBoxInp_theme">超级会员</h2>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="describe dataBoxInp_input">
-                </div>
-                <div class="dataBoxInp_box">
-                    <i class="dataBoxInp_text">空</i>
-                    <input type="text" class="address dataBoxInp_input">
-                </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">密码</i>
+                <input type="text" class="address dataBoxInp_input" readonly="readonly"
+                       value="${currentAdmin.adminPassword}">
             </div>
         </div>
-        <!-- 右边数据分析信息 -->
-        <div class="dataBox_dataInformation dataBox_information"></div>
-
     </div>
+    <!-- 右边数据分析信息 -->
+    <div class="dataBox_dataInformation dataBox_information"></div>
+
+</div>
 
 </div>
 <script src="../jquery-3.3.1.min.js"></script>
@@ -327,7 +270,52 @@
         }
 
     })
+</script>
 
+<%--用户信息表格--%>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var tr = $(".dataBoxUser_title");
+        var text = "<tr class='dataBoxUser_title'></tr>";
+        var text1 = "<tb class='dataBoxUserVal_name'></tb>" +
+            "<tb class='dataBoxUserVal_name'></tb>" +
+            "<tb class='dataBoxUserVal_name'></tb>" +
+            "<tb class='dataBoxUserVal_name'></tb>" +
+            "<tb class='dataBoxUserVal_name'></tb>";
+        $("#shuaxin").click(function () {
+            $.ajax({
+                type: 'post',
+                url: 'showData',
+                async: false,
+                dataType: 'json',
+                data: {},
+                success: function (result) {
+
+                    var length = 0;
+                    for (var a in result) {
+                        for (var b in result[a]) {
+                            length++;
+                        }
+                    }
+                    for (var i = 0; i < (length + 1); i++) {
+                        for (var k in result) {
+                            console.log(result[k][i]);
+                        }
+                    }
+                    for (var i = 0; i < length; i++) {
+                        tr.after(text);
+                    }
+                    tr.siblings().append(text1);
+                    // opener.location.reload()
+                },
+                error: function () {
+                    alert("加载数据失败");
+                }
+            });
+
+        })
+    });
+    window.location.load();
 </script>
 </body>
 </html>

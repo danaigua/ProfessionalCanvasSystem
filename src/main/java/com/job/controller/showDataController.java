@@ -4,13 +4,9 @@ package com.job.controller;
 import com.job.pojo.User;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
-import net.sf.json.JSONArray;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 public class showDataController extends ActionSupport {
@@ -32,7 +28,7 @@ public class showDataController extends ActionSupport {
 //        request.setCharacterEncoding("utf-8");
 //        response.setContentType("text/html;charset=utf-8");
           users = userService.selectAll();
-          users.size();
+//          users.size();
 //        设置服务器响应时向JSP表示层传输数据的编码格式
 //        response.setContentType("text/html; charset=utf-8");
         //ArrayList对象转化为JSON对象

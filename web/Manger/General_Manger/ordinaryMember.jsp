@@ -8,7 +8,8 @@
 <body>
 
 <div class="dataBox">    <!-- 外部大盒子 -->
-    <h2 class="dataBox_theme">普通管理员</h2>   <!-- 普通会员标题 -->
+    <h2 class="dataBox_theme">大数据求职系统后台</h2>   <!-- 普通会员标题 -->
+    <h4 class="">普通管理员</h4>
     <div class="dataBox_nav">     <!-- 左边导航栏 -->
         <i class="dataBoxNav_theme">求职资料</i>
     </div>

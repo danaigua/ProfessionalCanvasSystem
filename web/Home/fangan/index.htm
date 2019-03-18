@@ -171,222 +171,11 @@
 						The higher one's ideal, the purer one's life-----伏尼契</p>
 				</div>
 			</div>
-			<div id="container" width="1600px">
+			<div id="container" width="100%"  style="min-width:1200px" >
 				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-				<div id="main1" style="width: 1000px;height:600px;float: left;"></div>
-				<script type="text/javascript">
-					// 基于准备好的dom，初始化echarts实例
-					var myChart = echarts.init(document.getElementById('main1'));
-
-					// 指定图表的配置项和数据
-					option = {
-						tooltip: {
-							trigger: 'axis',
-							axisPointer: { // 坐标轴指示器，坐标轴触发有效
-								type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-							}
-						},
-						legend: {
-							data: ['毕业半年后就业率（%）', '工作与专业相关度（%）', '就业满意率（%）', '毕业半年内离职率（%）']
-						},
-						toolbox: {
-							show: true,
-							feature: {
-								mark: {
-									show: true
-								},
-								dataView: {
-									show: true,
-									readOnly: false
-								},
-								magicType: {
-									show: true,
-									type: ['line', 'bar', 'stack', 'tiled']
-								},
-								restore: {
-									show: true
-								},
-								saveAsImage: {
-									show: true
-								}
-							}
-						},
-						calculable: true,
-						xAxis: [{
-							type: 'value'
-						}],
-						yAxis: [{
-							type: 'category',
-							data: ['英语', '会计学', '财务管理', '土木工程', '机械设计及其自动化', '计算机科学与技术', '汉语言文学', '电气工程及其自动化', '国际经济与贸易', '软件工程']
-						}],
-						series: [{
-								name: '毕业半年后就业率（%）',
-								type: 'bar',
-								stack: '统计结果',
-								itemStyle: {
-									normal: {
-										label: {
-											show: true,
-											position: 'insideRight'
-										}
-									}
-								},
-								data: [91.5, 91.7, 94.2, 92.8, 92.6, 93.9, 91.6, 95.6, 91.2, 96.7]
-							},
-							{
-								name: '工作与专业相关度（%）',
-								type: 'bar',
-								stack: '统计结果',
-								itemStyle: {
-									normal: {
-										label: {
-											show: true,
-											position: 'insideRight'
-										}
-									}
-								},
-								data: [75, 83, 79, 86, 68, 77, 83, 77, 54, 85]
-							},
-							{
-								name: '就业满意率（%）',
-								type: 'bar',
-								stack: '统计结果',
-								itemStyle: {
-									normal: {
-										label: {
-											show: true,
-											position: 'insideRight'
-										}
-									}
-								},
-								data: [69, 68, 69, 65, 62, 74, 72, 70, 67, 75]
-							},
-							{
-								name: '毕业半年内离职率（%）',
-								type: 'bar',
-								stack: '统计结果',
-								itemStyle: {
-									normal: {
-										label: {
-											show: true,
-											position: 'insideRight'
-										}
-									}
-								},
-								data: [29, 20, 28, 15, 23, 22, 21, 17, 30, 26]
-							}
-						]
-					};
-
-					// 使用刚指定的配置项和数据显示图表。
-					myChart.setOption(option);
-				</script>
-				<div id="main2" style="width: 400px;height:600px;float: left;"></div>
-				<script type="text/javascript">
-					// 基于准备好的dom，初始化echarts实例
-					var myChart = echarts.init(document.getElementById('main2'));
-
-					// 指定图表的配置项和数据
-					option = {
-						title: {
-							text: '全国毕业生前十位就业情况',
-							subtext: '本科',
-							x: 'center'
-						},
-						tooltip: {
-							trigger: 'item',
-							formatter: "{a} <br/>{b} : {c} ({d}%)"
-						},
-						legend: {
-							orient: 'vertical',
-							x: 'left',
-							data: ['英语', '会计学', '财务管理', '土木工程', '机械设计及其自动化', '计算机科学与技术', '汉语言文学', '电气工程及其自动化', '国际经济与贸易', '软件工程']
-						},
-						toolbox: {
-							show: true,
-							feature: {
-								mark: {
-									show: true
-								},
-								dataView: {
-									show: true,
-									readOnly: false
-								},
-								magicType: {
-									show: true,
-									type: ['pie', 'funnel'],
-									option: {
-										funnel: {
-											x: '25%',
-											width: '50%',
-											funnelAlign: 'left',
-											max: 1548
-										}
-									}
-								},
-								restore: {
-									show: true
-								},
-								saveAsImage: {
-									show: true
-								}
-							}
-						},
-						calculable: true,
-						series: [{
-							name: '工资水平',
-							type: 'pie',
-							radius: '55%',
-							center: ['50%', '60%'],
-							data: [{
-									value: 4482,
-									name: '英语'
-								},
-								{
-									value: 4323,
-									name: '会计学'
-								},
-								{
-									value: 4184,
-									name: '财务管理'
-								},
-								{
-									value: 4566,
-									name: '土木工程'
-								},
-								{
-									value: 4494,
-									name: '机械设计及其自动化'
-								},
-								{
-									value: 5855,
-									name: '计算机科学与技术'
-								},
-								{
-									value: 4280,
-									name: '汉语言文学'
-								},
-								{
-									value: 4809,
-									name: '电气工程及其自动化'
-								},
-								{
-									value: 4509,
-									name: '国际经济与贸易'
-								},
-								{
-									value: 6259,
-									name: '软件工程'
-								}
-							]
-						}]
-					};
-
-					// 使用刚指定的配置项和数据显示图表。
-					myChart.setOption(option);
-				</script>
+				<div id="main1" style="width: 70%;float: left;"></div>
+				<div id="main2" style="width: 30%;float: left;"></div>
 			</div>
-			
 		</section>
 		<footer>
 			<div id="footerlink">
@@ -423,6 +212,216 @@
 		<script type="text/javascript" src="../js/jquery.plugin.min.js"></script>
 		<!--[if IE 6]>
 <script type="text/javascript" src="../js/killie6.js" ></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main1'));
+
+    // 指定图表的配置项和数据
+    option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: ['毕业半年后就业率（%）', '工作与专业相关度（%）', '就业满意率（%）', '毕业半年内离职率（%）']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                dataView: {
+                    show: true,
+                    readOnly: false
+                },
+                magicType: {
+                    show: true,
+                    type: ['line', 'bar', 'stack', 'tiled']
+                },
+                restore: {
+                    show: true
+                },
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        calculable: true,
+        xAxis: [{
+            type: 'value'
+        }],
+        yAxis: [{
+            type: 'category',
+            data: ['英语', '会计学', '财务管理', '土木工程', '机械设计及其自动化', '计算机科学与技术', '汉语言文学', '电气工程及其自动化', '国际经济与贸易', '软件工程']
+        }],
+        series: [{
+            name: '毕业半年后就业率（%）',
+            type: 'bar',
+            stack: '统计结果',
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'insideRight'
+                    }
+                }
+            },
+            data: [91.5, 91.7, 94.2, 92.8, 92.6, 93.9, 91.6, 95.6, 91.2, 96.7]
+        },
+            {
+                name: '工作与专业相关度（%）',
+                type: 'bar',
+                stack: '统计结果',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [75, 83, 79, 86, 68, 77, 83, 77, 54, 85]
+            },
+            {
+                name: '就业满意率（%）',
+                type: 'bar',
+                stack: '统计结果',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [69, 68, 69, 65, 62, 74, 72, 70, 67, 75]
+            },
+            {
+                name: '毕业半年内离职率（%）',
+                type: 'bar',
+                stack: '统计结果',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [29, 20, 28, 15, 23, 22, 21, 17, 30, 26]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main2'));
+
+    // 指定图表的配置项和数据
+    option = {
+        title: {
+            text: '全国毕业生前十位就业情况',
+            subtext: '本科',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data: ['英语', '会计学', '财务管理', '土木工程', '机械设计及其自动化', '计算机科学与技术', '汉语言文学', '电气工程及其自动化', '国际经济与贸易', '软件工程']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                dataView: {
+                    show: true,
+                    readOnly: false
+                },
+                magicType: {
+                    show: true,
+                    type: ['pie', 'funnel'],
+                    option: {
+                        funnel: {
+                            x: '25%',
+                            width: '50%',
+                            funnelAlign: 'left',
+                            max: 1548
+                        }
+                    }
+                },
+                restore: {
+                    show: true
+                },
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        calculable: true,
+        series: [{
+            name: '工资水平',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [{
+                value: 4482,
+                name: '英语'
+            },
+                {
+                    value: 4323,
+                    name: '会计学'
+                },
+                {
+                    value: 4184,
+                    name: '财务管理'
+                },
+                {
+                    value: 4566,
+                    name: '土木工程'
+                },
+                {
+                    value: 4494,
+                    name: '机械设计及其自动化'
+                },
+                {
+                    value: 5855,
+                    name: '计算机科学与技术'
+                },
+                {
+                    value: 4280,
+                    name: '汉语言文学'
+                },
+                {
+                    value: 4809,
+                    name: '电气工程及其自动化'
+                },
+                {
+                    value: 4509,
+                    name: '国际经济与贸易'
+                },
+                {
+                    value: 6259,
+                    name: '软件工程'
+                }
+            ]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
 <![endif]-->
 	</body>
 </html>
