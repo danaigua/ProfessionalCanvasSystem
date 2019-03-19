@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IAnalyzeJobDao">
+    <resultMap id="BaseResultMap" type="com.job.pojo.AnalyzeJob">
+        <result column="service_id" jdbcType="VARCHAR" property="serviceId"/>
+        <result column="job" jdbcType="VARCHAR" property="job"/>
+        <result column="job_age" jdbcType="VARCHAR" property="jobAge"/>
+        <result column="job_addr" jdbcType="VARCHAR" property="jobAddr"/>
+        <result column="job_worktime" jdbcType="VARCHAR" property="jobWorktime"/>
+        <result column="Salary" jdbcType="VARCHAR" property="Salary"/>
+    </resultMap>
+    <select id="showSalaryByJobAndTime" resultMap="BaseResultMap" parameterType="analyzeJob">
+        select * from servicejob where job_worktime=#{jobWorktime} and job = #{job}
+    </select>
+</mapper>

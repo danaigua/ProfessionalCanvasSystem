@@ -1,11 +1,20 @@
 package com.job.pojo;
 
-public class analyzeJob {
+public class AnalyzeJob {
     private Integer serviceId;
     private String job;
     private String jobAge;
     private String jobAddr;
     private String jobWorktime;
+    private String Salary;
+
+    public String getSalary() {
+        return Salary;
+    }
+
+    public void setSalary(String salary) {
+        Salary = salary;
+    }
 
     public Integer getServiceId() {
         return serviceId;

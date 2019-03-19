@@ -6,7 +6,7 @@
 		<title>关于_基于大数据的智能求职系统</title>
 		<meta name="keywords" content="这里填写关键词" />
 		<meta name="description" content="这里填写描述" />
-		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="../css/style1.css" type="text/css" media="all" />
 		<!--[if lt IE 9]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
 	</head>
 	<body>
@@ -20,10 +20,10 @@
 				<nav>
 					<ul>
 						<li class="home"><a href="../index.htm">首页<span>网站首页！</span></a></li>
-						<li class="service"><a href="../service/index.htm" title="网站建设">分析<span>大数据分析</span></a></li>
+						<li class="service"><a href="AnalyzeJurisdiction.action" title="网站建设">分析<span>大数据分析</span></a></li>
 						<li class="cases"><a href="../case/index.htm" title="网页制作">公司<span>社会招聘</span></a></li>
 						<li class="client"><a href="../fangan/index.htm" title="解决方案">学校<span>校园招聘</span></a></li>
-						<li class="about"><a href="../about/index.htm">我的<span>登陆注册</span></a></li>
+						<li class="about"><a href="AboutLogin.action">我的<span>登陆注册</span></a></li>
 					</ul>
 				</nav>
 			</div>

@@ -7,10 +7,15 @@
 <title>基于大数据的智能求职系统</title>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link rel="stylesheet" href="css/style.css"  type="text/css" media="all" />
+<link rel="stylesheet" href="css/style1.css" type="text/css" media="all" />
 <!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
 </head>
 <body id="ruifoxHome">
+  <form action="" class="mydataHome_form">
+     <input type="text" class="myDataHome_input">
+     <button type="submit" class="myData_home">搜索</button>
+     <i class="myDataHome_image"></i>
+  </form>
 <header>
 	<div id="navbg"></div>
 	<div class="wrapper">
@@ -278,7 +283,7 @@
         <a href="javascript:if(confirm('http://www.777moban.com/'))window.location='http://www.777moban.com/'"  target="_blank" class="openurl">访问品牌网站</a>
       </p>
 </li>
-    <li>
+<li>
 	<img src="uploads/131029/13102906.png"  width="240" height="152" alt="CareerFrog职业蛙"/>
       <p> <strong>CareerFrog职业蛙</strong>大学生求职服务领导者，做中国最有态度的雇主<br/>
         <a href="case/qiye/1-6.html"  class="btn_blue">查看招聘详情</a>
@@ -317,9 +322,7 @@
         <div class="newslist"> <a href="news/gsnews/7.html"  title="html5+js技术网站应用案例：三盛·都会城网站建设">html5+js技术网站应用案例：三盛·都会城网站建设</a> <span>UPTATED:2013/11/01</span>
           <p>三盛·都会城作为三盛地产在成都的全资开发项目，入主龙泉经开区，承载三盛地产在成都建立品牌的任务，三盛·都会城总投入近40亿元，前期将投入3亿重....</p>
         </div>
-      </li>
-
-
+</li>
     </ul>
   </div>
 </section>
@@ -373,6 +376,57 @@
 </footer>
 <script type="text/javascript" src="js/jquery.1.8.2.min.js" ></script>
 <script type="text/javascript" src="js/jquery.plugin.min.js"></script>
+            <!-- 鼠标点击搜索图标弹出搜索栏 -->
+<script type="text/javascript">
+     $(document).ready(function () {
+          var myDataHome = $(".myData_home");
+          var myDataHomeInput = $(".myDataHome_input");
+          var myDataHomeImage = $(".myDataHome_image")
+          // myDataHomeImage.click(function () {
+               // myDataHomeInput.css({
+               //     "width":"220px",
+               //     "padding-left":"5px",
+               //     "display":"inline-block"
+               // })
+               // myDataHome.css({
+               //    "left":"200px",
+               //    "display":"inline-block"
+               // })
+          //      myDataHomeInput.slideDown('1s');
+          //      myDataHome.slideDown('1s');
+          //      $(this).css("display","none")  
+          // });
+          // myDataHomeInput.focus(function () {
+          //       myDataHome.prop("type","submit")
+          // })
+          // myDataHomeInput.blur(function () {
+          //      $(this).css({
+          //          "width":"0",
+          //          "padding-left":"0",
+          //          "display":"none"
+          //      })
+          //      myDataHome.css({
+          //          "left": "15px",
+          //          "display":"none"
+          //      })
+          // })
+             $(".myDataHome_image").click(function () {
+                $(".myData_home, .myDataHome_input").animate({
+                     opacity:"1"  
+                },"0.2s")
+                $(".myDataHome_input").slideDown("slow");
+                $(".myData_home").slideDown("slow");
+                $(this).css("display","none");       
+           })
+           $(".myDataHome_input").blur(function () {
+               $(".myDataHome_input, .myData_home").animate({
+                  opacity:"0"  
+             },"0.2s")
+             $(".myDataHome_image").slideDown("slow");
+             $(".myDataHome_input, .myData_home").css("display","none");  
+           })
+     })
+</script>
 <!--[if IE 6]>
 <script type="text/javascript" src="js/killie6.js"></script>
 <![endif]-->

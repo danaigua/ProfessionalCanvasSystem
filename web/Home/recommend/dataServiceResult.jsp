@@ -6,7 +6,7 @@
 		<title>智能推荐_基于大数据的智能求职系统</title>
 		<meta name="keywords" content="这里填写关键词" />
 		<meta name="description" content="这里填写描述" />
-		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="../css/style1.css" type="text/css" media="all" />
 		<!--[if lt IE 9]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
 	</head>
 	<body>

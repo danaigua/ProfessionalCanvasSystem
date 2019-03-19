@@ -1023,6 +1023,10 @@ footer {
 	background-attachment: fixed
 }
 
+* html #login {
+	position: absolute;
+	top: expression(eval(document.documentElement.scrollTop+150));
+}
 
 /*SubPage caseDetailed*/
 #show_cases article {
@@ -1255,10 +1259,9 @@ footer {
 	top: 25px;
 	right: 5px;
 }
-/* 修改过 */
 #single .category{
 	height: 500px;
-	width: 100%;
+	width: 1200px;
 }
 #single .category .wrapper{
 	margin: 0 auto;
@@ -1301,7 +1304,7 @@ footer {
 }
 #single .category .wrapper .Font{
 	position: relative;
-	left: 15%;
+	left: 10%;
 	
 }
 #single .category .wrapper #main{
@@ -1677,8 +1680,9 @@ footer {
 	color: #999
 }
                /*补充*/
-#single .aboutMy .myData_title{
+.myData_title{
 	position:relative;
+	left:30px;
 	color:#fff;
 	font-size: 20px;
 	font-weight: 540;
@@ -1707,7 +1711,7 @@ footer {
 	color:#f00;
 }
 .myData_input{
-	margin: 40px 0 20px 30px;
+	margin-left: 30px;
 	width:150px;
 	height:40px;
 	line-height: 40px;
@@ -1720,38 +1724,53 @@ footer {
     font-weight:550;
     transition:all 0.3s;
     -webkit-transition:all .3s;
-		margin-bottom:40px ;
 }
 .myData_home{
 	display: inline-block;
-	width:60px;
-	height:60px;
-	position:fixed;
-	top:90px;
-	left:15px;
+	vertical-align: middle;
+	width:80px;
+	height:42px;
+	font-weight:550;
+	line-height:40px;
+	text-align:center;
+	color:#fff;
+	background:#000;
+	border:none;
 	cursor:pointer;
-	border-radius:100%;
-	background:url(../images/搜索小图标.jpg);
-	background-size:100% 100%;
-	z-index: 20000;
 	transition:all 1s;
 	-webkit-transition:all 1s;
 	-ms-transition:all 1s;
+	display: none;
 }
 .myDataHome_input{
-	width:0;
+	width:220px;
 	height:40px;
     border:none;
 	background: rgba(255,255,255);
-	position:fixed;
-	top:100px;
-	left:15px;
-	z-index:20000;
+	vertical-align: middle;
 	font-size:16px;
 	transition:all 1s;
 	-webkit-transition:all 1s;
 	-ms-transition:all 1s;
+	display: none;
 }
 .datailedColor{
 	color:#fff!important;
+}
+.mydataHome_form{
+	position:fixed;
+	left:15px;
+	top:100px;
+    z-index:20000;
+    width:300px;
+    font-size:0;
+}
+.myDataHome_image{
+	cursor:pointer;
+	border-radius:100%;
+	background:url(../images/搜索.jpg);
+	background-size:100% 100%;
+	display: inline-block;
+	width:60px;
+	height:60px;
 }

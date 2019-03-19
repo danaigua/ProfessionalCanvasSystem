@@ -1,6 +1,6 @@
 package com.job.pojo;
 
-public class analyzeSalary {
+public class AnalyzeSalary {
     private String sex;
     private String age;
     private String marry;
