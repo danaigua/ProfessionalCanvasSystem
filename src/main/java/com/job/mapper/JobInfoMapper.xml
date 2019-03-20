@@ -17,5 +17,15 @@
         insert into JobInfo (Company,Department,Job,Welfare,Academic,Descrive,Address,type) values (#{Company},#{Department},#{Job},#{Welfare},#{Academic}
          ,#{Descrive},#{Address},#{type})
     </insert>
-
+    <select id="showAllJob" resultMap="BaseResultMap">
+        select * from jobinfo where type = #{type}
+    </select>
+    <!--返回所有-->
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from jobinfo
+    </select>
+    <!--判断type是不是空的-->
+    <!--<select id="IfTypeIsNull" resultMap="BaseResultMap">-->
+        <!--select * from jobinfo where type = #{type}-->
+    <!--</select>-->
 </mapper>

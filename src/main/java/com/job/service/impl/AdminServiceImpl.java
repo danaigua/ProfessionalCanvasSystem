@@ -14,4 +14,7 @@ public class AdminServiceImpl implements IAdminService {
     public Admin loginBackstage(Admin admin) {
         return adminDao.loginBackstage(admin);
     }
+    public int ResAdmin(Admin admin) {
+        return adminDao.ResAdmin(admin);
+    }
 }

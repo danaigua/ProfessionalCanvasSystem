@@ -24,7 +24,7 @@ body,html{
 }
 body{
 
-	background:url(../image/body背景图1.jpg);
+	background:url(../image/bodybackgroundpicture.jpg);
 	background-size: 100% 100%;	
 }
        /*标签初始化*/
@@ -183,7 +183,7 @@ body{
 	text-align:center;
 	border-radius: 5px;
 	border:1px solid #666;
-	background:url(../image/按钮背景2.jpg);
+	background:url(../image/backgroundButton.jpg);
 	background-size:100% 100%;
 	margin-top: 10px;
     font-size: 14px;
@@ -198,14 +198,45 @@ body{
 }
 .dataBoxUser_value, .dataBoxUserVal_name{
     display:inline-block;
-	width:100px;
+	width:130px;
     height:40px;
+	padding:0 5px;
     line-height:40px;
     font-size:18px;
     text-align:center;
     border-top:1px solid #fff;
     border-left:1px solid #fff;
     border-right:1px solid #fff;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing: border-box;
+}
+.dataBoxUser_table{
+	width:670px;
+}
+.dataBoxUser_tips{
+	width:200px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	padding:0 15px;
+	border:1px solid #666;
+	position:absolute;
+}
+.dataBoxUser_tips::after{
+	content:"";
+	display:block;
+	width:0;
+	height:0;
+	border:10px solid transparent;
+	border-top:10px solid #666;
+	position:absolute;
+	left:50%;
+	bottom:-20px;
+	margin-left:-5px;
 }
 
 

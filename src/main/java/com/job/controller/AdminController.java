@@ -7,6 +7,10 @@ import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +34,7 @@ public class AdminController extends ActionSupport {
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
-
+    private HttpServletResponse response;
     @Resource
     private AdminServiceImpl adminService;
     @Resource
@@ -64,6 +68,25 @@ public class AdminController extends ActionSupport {
 
         }
 
+    }
+    public String ResAdmin() throws IOException {
+        int i = adminService.ResAdmin(admin);
+        if (i != 0){
+            return SUCCESS;
+        }else{
+            return ERROR;
+        }
+
+    }
+    //返回成功的数据给后端
+    public String RetResAdminInfo(){
+        int j = adminService.ResAdmin(admin);
+        String s = "success";
+        if (j != 0){
+            return SUCCESS;
+        }else{
+            return null;
+        }
     }
 
 }

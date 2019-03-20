@@ -24,6 +24,7 @@ public class showDataController extends ActionSupport {
     private UserServiceImpl userService;
 //    private HttpServletRequest request ;
 //    private HttpServletResponse response;
+    //返回数据给后台，显示出用户信息
     public String showData() throws IOException {
 //        request.setCharacterEncoding("utf-8");
 //        response.setContentType("text/html;charset=utf-8");
@@ -43,5 +44,6 @@ public class showDataController extends ActionSupport {
 //        writer.close();
         return SUCCESS;
     }
+
 
 }

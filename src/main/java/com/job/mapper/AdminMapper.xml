@@ -12,11 +12,8 @@
     <select id="loginBackstage" parameterType="Admin" resultMap="BaseResultMap">
 		select * from admin where admin_id=#{adminId} and admin_password=#{adminPassword}
 	</select>
-    <!--
-    <select id="SelectOne" parameterType="int" resultMap="BaseResultMap">
-        select * from user where telephone=#{telephone} and user_password=#{userPassword}
-    </select>
-    -->
-
-
+    <!--注册一个管理员账号-->
+    <insert id="ResAdmin" parameterType="Admin">
+        insert into admin (admin_id, admin_password, type) values (#{adminId},#{adminPassword},"admin")
+    </insert>
 </mapper>

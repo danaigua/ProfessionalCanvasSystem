@@ -13,24 +13,30 @@
         <global-results>
             <result name="error">/error.jsp</result>
         </global-results>
+        <!--登陆-->
         <action name="login" class="com.job.controller.UserController" method="login">
             <result name="success" type="redirect">/Home/index.htm</result>
         </action>
+        <!--注册-->
         <action name="Register" class="com.job.controller.UserController" method="Register">
             <result name="success" type="redirect">/Home/index.htm</result>
         </action>
+        <!--忘记密码-->
         <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
             <result name="success" type="redirect">/Home/index.htm</result>
         </action>
+
         <action name="LoginHomeIndex" class="com.job.controller.UserController" method="LoginHomeIndex">
             <result name="successLogin" type="redirect"></result>
             <result name="errorLogin" type="redirect"></result>
         </action>
+        <!--分析权限控制-->
         <action name="AnalyzeJurisdiction" class="com.job.controller.JurisdictionController"
                 method="AnalyzeJurisdictionManger">
             <result name="NOJURISDICTION" type="redirect">/Login/login.html</result>
             <result name="PASS" type="redirect">/Home/service/index.htm</result>
         </action>
+        <!--登陆权限控制-->
         <action name="ChangeInfo" class="com.job.controller.UserController" method="ChangeInfo">
             <result name="success" type="redirect">/Home/about/index1.2.jsp</result>
             <result name="error" type="redirect">/Home/about/index1.2.jsp</result>
@@ -43,6 +49,12 @@
             <result name="loginSuper" type="redirect">/Manger/Super_Admin/superMember.jsp</result>
             <result name="error" type="redirect">/error2.jsp</result>
         </action>
+        <!--添加管理员-->
+        <action name="ResAdmin" class="com.job.controller.AdminController" method="ResAdmin">
+            <result name="success" type="redirect">/Manger/Super_Admin/superMember.jsp</result>
+            <result name="error" type="redirect">/Manger/Super_Admin/superMember.jsp</result>
+        </action>
+        <!--查询职业资料-->
 
         <!--  删除操作    -->
         <action name="DeleteUser" class="com.job.controller.UserController" method="DeleteUser">
@@ -68,22 +80,38 @@
     <!--  职业资料 -->
     <package name="jobInfo" extends="struts-default">
         <action name="AddJob" class="com.job.controller.AddJobInfoController" method="AddJob">
-            <!--
-            <result name="success">/Manger/Super_Admin/superMember.jsp</result>
-            <result name="error">/Manger/Super_Admin/superMember.jsp</result>
-            -->
         </action>
         <!--  普通管理员     -->
         <action name="AddJobOri" class="com.job.controller.AddJobInfoController" method="AddJobOri">
+        </action>
+
+
+        <!--跳转到搜索页面-->
+        <action name="gotoSearchjsp" class="com.job.controller.JobController" method="gotoSearchjsp">
+            <result name="gotosearch" type="redirect">/Home/searchResult/search.jsp</result>
         </action>
     </package>
 
 
     <!--测试用Ajax来传递json-->
-    <package name="showDataController" extends="json-default">
+
+    <package name="showDataController" extends="json-default,struts-default">
+        <!--后台用户分析页面-->
         <action name="showData" class="com.job.controller.showDataController" method="showData">
             <result name="success" type="json">
                 <param name="users"></param>
+            </result>
+        </action>
+        <!--搜索栏页面json-->
+        <action name="showAllJob" class="com.job.controller.JobController" method="showAllJob">
+            <result name="success" type="json">
+                <param name="users"></param>
+            </result>
+        </action>
+        <!--返回是否成功的数据给前端-->
+        <action name="RetResAdminInfo" class="com.job.controller.AdminController" method="RetResAdminInfo">
+            <result name="success" type="json">
+                <param name="root">s</param>
             </result>
         </action>
     </package>

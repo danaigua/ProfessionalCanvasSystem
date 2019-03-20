@@ -125,7 +125,6 @@ public class UserController extends ActionSupport implements ServletResponseAwar
             response.setContentType("text/html;charset=UTF-8");
             response.setCharacterEncoding("UTF-8");//防止弹出的信息出现乱码
             PrintWriter out = response.getWriter();
-
             out.print("<script>alert('成功删除！')</script>");
             out.print("<script>window.location.href='http://localhost:8080/ProfessionalCanvasSystem_war/Manger/Super_Admin/superMember.jsp'</script>");
             out.flush();

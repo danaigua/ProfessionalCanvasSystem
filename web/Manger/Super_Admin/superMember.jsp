@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>大数据后台管理系统</title>
-    <link rel="stylesheet" href="superMenber.css">
+    <link rel="stylesheet" href="superMenber1.css">
 </head>
 <body>
 <div class="dataBox">    <!-- 外部大盒子 -->
@@ -113,51 +113,56 @@
         <div class="dataBox_userInformation dataBox_information">
             <button type="button" id="shuaxin">点击</button>
             <table class="dataBoxUser_table">
+                <p class="dataBoxUser_tips"></p>
                 <tr class="dataBoxUser_title">
-                    <th class="dataBoxUser_value"></th>
-                    <th class="dataBoxUser_value"></th>
-                    <th class="dataBoxUser_value"></th>
-                    <th class="dataBoxUser_value"></th>
-                    <th class="dataBoxUser_value"></th>
+                    <th class="dataBoxUser_value">姓名</th>
+                    <th class="dataBoxUser_value">电话</th>
+                    <th class="dataBoxUser_value">密码</th>
+                    <th class="dataBoxUser_value">邮箱</th>
+                    <th class="dataBoxUser_value">ID</th>
                 </tr>
             </table>
         </div>
         <!-- 右边会员管理信息 -->
         <div class="dataBox_menberInformation dataBox_information">
             <%--添加普通管理员--%>
-            <form action="addAdmin.action" method="post">
-                <div class="dataBoxInp_ordinary">
-                    <h2 class="dataBoxInp_theme">添加普通管理员</h2>
+
+            <div class="dataBoxInp_ordinary">
+
+                <h2 class="dataBoxInp_theme">添加普通管理员</h2>
+                <form action="ResAdmin.action" method="post">
                     <div class="dataBoxInp_box">
                         <i class="dataBoxInp_text">账号</i>
-                        <input type="text" class="describe dataBoxInp_input">
+                        <input type="text" class="describe dataBoxInp_input" name="admin.adminId">
                     </div>
                     <div class="dataBoxInp_box">
                         <i class="dataBoxInp_text">密码</i>
-                        <input type="text" class="address dataBoxInp_input">
+                        <input type="password" class="address dataBoxInp_input" name="admin.adminPassword">
                     </div>
                     <input type="submit" class="dataBoxInp_sub" value="添加会员">
-            </form>
-            <%--<input type="submit" class="dataBoxInp_sub" value="提交">--%>
+                </form>
+                <%--<input type="submit" class="dataBoxInp_sub" value="提交">--%>
 
-        </div>
-        <div class="dataBoxInp_super">
-            <h2 class="dataBoxInp_theme">超级管理员</h2>
-            <div class="dataBoxInp_box">
-                <i class="dataBoxInp_text">账号</i>
-                <input type="text" class="describe dataBoxInp_input" readonly="readonly" value="${currentAdmin.adminId}">
             </div>
-            <div class="dataBoxInp_box">
-                <i class="dataBoxInp_text">密码</i>
-                <input type="text" class="address dataBoxInp_input" readonly="readonly"
-                       value="${currentAdmin.adminPassword}">
+
+            <div class="dataBoxInp_super">
+                <h2 class="dataBoxInp_theme">超级管理员</h2>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">账号</i>
+                    <input type="text" class="describe dataBoxInp_input" readonly="readonly"
+                           value="${currentAdmin.adminId}">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">密码</i>
+                    <input type="text" class="address dataBoxInp_input" readonly="readonly"
+                           value="${currentAdmin.adminPassword}">
+                </div>
             </div>
         </div>
+        <!-- 右边数据分析信息 -->
+        <div class="dataBox_dataInformation dataBox_information"></div>
+
     </div>
-    <!-- 右边数据分析信息 -->
-    <div class="dataBox_dataInformation dataBox_information"></div>
-
-</div>
 
 </div>
 <script src="../jquery-3.3.1.min.js"></script>
@@ -282,6 +287,7 @@
             "<tb class='dataBoxUserVal_name'></tb>" +
             "<tb class='dataBoxUserVal_name'></tb>" +
             "<tb class='dataBoxUserVal_name'></tb>";
+        var length = 0;
         $("#shuaxin").click(function () {
             $.ajax({
                 type: 'post',
@@ -290,26 +296,66 @@
                 dataType: 'json',
                 data: {},
                 success: function (result) {
-
-                    var length = 0;
                     for (var a in result) {
                         for (var b in result[a]) {
-                            length++;
+                            tr.after(text);
                         }
-                    }
-                    for (var i = 0; i < (length + 1); i++) {
-                        for (var k in result) {
-                            console.log(result[k][i]);
-                        }
-                    }
-                    for (var i = 0; i < length; i++) {
-                        tr.after(text);
                     }
                     tr.siblings().append(text1);
-                    // opener.location.reload()
+                    for (var a in result) {
+                        for (var b in result[a]) {
+
+                            $(".dataBoxUser_title").eq(length + 1).children().eq(0).text(result[a][b].userName);
+                            $(".dataBoxUser_title").eq(length + 1).children().eq(1).text(result[a][b].telephone);
+                            $(".dataBoxUser_title").eq(length + 1).children().eq(2).text(result[a][b].userPassword);
+                            $(".dataBoxUser_title").eq(length + 1).children().eq(3).text(result[a][b].email);
+                            $(".dataBoxUser_title").eq(length + 1).children().eq(4).text(result[a][b].userId);
+                            console.log(result[a][b])
+                            length ++;
+                        }
+                    }
                 },
                 error: function () {
                     alert("加载数据失败");
+                }
+            });
+
+        })
+    });
+    var dataBoxUserTop = 0;
+    var dataBoxUserLeft = 65;
+    window.location.load();
+    for(var i = 1; i < $(".dataBoxUser_title").length; i ++) {
+        $(".dataBoxUser_tips").css({
+            "top":dataBoxUserTop + "px"
+        });
+        for(var j = 0; j < $(".dataBoxUserVal_name").length; j ++) {
+            $(".dataBoxUser_title").eq(i).children().eq(j).mouseenter(function () {
+                $(".dataBoxUser_tips").css({
+                    "display":"block",
+                    "left":dataBoxUserLeft + "px"
+                });
+                dataBoxUserLeft += 130;
+            });
+        };
+        dataBoxUserTop += 40;
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".dataBoxInp_sub").click(function () {
+
+            $.ajax({
+                type: 'post',
+                url: 'RetResAdminInfo',
+                async: false,	//同步执行
+                dataType: 'json',
+                data: {},
+                success: function (result) {
+                    alert("修改成功");
+                },
+                error: function () {
+                    alert("修改失败");
                 }
             });
 

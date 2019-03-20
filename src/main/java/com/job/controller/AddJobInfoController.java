@@ -52,7 +52,7 @@ public class AddJobInfoController extends ActionSupport implements ServletRespon
 //            return SUCCESS;
             return null;
         }else{
-            out.print("<script>alert('修改失败！')</script>");
+            out.print("<script>alert('添加失败！')</script>");
             out.print("<script>window.location.href='http://localhost:8080/ProfessionalCanvasSystem_war/Manger/Super_Admin/superMember.jsp'</script>");
             out.flush();
             out.close();
