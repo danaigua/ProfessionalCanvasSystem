@@ -11,8 +11,8 @@
 <!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
 </head>
 <body id="ruifoxHome">
-  <form action="" class="mydataHome_form">
-     <input type="text" class="myDataHome_input">
+  <form action="gotosearch" class="mydataHome_form" method="post" >
+     <input type="text" class="myDataHome_input" name="typeJob">
      <button type="submit" class="myData_home">搜索</button>
      <i class="myDataHome_image"></i>
   </form>
@@ -358,16 +358,16 @@
       <p>
       	<ul>
       		<li>
-        		<a href="#" target='_blank'>建荣博客</a> 
+        		<a href="#" target='_blank'></a>
         	</li>
         	<li>
-        		<a href="#" target='_blank'>建荣博客</a> 
+        		<a href="#" target='_blank'></a>
         	</li>
         	<li>
-        		<a href="#" target='_blank'>建荣博客</a>
+        		<a href="#" target='_blank'></a>
         	</li>
         	<li>
-        		<a href="#" target='_blank'>建荣博客</a> 
+        		<a href="#" target='_blank'></a>
         	</li> 
       	</ul>
       </p>
@@ -382,34 +382,7 @@
           var myDataHome = $(".myData_home");
           var myDataHomeInput = $(".myDataHome_input");
           var myDataHomeImage = $(".myDataHome_image")
-          // myDataHomeImage.click(function () {
-               // myDataHomeInput.css({
-               //     "width":"220px",
-               //     "padding-left":"5px",
-               //     "display":"inline-block"
-               // })
-               // myDataHome.css({
-               //    "left":"200px",
-               //    "display":"inline-block"
-               // })
-          //      myDataHomeInput.slideDown('1s');
-          //      myDataHome.slideDown('1s');
-          //      $(this).css("display","none")  
-          // });
-          // myDataHomeInput.focus(function () {
-          //       myDataHome.prop("type","submit")
-          // })
-          // myDataHomeInput.blur(function () {
-          //      $(this).css({
-          //          "width":"0",
-          //          "padding-left":"0",
-          //          "display":"none"
-          //      })
-          //      myDataHome.css({
-          //          "left": "15px",
-          //          "display":"none"
-          //      })
-          // })
+
              $(".myDataHome_image").click(function () {
                 $(".myData_home, .myDataHome_input").animate({
                      opacity:"1"  
@@ -418,7 +391,7 @@
                 $(".myData_home").slideDown("slow");
                 $(this).css("display","none");       
            })
-           $(".myDataHome_input").blur(function () {
+           $(".myData_home").click(function () {
                $(".myDataHome_input, .myData_home").animate({
                   opacity:"0"  
              },"0.2s")

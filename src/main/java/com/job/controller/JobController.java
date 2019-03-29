@@ -9,6 +9,7 @@ import java.util.List;
 
 public class JobController extends ActionSupport {
     private List<JobInfo> jobs;
+
     private JobInfo jobInfo;
 
     public JobInfo getJobInfo() {
@@ -31,16 +32,7 @@ public class JobController extends ActionSupport {
     private JobInfoServiceImpl JobService;
     //返回数据给搜索栏
     public String showAllJob(){
-        if ((jobInfo.getType().equals(""))) {
-            jobs = JobService.selectAll(jobInfo);
-        }else {
-            jobs = JobService.showAllJob(jobInfo);
-        }
-        return SUCCESS;
-    }
-    //跳转到搜索页面
-    public String gotoSearchjsp(){
-//        JobInfo jobInfo1 = JobService.IfTypeIsNull(this.jobInfo);
+            jobs = JobService.selectAll();
         return SUCCESS;
     }
 }

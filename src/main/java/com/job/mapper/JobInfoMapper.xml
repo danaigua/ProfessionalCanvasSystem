@@ -12,11 +12,14 @@
         <result column="Academic" jdbcType="VARCHAR" property="Academic"/>
         <result column="Descrive" jdbcType="VARCHAR" property="Descrive"/>
         <result column="Address" jdbcType="VARCHAR" property="Address"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="Salary" jdbcType="VARCHAR" property="Salary"/>
     </resultMap>
     <insert id="addJobInfo" parameterType="JobInfo" >
-        insert into JobInfo (Company,Department,Job,Welfare,Academic,Descrive,Address,type) values (#{Company},#{Department},#{Job},#{Welfare},#{Academic}
-         ,#{Descrive},#{Address},#{type})
+        insert into jobinfo (Company,Department,Job,Welfare,Academic,Descrive,Address,type,Salary) values (#{Company},#{Department},#{Job},#{Welfare},#{Academic}
+         ,#{Descrive},#{Address},#{type},#{Salary})
     </insert>
+    <!--通过类型查找-->
     <select id="showAllJob" resultMap="BaseResultMap">
         select * from jobinfo where type = #{type}
     </select>
@@ -24,8 +27,5 @@
     <select id="selectAll" resultMap="BaseResultMap">
         select * from jobinfo
     </select>
-    <!--判断type是不是空的-->
-    <!--<select id="IfTypeIsNull" resultMap="BaseResultMap">-->
-        <!--select * from jobinfo where type = #{type}-->
-    <!--</select>-->
+
 </mapper>

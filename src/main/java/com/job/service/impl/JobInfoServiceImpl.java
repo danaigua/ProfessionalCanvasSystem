@@ -18,16 +18,18 @@ public class JobInfoServiceImpl implements IJobInfoService {
         return iJobInfoDao.addJobInfo(jobInfo);
     }
 
-//    public JobInfo IfTypeIsNull(JobInfo jobInfo) {
-//        return iJobInfoDao.IfTypeIsNull(jobInfo);
-//    }
 
     //搜索栏查询所有的有关类型的工作
     public List<JobInfo> showAllJob(JobInfo jobInfo) {
         return iJobInfoDao.showAllJob(jobInfo);
     }
 
-    public List<JobInfo> selectAll(JobInfo jobInfo) {
-        return iJobInfoDao.selectAll(jobInfo);
+
+
+
+    //返回所有
+    public List<JobInfo> selectAll() {
+        return iJobInfoDao.selectAll();
     }
+
 }

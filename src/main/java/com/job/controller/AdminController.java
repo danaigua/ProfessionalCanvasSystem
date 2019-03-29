@@ -1,8 +1,10 @@
 package com.job.controller;
 
 import com.job.pojo.Admin;
+import com.job.pojo.JobInfo;
 import com.job.pojo.User;
 import com.job.service.impl.AdminServiceImpl;
+import com.job.service.impl.JobInfoServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -10,7 +12,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,6 @@ public class AdminController extends ActionSupport {
     private Admin admin;
     private String error;
     private List<User> userList;
-
     public List<User> getUserList() {
         return userList;
     }
@@ -42,11 +42,9 @@ public class AdminController extends ActionSupport {
     public String loginBackstage(){
         Admin admin1 = adminService.loginBackstage(admin);
         if (admin1!=null){
-
             //存入管理员对象
             ActionContext context = ActionContext.getContext();
             Map<String, Object> session = context.getSession();
-
             session.put("currentAdmin",admin1);
             System.out.println(admin1.getType());
             List<User> userList = userService.selectAll();

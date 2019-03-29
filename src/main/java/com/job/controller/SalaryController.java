@@ -25,7 +25,8 @@ public class SalaryController extends ActionSupport {
         this.analyzeJob = analyzeJob;
     }
     public String showSalaryByJobAndTime(){
-        AnalyzeJob analyzeJob = analyzeJobService.showSalaryByJobAndTime(this.analyzeJob);
+        AnalyzeJob analyzeJob1 = analyzeJobService.showSalaryByJobAndTime(analyzeJob);
+        String salary = analyzeJob1.getSalary();
 
         return null;
     }

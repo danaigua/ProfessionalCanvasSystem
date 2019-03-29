@@ -67,6 +67,14 @@
         </action>
 
 
+        <!--跳到搜索栏-->
+        <action name="gotosearch" class="com.job.controller.SearchJobBytetypeController" method="gotoS">
+            <result name="success" type="redirect">/Home/searchResult/company.jsp?typeJob=${typeJob}</result>
+        </action>
+
+
+
+
     </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
@@ -87,9 +95,7 @@
 
 
         <!--跳转到搜索页面-->
-        <action name="gotoSearchjsp" class="com.job.controller.JobController" method="gotoSearchjsp">
-            <result name="gotosearch" type="redirect">/Home/searchResult/search.jsp</result>
-        </action>
+
     </package>
 
 
@@ -105,13 +111,18 @@
         <!--搜索栏页面json-->
         <action name="showAllJob" class="com.job.controller.JobController" method="showAllJob">
             <result name="success" type="json">
-                <param name="users"></param>
+                <param name="jobs"></param>
             </result>
         </action>
         <!--返回是否成功的数据给前端-->
         <action name="RetResAdminInfo" class="com.job.controller.AdminController" method="RetResAdminInfo">
             <result name="success" type="json">
                 <param name="root">s</param>
+            </result>
+        </action>
+        <action name="searchJobByteType" class="com.job.controller.SearchJobBytetypeController" method="searchJobByteType">
+            <result name="success" type="json">
+                <param name="jobInfos"></param>
             </result>
         </action>
     </package>

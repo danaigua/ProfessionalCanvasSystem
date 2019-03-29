@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-错误信息：${error}  <a href="Login/admin/index.html">登录</a>
+错误信息：${error}  <a href="/admin/index.html">登录</a>
 </body>
 </html>

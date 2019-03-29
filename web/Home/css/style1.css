@@ -914,9 +914,9 @@ footer {
 }
 
 #case_footer {
-	position:absolute;
-	left:0;
-	bottom:0;
+	/*position:absolute;*/
+	/*left:0;*/
+	/*bottom:0;*/
 	background: #f5f4f4;
 	border-top: 1px solid #d8d9d8;
 	padding: 15px 0;
@@ -1773,4 +1773,21 @@ footer {
 	display: inline-block;
 	width:60px;
 	height:60px;
+}
+             /*job的链接样式*/
+.job_link{
+	width:150px;
+	height:50px;
+	font-size:20px;
+	text-align:center;
+	line-height:50px;
+	border:1px solid black;
+	border-radius:5px;
+	position:absolute;
+	color:#666;
+	top:0px;
+	right:0px;
+}
+.job_link:hover{
+	text-decoration:none;
 }
