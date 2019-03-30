@@ -40,4 +40,7 @@
     <select id="selectByteAddr" resultMap="BaseResultMap">
         select * from jobinfo where Address = #{Address}
     </select>
+    <select id="slectByteId" resultMap="BaseResultMap">
+        select * from jobinfo where id = #{id}
+    </select>
 </mapper>

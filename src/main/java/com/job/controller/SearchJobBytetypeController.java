@@ -96,4 +96,9 @@ public class SearchJobBytetypeController extends ActionSupport {
         jobInfos = JobService.showAllJob(job);
         return SUCCESS;
     }
+    //通过id来查找
+    public String searchJobByteId(){
+        JobInfo jobInfo = JobService.selectByteId(job);
+        return SUCCESS;
+    }
 }

@@ -71,8 +71,10 @@
         <action name="gotosearch" class="com.job.controller.SearchJobBytetypeController" method="gotoS">
             <result name="success" type="redirect">/Home/searchResult/company.jsp?typeJob=${typeJob}</result>
         </action>
-
-
+        <!--跳到动态职业页面-->
+        <action name="searchJobByteId" class="com.job.controller.SearchJobBytetypeController" method="searchJobByteId">
+            <result name="success" type="redirect">/Home/jobVo/dynamicJob.jsp</result>
+        </action>
 
 
     </package>

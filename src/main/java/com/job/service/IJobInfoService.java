@@ -26,5 +26,6 @@ public interface IJobInfoService {
     /**
      * 返回全部的工作资料到后台
      */
+    JobInfo selectByteId(JobInfo jobInfo);
 
 }
