@@ -92,6 +92,14 @@
                     <input type="text" class="work dataBoxInp_input" name="jobInfo.Job">
                 </div>
                 <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">工作时间</i>
+                    <input type="text" class="work dataBoxInp_input" name="jobInfo.workTime">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">工作经验</i>
+                    <input type="text" class="work dataBoxInp_input" name="jobInfo.experience">
+                </div>
+                <div class="dataBoxInp_box">
                     <i class="dataBoxInp_text">福利</i>
                     <input type="text" class="experience dataBoxInp_input" name="jobInfo.Welfare">
                 </div>
@@ -102,6 +110,34 @@
                 <div class="dataBoxInp_box">
                     <i class="dataBoxInp_text">职位描述</i>
                     <input type="text" class="describe dataBoxInp_input" name="jobInfo.Descrive">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">岗位要求1</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements1">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">岗位要求2</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements2">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">岗位要求3</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements3">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">岗位要求4</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements4">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">岗位要求5</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements5">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">晋升渠道1</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.channelPromotion1">
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">晋升渠道2</i>
+                    <input type="text" class="describe dataBoxInp_input" name="jobInfo.channelPromotion2">
                 </div>
                 <div class="dataBoxInp_box">
                     <i class="dataBoxInp_text">工作地址</i>

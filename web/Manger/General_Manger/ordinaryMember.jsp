@@ -14,7 +14,7 @@
         <i class="dataBoxNav_theme">求职资料</i>
     </div>
     <form method="post" action="AddJobOri.action">
-        <div class="dataBox_information">     <!-- 右边基本信息 -->
+        <div class="dataBox_jobInformation dataBox_information">
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">公司</i>
                 <input type="text" name="jobInfo.Company" class="salary dataBoxInp_input">
@@ -25,29 +25,39 @@
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">薪资区间</i>
-                <input type="text" name="jobInfo.Salary" class="salary dataBoxInp_input">
+                <input type="text" name="jobInfo.salary" class="salary dataBoxInp_input">
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">
                     工作类型：</i><select name="jobInfo.type">
-                <option value="" name="jobInfo.type">JAVA</option>
-                <option value="" name="jobInfo.type">PYTHON</option>
-                <option value="" name="jobInfo.type">JAVASCRIPT</option>
-                <option value="" name="jobInfo.type">大数据</option>
-                <option value="" name="jobInfo.type">人工智能</option>
-                <option value="" name="jobInfo.type">PHP</option>
-                <option value="" name="jobInfo.type">C</option>
-                <option value="" name="jobInfo.type">运维</option>
-                <option value="" name="jobInfo.type">区块链</option>
-                <option value="" name="jobInfo.type">SHELL</option>
-                <option value="" name="jobInfo.type">VB</option>
-                <option value="" name="jobInfo.type">RUBY</option>
-                <option value="" name="jobInfo.type">其他</option>
+                <option >JAVA</option>
+                <option >PYTHON</option>
+                <option>JAVASCRIPT</option>
+                <option>大数据</option>
+                <option>人工智能</option>
+                <option>PHP</option>
+                <option>C</option>
+                <option>运维</option>
+                <option>区块链</option>
+                <option>SHELL</option>
+                <option>VB</option>
+                <option>RUBY</option>
+                <option>其他</option>
             </select>
+
+
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">工作</i>
                 <input type="text" class="work dataBoxInp_input" name="jobInfo.Job">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">工作时间</i>
+                <input type="text" class="work dataBoxInp_input" name="jobInfo.workTime">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">工作经验</i>
+                <input type="text" class="work dataBoxInp_input" name="jobInfo.experience">
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">福利</i>
@@ -60,6 +70,34 @@
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">职位描述</i>
                 <input type="text" class="describe dataBoxInp_input" name="jobInfo.Descrive">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">岗位要求1</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements1">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">岗位要求2</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements2">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">岗位要求3</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements3">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">岗位要求4</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements4">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">岗位要求5</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.jobRequirements5">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">晋升渠道1</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.channelPromotion1">
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">晋升渠道2</i>
+                <input type="text" class="describe dataBoxInp_input" name="jobInfo.channelPromotion2">
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">工作地址</i>
