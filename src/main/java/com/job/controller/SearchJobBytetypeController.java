@@ -11,8 +11,16 @@ import java.util.List;
 
 public class SearchJobBytetypeController extends ActionSupport {
     private String typeJob;
-    JobInfo job = new JobInfo();
+    private JobInfo job;
     private List<JobInfo> jobInfos;
+
+    public JobInfo getJob() {
+        return job;
+    }
+
+    public void setJob(JobInfo job) {
+        this.job = job;
+    }
 
     public List<JobInfo> getJobInfos() {
         return jobInfos;
@@ -79,5 +87,13 @@ public class SearchJobBytetypeController extends ActionSupport {
 
         return SUCCESS;
     }
-
+    public String searchJobByteAddr(){
+        jobInfos = JobService.selectByteAddr(job);
+        return SUCCESS;
+    }
+//    通过类型来查找
+    public String searchJobBytetype(){
+        jobInfos = JobService.showAllJob(job);
+        return SUCCESS;
+    }
 }

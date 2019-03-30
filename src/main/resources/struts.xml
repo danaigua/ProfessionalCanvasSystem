@@ -125,6 +125,18 @@
                 <param name="jobInfos"></param>
             </result>
         </action>
+        <!--通过地区查找-->
+        <action name="searchJobByteType" class="com.job.controller.SearchJobBytetypeController" method="searchJobByteAddr">
+            <result name="success" type="json">
+                <param name="jobInfos"></param>
+            </result>
+        </action>
+        <!--通过类型查找，无判断-->
+        <action name="searchJobByteType" class="com.job.controller.SearchJobBytetypeController" method="searchJobBytetype">
+            <result name="success" type="json">
+                <param name="jobInfos"></param>
+            </result>
+        </action>
     </package>
 
 

@@ -21,7 +21,7 @@ public interface IJobInfoService {
     List<JobInfo> showAllJob(JobInfo jobInfo);
 
     List<JobInfo> selectAll();
-
+    List<JobInfo> selectByteAddr(JobInfo jobInfo);
 
     /**
      * 返回全部的工作资料到后台

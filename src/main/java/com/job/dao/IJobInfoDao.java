@@ -10,5 +10,7 @@ public interface IJobInfoDao {
     public  List<JobInfo> showAllJob(JobInfo jobInfo);
     //如果查不出来的话就返回全部
     public List<JobInfo> selectAll();
+    //通过地区查找工作
+    public List<JobInfo> selectByteAddr(JobInfo jobInfo);
 
 }

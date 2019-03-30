@@ -32,4 +32,8 @@ public class JobInfoServiceImpl implements IJobInfoService {
         return iJobInfoDao.selectAll();
     }
 
+    public List<JobInfo> selectByteAddr(JobInfo jobInfo) {
+        return iJobInfoDao.selectByteAddr(jobInfo);
+    }
+
 }
