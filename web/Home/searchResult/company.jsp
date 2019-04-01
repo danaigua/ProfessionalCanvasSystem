@@ -238,6 +238,7 @@
 								    if (count==0) {
                                         for (var b in result[a]) {
                                         	if(b != 0) {
+                                        		console.log(1);
 												company.after(companyLink);
 											}
                                             if (b==0){

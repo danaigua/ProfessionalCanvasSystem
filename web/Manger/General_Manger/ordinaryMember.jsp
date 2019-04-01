@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="ordinaryMember.css">
 </head>
 <body>
-
 <div class="dataBox">    <!-- 外部大盒子 -->
     <h2 class="dataBox_theme">大数据求职系统后台</h2>   <!-- 普通会员标题 -->
     <h4 class="">普通管理员</h4>
@@ -44,8 +43,6 @@
                 <option>RUBY</option>
                 <option>其他</option>
             </select>
-
-
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">工作</i>

@@ -11,16 +11,64 @@ import java.util.List;
 
 public class SearchJobBytetypeController extends ActionSupport {
     private String typeJob;
-    private JobInfo job;
+    JobInfo job = new JobInfo();
+//    private JobInfo job;
+    private JobInfo job1;
+    private JobInfo job2;
+    private JobInfo job3;
     private List<JobInfo> jobInfos;
+    private List<JobInfo> jobInfos1;
+    private List<JobInfo> jobInfos2;
+    private List<JobInfo> jobInfos3;
 
-    public JobInfo getJob() {
-        return job;
+    public JobInfo getJob2() {
+        return job2;
     }
 
-    public void setJob(JobInfo job) {
-        this.job = job;
+    public void setJob2(JobInfo job2) {
+        this.job2 = job2;
     }
+
+    public JobInfo getJob1() {
+        return job1;
+    }
+
+    public void setJob1(JobInfo job1) {
+        this.job1 = job1;
+    }
+
+    public JobInfo getJob3() {
+        return job3;
+    }
+
+    public void setJob3(JobInfo job3) {
+        this.job3 = job3;
+    }
+
+    public List<JobInfo> getJobInfos1() {
+        return jobInfos1;
+    }
+
+    public void setJobInfos1(List<JobInfo> jobInfos1) {
+        this.jobInfos1 = jobInfos1;
+    }
+
+    public List<JobInfo> getJobInfos2() {
+        return jobInfos2;
+    }
+
+    public void setJobInfos2(List<JobInfo> jobInfos2) {
+        this.jobInfos2 = jobInfos2;
+    }
+
+    public List<JobInfo> getJobInfos3() {
+        return jobInfos3;
+    }
+
+    public void setJobInfos3(List<JobInfo> jobInfos3) {
+        this.jobInfos3 = jobInfos3;
+    }
+
 
     public List<JobInfo> getJobInfos() {
         return jobInfos;
@@ -49,11 +97,13 @@ public class SearchJobBytetypeController extends ActionSupport {
      */
 
     public String searchJobByteType(){
+
 //        HttpServletRequest request = ServletActionContext.getRequest();
 //        String type = request.getParameter("TypeJob");
 //        String type = ServletActionContext.getRequest().getParameter("typeJob");
+
         System.out.println(typeJob);
-//        System.out.println(typeJob);
+        System.out.println(typeJob);
         if ("C".equals(typeJob)||"c".equals(typeJob)){
             System.out.println(1);
             job.setType("c");
@@ -87,18 +137,19 @@ public class SearchJobBytetypeController extends ActionSupport {
 
         return SUCCESS;
     }
+//    //通过地区来查找
     public String searchJobByteAddr(){
-        jobInfos = JobService.selectByteAddr(job);
+        jobInfos1 = JobService.selectByteAddr(job2);
         return SUCCESS;
     }
-//    通过类型来查找
+////    通过类型来查找
     public String searchJobBytetype(){
-        jobInfos = JobService.showAllJob(job);
+        jobInfos2 = JobService.showAllJob(job1);
         return SUCCESS;
     }
     //通过id来查找
     public String searchJobByteId(){
-        JobInfo jobInfo = JobService.selectByteId(job);
+        JobInfo jobInfo = JobService.selectByteId(job3);
         return SUCCESS;
     }
 }
