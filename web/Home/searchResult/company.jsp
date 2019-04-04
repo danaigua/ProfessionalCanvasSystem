@@ -255,6 +255,7 @@
 										$(".company").eq(length).children().eq(1).children().text(result[a1][b1].job);
 										$(".company").eq(length).children().eq(2).text(result[a1][b1].academic);
 										$(".company").eq(length).children().eq(3).text(result[a1][b1].address);
+										$(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
 										length++;
 									}
 
