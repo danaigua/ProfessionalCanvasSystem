@@ -28,6 +28,19 @@
         </nav>
     </div>
 </header>
+
+        <!--加载条-->
+<div class="bigBox">
+    <h1 class="jiazai_theme">加载中 ····</h1>
+    <div class="big">
+        <div class="big1">
+            <p class="text">
+                <i class="num1"></i><i class="num"></i>%
+            </p>
+        </div>
+    </div>
+</div>
+
 <!-- 查找最顶级栏目  -->
 <section id="single">
     <!-- 查找子栏目  -->
@@ -48,6 +61,13 @@
                 position: relative;
             }
             -->
+            <div class="catTitle_menu">选择年份</div>
+            <div class="catTitle_box">
+                <p class="catTitle_content">2019</p>
+                <p class="catTitle_content">2018</p>
+                <p class="catTitle_content">2017</p>
+                <p class="catTitle_content catTitleCon_first">2016</p>
+            </div>
             <h2>SERVICE分析</h2>
             <p>大数据分析系统<br/>Big data analysis system</p>
         </div>
@@ -74,7 +94,7 @@
             </
             <div>
                 <div class="FormFont" style="float: left;width: 500px;height: 540px;">
-                    <form action="" method="post">
+                    <form action="" method="post" target="test">
                         <fieldset>
                             <legend>大数据分析表单:</legend>
                             性别: <input type="radio" name="analyzeSalary.sex">男<input type="radio" name="analyzeSalary.sex">女<br><br>
@@ -189,9 +209,10 @@
                             <option>开朗乐观</option>
                             <option>开放</option>
                         </select>
-                            <input type="submit">
+                            <button type="submit" onclick="load()">提交</button>
                         </fieldset>
                     </form>
+                    <iframe name="test" style="display:none" frameborder="0"></iframe>
                 </div>
 
             </
@@ -236,7 +257,7 @@
 <script type="text/javascript" src="../js/jquery.plugin.min.js"></script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main2'));
+    var myChart1 = echarts.init(document.getElementById('main2'));
     var labelTop = {
         normal: {
             label: {
@@ -444,7 +465,7 @@
     };
 
 
-    myChart.setOption(option1);
+    myChart1.setOption(option1);
 </script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
@@ -667,5 +688,97 @@
 <script type="text/javascript" src="../js/killie6.js"></script>
 <![endif]-->
 
+<!-- 加载条 -->
+<script type="text/javascript">
+    var bigBox = document.getElementsByClassName("bigBox")[0];
+    var big1 = document.getElementsByClassName("big1")[0];
+    var sum = 0;
+    var num = document.getElementsByClassName("num")[0];
+    var jiazai = document.getElementsByClassName("jiazai_theme")[0];
+    var dian1 = document.getElementsByClassName("dian");
+    var ji = 5;
+    var num1 = document.getElementsByClassName("num1")[0];
+    function load() {
+        bigBox.style.display = "block";
+        var time = window.setInterval(function () {
+            // var dian = document.createElement("i");
+            // dian.innerHTML = "·";
+            // dian1.appendChild(dian);
+            // if(ji % 4 == 0) {
+            //     dian1.innerHTML = " "
+            // }
+            // ji ++;
+            if(sum > 30 && sum < 50) {
+                big1.style.background = "#f40";
+                big1.style.boxShadow = "0 0 20px #f40"
+                jiazai.style.color = "#f40";
+                num1.innerHTML = "获悉中"
+            }else if(sum > 50 && sum < 70) {
+                big1.style.background = "#f0f";
+                big1.style.boxShadow = "0 0 20px #f0f"
+                jiazai.style.color = "#f0f"
+            }else if(sum > 70) {
+                big1.style.background = "#c3c";
+                big1.style.boxShadow = "0 0 20px #c3c";
+                jiazai.style.color = "#c3c";
+                num1.innerHTML = "loading"
+            }else{
+                big1.style.boxShadow = "0 0 20px #00f"
+                jiazai.style.color = "#00f";
+                num1.innerHTML = "爬取中";
+            }
+
+
+            if(sum > 92) {
+                big1.style.width = "100%";
+                num.innerHTML = 100;
+                window.clearInterval(time);
+                self.location.href = "../about/gongzuo.html";
+            }else{
+                sum += Math.floor(Math.random() * 10);
+                big1.style.width = sum + "%";
+                num.innerHTML = sum;
+            }
+        }, 800)
+    }
+
+
+
+</script>
+
+
+<!--选择年份-->
+<script type="text/javascript">
+
+    $(document).ready(function  ()　{
+        var catTitleBox = $(".catTitle_box");
+        var catTitleMenu = $(".catTitle_menu");
+        var catTitleContent = $(".catTitle_content");
+        catTitleMenu.click(function ()　{
+            catTitleBox.slideToggle("fast");
+        });
+
+        for(var i = 0; i < catTitleContent.length; i ++) {
+
+            catTitleContent.eq(i).click(function () {
+                catTitleMenu.text($(this).text());
+                catTitleBox.slideUp("fast");
+                option.title.text = $(this).text() + "年冬季求职";
+                for(var j = 0; j < option.series[0].data.length; j ++) {
+                    option.series[0].data[j].value = Math.floor(Math.random() * 1000) + option.series[0].data[j].value;
+                };
+                for(var k = 0; k < option1.series.length; k ++) {
+
+                    option1.series[k].data[0].value = Math.floor(Math.random() * 100);
+                    option1.series[k].data[1].value = 100 - (option1.series[k].data[0].value);
+                }
+                myChart1.setOption(option1);
+                myChart.setOption(option);
+            });
+
+        }
+    })
+
+</script>
 </body>
 </html>

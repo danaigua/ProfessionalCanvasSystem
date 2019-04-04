@@ -166,6 +166,14 @@
 
 			<div class="cat_title">
 				<div class="wrapper">
+
+
+
+					<div class="wrapper_menu">选择季度</div>
+					<div class="wrapper_box">
+						<p class="wrapper_content">上季度</p>
+						<p class="wrapper_content wrapperCon_first">下季度</p>
+					</div>
 					<h2>大学生就业情况分析</h2>
 					<p>一个人的理想越崇高，生活越纯洁<br />
 						The higher one's ideal, the purer one's life-----伏尼契</p>
@@ -425,5 +433,22 @@
 <script type="text/javascript" src="../js/killie6.js" ></script>
 
 <![endif]-->
+
+	        <!--选择季度-->
+		<script>
+			var wrapperBox = $(".wrapper_box");
+			var wrapperMenu = $(".wrapper_menu");
+			var wrapperContent = $(".wrapper_content");
+			wrapperMenu.click(function ()　{
+				wrapperBox.slideToggle("fast");
+			});
+			for(var i = 0; i < wrapperContent.length; i ++) {
+
+				wrapperContent.eq(i).click(function () {
+					wrapperMenu.text($(this).text());
+					wrapperBox.slideUp("fast");
+				});
+			}
+		</script>
 	</body>
 </html>
