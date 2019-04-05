@@ -250,12 +250,14 @@
 								;
 								for (var a1 in result) {
 									for (var b1 in result[a1]) {
-										$(".company").eq(length).children().eq(0).children().eq(0).text(result[a1][b1].company);
-										$(".company").eq(length).children().eq(0).children().eq(1).text(result[a1][b1].salary);
-										$(".company").eq(length).children().eq(1).children().text(result[a1][b1].job);
-										$(".company").eq(length).children().eq(2).text(result[a1][b1].academic);
-										$(".company").eq(length).children().eq(3).text(result[a1][b1].address);
-										$(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
+										$(".company").eq(length).children().eq(0).children().eq(0).text(result[a1][b1].job);
+										$(".company").eq(length).children().eq(0).children().eq(1).text(result[a1][b1].address);
+										$(".company").eq(length).children().eq(1).children().text(result[a1][b1].academic);
+										$(".company").eq(length).children().eq(2).text(result[a1][b1].company);
+										$(".company").eq(length).children().eq(3).text(result[a1][b1].salary);
+										// $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
+										$(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "searchJobByteId?id=" + result[a1][b1].id);
+										// $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
 										length++;
 									}
 

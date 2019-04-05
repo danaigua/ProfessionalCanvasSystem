@@ -2,17 +2,21 @@ package com.job.controller;
 
 import com.job.pojo.JobInfo;
 import com.job.service.impl.JobInfoServiceImpl;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 public class SearchJobBytetypeController extends ActionSupport {
     private String typeJob;
+    private int id;
     JobInfo job = new JobInfo();
 //    private JobInfo job;
+    private JobInfo jobInfo;
     private JobInfo job1;
     private JobInfo job2;
     private JobInfo job3;
@@ -20,6 +24,23 @@ public class SearchJobBytetypeController extends ActionSupport {
     private List<JobInfo> jobInfos1;
     private List<JobInfo> jobInfos2;
     private List<JobInfo> jobInfos3;
+
+
+    public JobInfo getJobInfo() {
+        return jobInfo;
+    }
+
+    public void setJobInfo(JobInfo jobInfo) {
+        this.jobInfo = jobInfo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public JobInfo getJob2() {
         return job2;
@@ -149,7 +170,13 @@ public class SearchJobBytetypeController extends ActionSupport {
     }
     //通过id来查找
     public String searchJobByteId(){
-        JobInfo jobInfo = JobService.selectByteId(job3);
+        job.setId(id);
+        System.out.println(id);
+        jobInfo = JobService.selectByteId(job);
+        System.out.println(jobInfo);
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String, Object> session = actionContext.getSession();
+        session.put("jobInfo", jobInfo);
         return SUCCESS;
     }
 }

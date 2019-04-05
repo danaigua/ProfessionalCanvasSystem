@@ -754,28 +754,98 @@
         var catTitleBox = $(".catTitle_box");
         var catTitleMenu = $(".catTitle_menu");
         var catTitleContent = $(".catTitle_content");
+        var sum = 0;
         catTitleMenu.click(function ()　{
             catTitleBox.slideToggle("fast");
         });
 
         for(var i = 0; i < catTitleContent.length; i ++) {
+            var catTitleFun = function (h) {
+                catTitleContent.eq(i).click(function () {
+                    catTitleMenu.text($(this).text());
+                    catTitleBox.slideUp("fast");
+                    option.title.text = $(this).text() + "年冬季求职";
+                    for (var j = 0; j < option.series[0].data.length; j++) {
+                        option.series[0].data[j].value = Math.floor(Math.random() * 1000) + option.series[0].data[j].value;
+                    }
+                    ;
+                    for (var k = 0; k < option1.series.length; k++) {
+                        if (k == 0) {
+                            sum = 18;
+                            if (h == 3) {
+                                sum += 2;
+                            } else if (h == 2) {
+                                sum += 4;
+                            } else if (h == 1) {
+                                sum += 6;
+                            } else {
+                                sum += 8;
+                            }
 
-            catTitleContent.eq(i).click(function () {
-                catTitleMenu.text($(this).text());
-                catTitleBox.slideUp("fast");
-                option.title.text = $(this).text() + "年冬季求职";
-                for(var j = 0; j < option.series[0].data.length; j ++) {
-                    option.series[0].data[j].value = Math.floor(Math.random() * 1000) + option.series[0].data[j].value;
-                };
-                for(var k = 0; k < option1.series.length; k ++) {
-
-                    option1.series[k].data[0].value = Math.floor(Math.random() * 100);
-                    option1.series[k].data[1].value = 100 - (option1.series[k].data[0].value);
-                }
-                myChart1.setOption(option1);
-                myChart.setOption(option);
-            });
-
+                        } else if (k == 1) {
+                            sum = 15;
+                            if (h == 3) {
+                                sum += 1;
+                            } else if (h == 2) {
+                                sum += 2;
+                            } else if (h == 1) {
+                                sum += 3;
+                            } else {
+                                sum += 4;
+                            }
+                        } else if (k == 2) {
+                            sum = 11;
+                            if (h == 3) {
+                                sum += 2;
+                            } else if (h == 2) {
+                                sum += 4;
+                            } else if (h == 1) {
+                                sum += 6;
+                            } else {
+                                sum += 8;
+                            }
+                        } else if (k == 3) {
+                            sum = 14;
+                            if (h == 3) {
+                                sum -= 2;
+                            } else if (h == 2) {
+                                sum -= 4;
+                            } else if (h == 1) {
+                                sum -= 6;
+                            } else {
+                                sum -= 8;
+                            }
+                        } else if (k == 4) {
+                            sum = 15;
+                            if (h == 3) {
+                                sum -= 3;
+                            } else if (h == 2) {
+                                sum -= 6;
+                            } else if (h == 1) {
+                                sum -= 7;
+                            } else {
+                                sum -= 8;
+                            }
+                        } else {
+                            sum = 26;
+                            if (h == 3) {
+                                sum += 4;
+                            } else if (h == 2) {
+                                sum += 7;
+                            } else if (h == 1) {
+                                sum += 8;
+                            } else {
+                                sum += 10;
+                            }
+                        }
+                        option1.series[k].data[0].value = 100 - sum;
+                        option1.series[k].data[1].value = sum;
+                    }
+                    myChart1.setOption(option1);
+                    myChart.setOption(option);
+                });
+            }
+            catTitleFun(i);
         }
     })
 

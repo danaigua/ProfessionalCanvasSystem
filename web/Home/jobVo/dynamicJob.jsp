@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=1024" />
-		<title>${jobInfo.Company}招聘</title>
+		<title>${jobInfo.company}招聘</title>
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
 		<link rel="stylesheet" href="../css/style1.css" type="text/css" media="all" />
@@ -32,8 +32,8 @@
 		<section id="newslist">
 			<div class="cat_title">
 				<div class="wrapper">
-					<h2>${jobInfo.Company}招聘</h2>
-					<h3>${jobInfo.Job}【${jobInfo.Company}直聘】<br />${jobInfo.Company}招聘</h3>
+					<h2>${jobInfo.company}招聘</h2>
+					<p>${jobInfo.job}【${jobInfo.company}直聘】<br />${jobInfo.company}招聘</p>
 				</div>
 			</div>
 			<!--  
@@ -51,15 +51,15 @@
 			<ul class="news wrapper">
 				<li>
 					<div class="job">
-						<a href="resume.html" class="job_link">填写个人资料</a>
-						<h4>薪资区间：${jobInfo.Salary}</h4>
-						<h4>地点：${jobInfo.Address} </h4>
+						<a href="../job/resume.html" class="job_link">填写个人资料</a>
+						<h4>薪资区间：${jobInfo.salary}</h4>
+						<h4>地点：${jobInfo.address} </h4>
 						<h4>工作经验：${jobInfo.experience}</h4>
-						<h4>学历要求：${jobInfo.Academic}</h4>
+						<h4>学历要求：${jobInfo.academic}</h4>
 						<h4>职位诱惑：</h4>
-						<p>${jobInfo.Welfare}</p>
+						<p>${jobInfo.welfare}</p>
 						<h4>职位描述：</h4>
-						<p>${jobInfo.Descrive}</p>
+						<p>${jobInfo.descrive}</p>
 						<h5>任职要求：</h5>
 						<p>${jobInfo.jobRequirements1}</p>
 						<p>${jobInfo.jobRequirements2}</p>
@@ -72,7 +72,7 @@
 						<p>${jobInfo.channelPromotion1}</p>
 						<p>${jobInfo.channelPromotion1}</p>
 						<h4>工作地址</h4>
-						${jobInfo.Address}
+						${jobInfo.address}
 					</div>
 				</li>
 			</ul>

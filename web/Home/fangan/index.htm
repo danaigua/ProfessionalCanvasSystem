@@ -443,11 +443,22 @@
 				wrapperBox.slideToggle("fast");
 			});
 			for(var i = 0; i < wrapperContent.length; i ++) {
+              var wraFun = function (k) {
+                  wrapperContent.eq(i).click(function () {
+                      wrapperMenu.text($(this).text());
+                      wrapperBox.slideUp("fast");
+                      for(var j = 0; j < option.series.length; j ++) {
+                          for(var h = 0; h < option.series[0].data.length; h ++) {
+                              if(j == 0) {
+                                  var jiuye = 90;
+                                  option.series[j].data[h] =
+                              }
 
-				wrapperContent.eq(i).click(function () {
-					wrapperMenu.text($(this).text());
-					wrapperBox.slideUp("fast");
-				});
+                          }
+                      }
+                  });
+              };
+              wraFun(i);
 			}
 		</script>
 	</body>
