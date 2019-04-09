@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>大数据后台管理系统</title>
-    <link rel="stylesheet" href="superMenber1.css">
+    <link rel="stylesheet" href="superMenber.css">
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
 </head>
 <body>
@@ -48,6 +48,12 @@
             <i class="dataBoxNav_letter">资</i>
             <i class="dataBoxNav_letter">料</i>
         </span>
+        <span class="dataBoxNav_theme">
+            <i class="dataBoxNav_letter">新</i>
+            <i class="dataBoxNav_letter">闻</i>
+            <i class="dataBoxNav_letter">发</i>
+            <i class="dataBoxNav_letter">布</i>
+        </span>
     </div>
     <!-- 右边信息显示 -->
     <div class="dataBox_right">
@@ -86,6 +92,13 @@
                 </select>
 
 
+                </div>
+                <div class="dataBoxInp_box">
+                    <i class="dataBoxInp_text">招聘类型：</i>
+                    <select name="jobInfo.type">
+                        <option >社招</option>
+                        <option >校招</option>
+                    </select>
                 </div>
                 <div class="dataBoxInp_box">
                     <i class="dataBoxInp_text">工作</i>
@@ -216,10 +229,22 @@
                 </tr>
             </table>
         </div>
+                  <%--右边新闻发布--%>
+        <div class="dataBox_information dataBox_news">
+            <form action="" target="test">
+                <input type="text" placeholder="请输入标题" class="news_theme" >
+                <div class="news_box">
+
+                    <textarea class="news_text">请输入内容····</textarea>
+                </div>
+                <input type="submit" value="提交" class="news_tijiao">
+            </form>
+            <iframe name="test" style="display:none" frameborder="0"></iframe>
+        </div>
     </div>
     <script src="../jquery-3.3.1.min.js"></script>
 
-    <!-- 鼠标点击不同导航栏出现不同内容  鼠标点击用户弹出相应内容, 用户管理宽度, 超级会员居中, 右边信息定位, 左边导航栏字体变颜色, 点击删除键清空输入框 -->
+    <!-- 鼠标点击不同导航栏出现不同内容  鼠标点击用户弹出相应内容, 用户管理宽度, 超级会员居中, 右边信息定位, 左边导航栏字体变颜色,  点击删除键清空输入框,输入框点击后高变小 -->
     <script type="text/javascript">
         $(document).ready(function () {
             var dataBoxNavTheme = $(".dataBoxNav_theme");
@@ -325,7 +350,25 @@
                     $(this).prev().val("");
                 })
             }
+            // 点击删除键清空输入框,输入框点击后高变小
+            var newsText = $(".news_text");
+            var newsTijiao = $(".news_tijiao");
+            var newsTheme = $(".news_theme")
+            newsText.focus(function () {
+                $(this).css({
+                    "font-size":"19px",
+                    "text-align":"left"
+                });
+                if(newsText.val() == "请输入内容····") {
+                    newsText.val(" ")
+                }
+            })
+            newsTijiao.click(function () {
+                newsText.val("请输入内容····");
+                newsTheme.val("");
+                alert("上传成功！");
 
+            })
         })
     </script>
     <%--用户信息表格--%>
@@ -371,6 +414,7 @@
                                     $(".dataBoxUser_title").eq(length).children().eq(2).text(result[a][b].userPassword);
                                     $(".dataBoxUser_title").eq(length).children().eq(3).text(result[a][b].email);
                                     $(".dataBoxUser_title").eq(length).children().eq(4).text(result[a][b].userId);
+                                    $(".dataBoxUser_title").eq(length).children(".dataBoxUserVal_link").attr("href","?id=" + result[a][b].userId)
                                     length++;
                                     console.log(length)
                                 }
@@ -397,7 +441,7 @@
                                     };
 
                                     dataPosition(dataBoxUserLeft, dataBoxUserTop);
-                                    dataBoxUserLeft += 130;
+                                    dataBoxUserLeft += 110;
                                     if (dataBoxUserTop >= 585) {
                                         dataBoxUserLeft = 0;
                                     }
@@ -459,6 +503,7 @@
                                     $(".dataBoxJob_title").eq(length1).children().eq(2).text(result[a][b].job);
                                     $(".dataBoxJob_title").eq(length1).children().eq(3).text(result[a][b].academic);
                                     $(".dataBoxJob_title").eq(length1).children().eq(4).text(result[a][b].address);
+                                    $(".dataBoxJob_title").eq(length1).children(".dataBoxUserVal_link").attr("href","?id=" + result[a][b].id)
                                     length1 ++;
                                     console.log(result[a][b]);
                                 }

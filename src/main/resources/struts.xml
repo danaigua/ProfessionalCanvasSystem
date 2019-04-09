@@ -97,7 +97,10 @@
 
 
         <!--跳转到搜索页面-->
+        <!--分析中的搜索表单-->
+        <action name="showSalaryByJobAndTime" class="com.job.controller.SalaryController" method="showSalaryByJobAndTime">
 
+        </action>
     </package>
 
 

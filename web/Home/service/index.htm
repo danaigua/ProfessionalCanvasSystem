@@ -6,7 +6,7 @@
     <title>分析_基于大数据的智能求职系统</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-    <link rel="stylesheet" href="../css/style1.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="../js/html5.js"></script><![endif]-->
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
@@ -94,9 +94,9 @@
             </
             <div>
                 <div class="FormFont" style="float: left;width: 500px;height: 540px;">
-                    <form action="" method="post" target="test">
+                    <form action="showSalaryByJobAndTime" method="post" target="test">
                         <fieldset>
-                            <legend>大数据分析表单:</legend>
+                            <legend class="form_theme">大数据分析表单:</legend>
                             性别: <input type="radio" name="analyzeSalary.sex">男<input type="radio" name="analyzeSalary.sex">女<br><br>
                             年龄: <select name="analyzeSalary.age">
                             <option>16~20</option>
@@ -108,13 +108,9 @@
                             <option>55~60</option>
                         </select><br><br>
                             婚否: <input type="radio" name="analyzeSalary.marry">是<input type="radio" name="analyzeSalary.marry">否<br><br>
-                            是否应届生: <input type="radio" name="analyzeSalary.Fresh_Graduate">是<input type="radio" name="analyzeSalary.Fresh_Graduate">否<br><br>
-                            期望工作时间: <select name="analyzeSalary.workTime">
-                            <option>6~8</option>
-                            <option>8~10</option>
-                            <option>10~12</option>
-                            <option>12以上</option>
-                        </select><br><br>
+                            是否应届生: <input type="radio" name="analyzeSalary.freshGraduce">是<input type="radio" name="analyzeSalary.FreshGraduce">否
+                            <br><br>
+
                             学历简况: <select name="analyzeSalary.education">
                             <option>本科</option>
                             <option>小学</option>
@@ -126,6 +122,14 @@
                             <option>博士生</option>
                             <option>博士后</option>
                         </select><br><br>
+                            在该期望行业的工作时间:
+                            <select name="analyzeSalary.worktime">
+                                <option>0~6个月</option>
+                                <option>6~12个月</option>
+                                <option>1年~3年</option>
+                                <option>3年~5年</option>
+                                <option>5年~</option>
+                            </select><br><br>
                             期望工作城市: <select name="analyzeSalary.addr">
                             <option>北京</option>
                             <option>上海</option>
@@ -733,7 +737,7 @@
                 big1.style.width = "100%";
                 num.innerHTML = 100;
                 window.clearInterval(time);
-                self.location.href = "../about/gongzuo.html";
+                self.location.href = "../about/gongzuo.jsp";
             }else{
                 sum += Math.floor(Math.random() * 10);
                 big1.style.width = sum + "%";

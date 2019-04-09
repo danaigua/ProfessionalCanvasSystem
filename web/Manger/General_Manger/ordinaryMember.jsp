@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>大数据后台管理系统</title>
-    <link rel="stylesheet" href="ordinaryMember.css">
+    <link rel="stylesheet" href="ordinaryMember1.css">
 </head>
 <body>
 <div class="dataBox">    <!-- 外部大盒子 -->
     <h2 class="dataBox_theme">大数据求职系统后台</h2>   <!-- 普通会员标题 -->
-    <h4 class="">普通管理员</h4>
+    <h4 class="dataBox_little">普通管理员</h4>
     <div class="dataBox_nav">     <!-- 左边导航栏 -->
         <i class="dataBoxNav_theme">求职资料</i>
     </div>
     <form method="post" action="AddJobOri.action">
+        <div class="dataBox_form">
         <div class="dataBox_jobInformation dataBox_information">
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">公司</i>
@@ -27,8 +28,8 @@
                 <input type="text" name="jobInfo.salary" class="salary dataBoxInp_input">
             </div>
             <div class="dataBoxInp_box">
-                <i class="dataBoxInp_text">
-                    工作类型：</i><select name="jobInfo.type">
+                <i class="dataBoxInp_text">工作类型：</i>
+                <select name="jobInfo.type">
                 <option >JAVA</option>
                 <option >PYTHON</option>
                 <option>JAVASCRIPT</option>
@@ -43,6 +44,13 @@
                 <option>RUBY</option>
                 <option>其他</option>
             </select>
+            </div>
+            <div class="dataBoxInp_box">
+                <i class="dataBoxInp_text">招聘类型：</i>
+                <select name="jobInfo.type">
+                    <option >社招</option>
+                    <option >校招</option>
+                </select>
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">工作</i>
@@ -101,6 +109,7 @@
                 <input type="text" class="address dataBoxInp_input" name="jobInfo.Address">
             </div>
             <input type="submit" value="提交" class="dataBoxInp_sub" onclick="javascript:form.submit();">
+        </div>
         </div>
     </form>
 </div>

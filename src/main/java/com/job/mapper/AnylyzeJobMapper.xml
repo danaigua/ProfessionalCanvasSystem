@@ -11,7 +11,8 @@
         <result column="job_worktime" jdbcType="VARCHAR" property="jobWorktime"/>
         <result column="Salary" jdbcType="VARCHAR" property="Salary"/>
     </resultMap>
+    <!--通过工作的时间来得到特定的数据-->
     <select id="showSalaryByJobAndTime" resultMap="BaseResultMap" parameterType="analyzeJob">
-        select * from servicejob where job_worktime=#{jobWorktime} and job = #{job}
+        select * from servicejob where job_age=#{jobWorktime} and job = #{job}
     </select>
 </mapper>

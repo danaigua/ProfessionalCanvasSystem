@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IAnalyzeJobSalaryDao">
+    <resultMap id="BaseResultMap" type="com.job.pojo.SalaryResult">
+        <result column="addr" jdbcType="VARCHAR" property="addr"/>
+        <result column="job" jdbcType="VARCHAR" property="job"/>
+        <result column="job_aveSalary" jdbcType="VARCHAR" property="jobaveSalary"/>
+        <result column="addr_aveSalary" jdbcType="VARCHAR" property="addraveSalary"/>
+        <result column="talent_gap" jdbcType="VARCHAR" property="talentGap"/>
+    </resultMap>
+    <!--查询servicejob2 的信息-->
+    <select id="selectSalaryByteAddrandJob" resultMap="BaseResultMap" parameterType="SalaryResult">
+        select * from servicejob2 where addr= #{addr} and job=#{job}
+    </select>
+</mapper>

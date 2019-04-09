@@ -6,14 +6,23 @@ public class AnalyzeJob {
     private String jobAge;
     private String jobAddr;
     private String jobWorktime;
-    private String Salary;
+    private int Salary1;
+    private int Salary2;
 
-    public String getSalary() {
-        return Salary;
+    public int getSalary1() {
+        return Salary1;
     }
 
-    public void setSalary(String salary) {
-        Salary = salary;
+    public void setSalary1(int salary1) {
+        Salary1 = salary1;
+    }
+
+    public int getSalary2() {
+        return Salary2;
+    }
+
+    public void setSalary2(int salary2) {
+        Salary2 = salary2;
     }
 
     public Integer getServiceId() {

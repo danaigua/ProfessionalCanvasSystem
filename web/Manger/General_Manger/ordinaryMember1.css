@@ -26,16 +26,22 @@ body{
 	background:url(../image/bodybackgroundpicture.jpg);
 	background-size:100% 100%;
 }
+body{
+
+	background:#333;
+	background-size: 100% 100%;
+}
        /*标签初始化*/
 
        /*外部大盒子样式*/
 .dataBox{
-	width:960px;	
+	width:1100px;
 	height:100%;
 	min-height: 550px;
 	margin:auto;
 	position:relative;
-	background:rgba(204,0,0,0.6);
+	background:#333;
+	box-shadow:0 0 30px black;
 }
 .dataBox::after{       /*清除内部两盒子浮动*/
     content:"";
@@ -81,9 +87,6 @@ body{
         /*右边输入框盒子样式*/
 .dataBox_information{
 	padding:20px 50px;
-	position:absolute;
-	top: 113px;
-	left:250px;
 }
 .dataBoxInp_box{
 	margin-bottom: 20px;
@@ -120,8 +123,20 @@ body{
 	border-radius: 40px;
 	cursor:pointer;
 }
+.dataBox_form{
+	width:600px;
+	height:550px;
+	overflow:auto;
+	position:absolute;
+	left:250px;
+	top:113px;
 
+}
+.dataBox_little{
+	padding:10px;
+	font-size:20px;
 
+}
 
 
 

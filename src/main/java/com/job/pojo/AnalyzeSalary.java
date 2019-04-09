@@ -13,6 +13,16 @@ public class AnalyzeSalary {
     private String everjob;
     private String technology;
     private String character;
+    private String workTimes;
+
+    public String getWorkTimes() {
+        return workTimes;
+    }
+
+    public void setWorkTimes(String workTimes) {
+        this.workTimes = workTimes;
+    }
+
     public String getSex() {
         return sex;
     }

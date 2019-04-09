@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>招聘职位</title>
 
-	<link rel="stylesheet" href="../css/style1.css">
+	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/company.css">
 </head>
 <body>
@@ -51,77 +51,77 @@
 		<h1 class="companyRec_theme">精品推荐</h1>
 		<hr class="companyRec_line">
 		<div class="companyRec_box">
-			<a href="javascript:" class="companyRec_link">
+			<a href="../job/baidu1.html" class="companyRec_link">
 				<i class="companyRec_img">百度</i>
 				<h2 class="companyRec_name">前端工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 五险一金</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 熟悉模块化，前端编译和构建工具。</p>
-				<p class="companyRec_money">2000￥~3500￥</p>
+				<p class="companyRec_money">6000￥~12000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
+			<a href="../job/baidu2.html" class="companyRec_link">
 				<i class="companyRec_img">阿里</i>
 				<h2 class="companyRec_name">后端工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 周末双休</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 五年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 精通JAVA，熟悉常用技术框架</p>
-				<p class="companyRec_money">2500￥~3500￥</p>
+				<p class="companyRec_money">7000￥~16000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
-				<i class="companyRec_img">腾讯</i>
+			<a href="../job/bangde1.html" class="companyRec_link">
+				<i class="companyRec_img">安邦德</i>
 				<h2 class="companyRec_name">H5工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 有大牛</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 关注前沿技术，通过新的技术服务于业务</p>
-				<p class="companyRec_money">3000￥~4500￥</p>
+				<p class="companyRec_money">6000￥~10000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
-				<i class="companyRec_img">今日头条</i>
+			<a href="../job/batulu1.html" class="companyRec_link">
+				<i class="companyRec_img">巴图鲁</i>
 				<h2 class="companyRec_name">web前端实习生</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 有项目奖金</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 优化网站的前端性能，保证网站的高速</p>
-				<p class="companyRec_money">4000￥~5500￥</p>
+				<p class="companyRec_money">6000￥~10000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
-				<i class="companyRec_img">蘑菇街</i>
+			<a href="../job/BBD1.html" class="companyRec_link">
+				<i class="companyRec_img">BBD</i>
 				<h2 class="companyRec_name">JAVA开发工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 年终奖，餐补</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 二年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 具备两年以上的Java开发经验</p>
-				<p class="companyRec_money">3000￥~4500￥</p>
+				<p class="companyRec_money">10000￥~20000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
-				<i class="companyRec_img">百度</i>
+			<a href="../job/beike1.html" class="companyRec_link">
+				<i class="companyRec_img">贝克</i>
 				<h2 class="companyRec_name">c ++服务器工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 环境舒适</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 三年以上的游戏服务器后台工作经验</p>
-				<p class="companyRec_money">2600￥~4500￥</p>
+				<p class="companyRec_money">8000￥~15000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
-				<i class="companyRec_img">聚美优品</i>
+			<a href="../job/danei1.html" class="companyRec_link">
+				<i class="companyRec_img">达内</i>
 				<h2 class="companyRec_name">初级前端工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 双休</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 熟悉</p>
-				<p class="companyRec_money">2000￥~3500￥</p>
+				<p class="companyRec_money">10000￥~12000￥</p>
 			</a>
-			<a href="javascript:" class="companyRec_link">
-				<i class="companyRec_img">百度</i>
+			<a href="../job/douxiang1.html" class="companyRec_link">
+				<i class="companyRec_img">斗象科技</i>
 				<h2 class="companyRec_name">前端工程师</h2>
 				<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 五险一金</p>
 				<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
 				<p class="companyRec_describe companyRec_text">
 					<strong>职位描述</strong>: 良好的团队合作能力，工作积极主动，责任心强。</p>
-				<p class="companyRec_money">2000￥~3500￥</p>
+				<p class="companyRec_money">8000￥~15000￥</p>
 			</a>
 
 		</div>
@@ -256,7 +256,7 @@
 										$(".company").eq(length).children().eq(2).text(result[a1][b1].company);
 										$(".company").eq(length).children().eq(3).text(result[a1][b1].salary);
 										// $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
-										$(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "searchJobByteId?id=" + result[a1][b1].id);
+										$(".company").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
 										// $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
 										length++;
 									}

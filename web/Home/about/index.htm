@@ -1,0 +1,770 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<title>分析_基于大数据的智能求职系统</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+		<script type="text/javascript" src="../js/jquery.1.8.2.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.plugin.min.js"></script>
+		<!--[if lt IE 9]>
+	<script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+	</head>
+	<body>
+
+
+
+		<header>
+			<div id="navbg"></div>
+			<div class="wrapper">
+				<h1 class="logo"><a href="../index.htm" title="大数据分析"><img src="../images/logo.png" width="213" height="36" alt="" /></a></h1>
+				<nav>
+					<ul>
+						<li class="home"><a href="../index.htm">首页<span>网站首页！</span></a></li>
+						<li class="service"><a href="AnalyzeJurisdiction.action" title="大数据分析">分析<span>大数据分析</span></a></li>
+						<li class="cases"><a href="../case/index.htm" title="社会招聘">公司<span>社会招聘</span></a></li>
+						<li class="client"><a href="../fangan/index.htm" title="校园招聘">学校<span>校园招聘</span></a></li>
+						<li class="about"><a href="AboutLogin.action">我的<span>登陆注册</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		                <!-- 加载条 -->
+		<div class="bigBox">
+		  <h1 class="jiazai_theme">加载中 ····</h1>
+          <div class="big">
+            <div class="big1">
+              <p class="text">
+                 loading : 
+                <i class="num"></i>
+                %
+              </p>
+            </div>
+          </div>
+        </div>
+		<!-- 查找最顶级栏目  -->
+		<section id="single">
+			<!--
+			-->
+			<!-- 查找子栏目  -->
+			<div class="cat_title">
+				<!--
+				.cat_title {
+					overflow: hidden;
+					padding: 35px 0;
+					height: 120px;
+					border-bottom: 1px solid #d8d9d8;
+				}
+				-->
+				<div class="wrapper">
+					<!--
+					.wrapper {
+						width: 986px;
+						margin: 0 auto;
+						position: relative;
+					}
+					-->
+					<div class="catTitle_menu">选择年份</div>
+                      <div class="catTitle_box">
+                          <p class="catTitle_content">2019</p>
+                          <p class="catTitle_content">2018</p>
+                          <p class="catTitle_content">2017</p>
+                          <p class="catTitle_content catTitleCon_first">2016</p>
+                      </div>
+					<h2><strong>SERVICE</strong>分析</h2>
+					<p>大数据分析系统<br />Big data analysis system</p>
+				</div>
+			</div>
+			<div class="category">
+				<!--
+				
+				-->
+				<div class="wrapper">
+					<!--
+					
+					-->
+					<div class="Font">
+						<h1>大数据统计</h1>
+					</div>
+					<div id="main" style="width: 600px;height:400px;"></div>
+					<script type="text/javascript">
+						// 基于准备好的dom，初始化echarts实例
+						var myChart1 = echarts.init(document.getElementById('main'));
+
+						// 指定图表的配置项和数据
+
+						option = {
+							title: {
+								text: '2018年冬季求职期',
+								subtext: '全国主要城市平均薪资',
+								x: 'center'
+							},
+							tooltip: {
+								trigger: 'item',
+								formatter: "{a} <br/>{b} : {c} ({d}%)"
+							},
+							legend: {
+								orient: 'vertical',
+								x: 'left',
+								data: ['北京', '上海', '深圳', '杭州', '广州', '南京', '宁波', '厦门', '东莞', '苏州', '武汉', '成都', '佛山', '重庆', '贵阳', '长沙', '乌鲁木齐',
+									'南宁', '昆明', '济南', '南昌', '福州', '合肥', '海口', '无锡', '郑州', '青岛', '兰州', '天津', '西安', '大连', '石家庄', '太原', '烟台', '长春',
+									'哈尔滨', '沈阳'
+								]
+							},
+							toolbox: {
+								show: true,
+								feature: {
+									mark: {
+										show: true
+									},
+									dataView: {
+										show: true,
+										readOnly: false
+									},
+									magicType: {
+										show: true,
+										type: ['pie', 'funnel'],
+										option: {
+											funnel: {
+												x: '25%',
+												width: '50%',
+												funnelAlign: 'left',
+												max: 1548
+											}
+										}
+									},
+									restore: {
+										show: true
+									},
+									saveAsImage: {
+										show: true
+									}
+								}
+							},
+							calculable: true,
+							series: [{
+								name: '数据',
+								type: 'pie',
+								radius: '55%',
+								center: ['50%', '60%'],
+								data: [{
+										value: 10871,
+										name: '北京'
+									},
+									{
+										value: 10164,
+										name: '上海'
+									},
+									{
+										value: 9776,
+										name: '深圳'
+									},
+									{
+										value: 9029,
+										name: '杭州'
+									},
+									{
+										value: 8440,
+										name: '广州'
+									},
+									{
+										value: 8048,
+										name: '南京'
+									},
+									{
+										value: 7984,
+										name: '宁波'
+									},
+									{
+										value: 7837,
+										name: '厦门'
+									},
+									{
+										value: 7835,
+										name: '东莞'
+									},
+									{
+										value: 7739,
+										name: '苏州'
+									},
+									{
+										value: 7710,
+										name: '武汉'
+									},
+									{
+										value: 7692,
+										name: '成都'
+									},
+									{
+										value: 7667,
+										name: '佛山'
+									},
+									{
+										value: 7633,
+										name: '重庆'
+									},
+									{
+										value: 7545,
+										name: '贵阳'
+									},
+									{
+										value: 7502,
+										name: '长沙'
+									},
+									{
+										value: 7491,
+										name: '乌鲁木齐'
+									},
+									{
+										value: 7426,
+										name: '南宁'
+									},
+									{
+										value: 7410,
+										name: '昆明'
+									},
+									{
+										value: 7372,
+										name: '济南'
+									},
+									{
+										value: 7344,
+										name: '南昌'
+									},
+									{
+										value: 7300,
+										name: '福州'
+									},
+									{
+										value: 7285,
+										name: '合肥'
+									},
+									{
+										value: 7275,
+										name: '海口'
+									},
+									{
+										value: 7223,
+										name: '无锡'
+									},
+									{
+										value: 7129,
+										name: '郑州'
+									},
+									{
+										value: 7083,
+										name: '青岛'
+									},
+									{
+										value: 7061,
+										name: '兰州'
+									},
+									{
+										value: 7038,
+										name: '天津'
+									},
+									{
+										value: 6898,
+										name: '西安'
+									},
+									{
+										value: 6675,
+										name: '大连'
+									},
+									{
+										value: 6644,
+										name: '石家庄'
+									},
+									{
+										value: 6559,
+										name: '太原'
+									},
+									{
+										value: 6557,
+										name: '烟台'
+									},
+									{
+										value: 6355,
+										name: '长春'
+									},
+									{
+										value: 6310,
+										name: '哈尔滨'
+									},
+									{
+										value: 6215,
+										name: '沈阳'
+									}
+
+								]
+							}]
+						};
+
+
+
+
+						// 使用刚指定的配置项和数据显示图表。
+						myChart1.setOption(option);
+
+					
+					</script>
+					<!--
+					刚刚修改过
+					-->
+					<div id="main2" style="width: 480px;height:480px;"></div>
+					<script type="text/javascript">
+						// 基于准备好的dom，初始化echarts实例
+						var myChart = echarts.init(document.getElementById('main2'));
+						var labelTop = {
+							normal: {
+								label: {
+									show: true,
+									position: 'center',
+									formatter: '{b}',
+									textStyle: {
+										baseline: 'bottom'
+									}
+								},
+								labelLine: {
+									show: false
+								}
+							}
+						};
+						var labelFromatter = {
+							normal: {
+								label: {
+									formatter: function(params) {
+										return 100 - params.value + '%'
+									},
+									textStyle: {
+										baseline: 'top'
+									}
+								}
+							},
+						}
+						var labelBottom = {
+							normal: {
+								color: '#ccc',
+								label: {
+									show: true,
+									position: 'center'
+								},
+								labelLine: {
+									show: false
+								}
+							},
+							emphasis: {
+								color: 'rgba(0,0,0,0)'
+							}
+						};
+						var radius = [40, 55];
+						option1 = {
+							legend: {
+								x: 'center',
+								y: 'center',
+								data: [
+									'工作时间', '工作城市', '工龄', '行业', '职务',
+									'学历'
+								]
+							},
+							title: {
+								text: '薪资影响最多的因素占比',
+								subtext: '本结果来自大数据统计，可能有所误差！',
+								x: 'center'
+							},
+							toolbox: {
+								show: true,
+								feature: {
+									dataView: {
+										show: true,
+										readOnly: false
+									},
+									magicType: {
+										show: true,
+										type: ['pie', 'funnel'],
+										option: {
+											funnel: {
+												width: '20%',
+												height: '30%',
+												itemStyle: {
+													normal: {
+														label: {
+															formatter: function(params) {
+																return 'other\n' + params.value + '%\n'
+															},
+															textStyle: {
+																baseline: 'middle'
+															}
+														}
+													},
+												}
+											}
+										}
+									},
+									restore: {
+										show: true
+									},
+									saveAsImage: {
+										show: true
+									}
+								}
+							},
+							series: [{
+									type: 'pie',
+									center: ['20%', '30%'],
+									radius: radius,
+									x: '0%', // for funnel
+									itemStyle: labelFromatter,
+									data: [{
+											name: 'other',
+											value: 82,
+											itemStyle: labelBottom
+										},
+										{
+											name: '工作时间',
+											value: 18,
+											itemStyle: labelTop
+										}
+									]
+								},
+								{
+									type: 'pie',
+									center: ['50%', '30%'],
+									radius: radius,
+									x: '20%', // for funnel
+									itemStyle: labelFromatter,
+									data: [{
+											name: 'other',
+											value: 85,
+											itemStyle: labelBottom
+										},
+										{
+											name: '工作城市',
+											value: 15,
+											itemStyle: labelTop
+										}
+									]
+								},
+								{
+									type: 'pie',
+									center: ['80%', '30%'],
+									radius: radius,
+									x: '40%', // for funnel
+									itemStyle: labelFromatter,
+									data: [{
+											name: 'other',
+											value: 89,
+											itemStyle: labelBottom
+										},
+										{
+											name: '工龄',
+											value: 11,
+											itemStyle: labelTop
+										}
+									]
+								},
+								{
+									type: 'pie',
+									center: ['20%', '70%'],
+									radius: radius,
+									x: '60%', // for funnel
+									itemStyle: labelFromatter,
+									data: [{
+											name: 'other',
+											value: 86,
+											itemStyle: labelBottom
+										},
+										{
+											name: '行业',
+											value: 14,
+											itemStyle: labelTop
+										}
+									]
+								},
+								{
+									type: 'pie',
+									center: ['50%', '70%'],
+									radius: radius,
+									x: '80%', // for funnel
+									itemStyle: labelFromatter,
+									data: [{
+											name: 'other',
+											value: 85,
+											itemStyle: labelBottom
+										},
+										{
+											name: '职务',
+											value: 15,
+											itemStyle: labelTop
+										}
+									]
+								},
+								{
+									type: 'pie',
+									center: ['80%', '70%'],
+									radius: radius,
+									y: '55%', // for funnel
+									x: '0%', // for funnel
+									itemStyle: labelFromatter,
+									data: [{
+											name: 'other',
+											value: 74,
+											itemStyle: labelBottom
+										},
+										{
+											name: '学历',
+											value: 26,
+											itemStyle: labelTop
+										}
+									]
+								}
+							]
+						};
+
+
+
+
+						myChart.setOption(option1);
+					</script>
+					<!--
+					刚刚修改过
+					-->
+				</div>
+			</div>
+
+			<article class="serv_detailed">
+				<div id="detailed">
+					<div class="Font">
+						<h1>大数据分析</h1>
+					</div>
+					<div class="BigData" style="width: 1000px;height: 560px;margin: 0 auto;">
+
+						<div style="float: left;background-color: red;width: 500px;height: 540px;background-image: url(../css/images/Celebrated_dictum.jpg);"></div>
+
+						</<div>
+						<div class="FormFont" style="float: left;width: 500px;height: 540px;">
+							<form action="" target="test">
+								<fieldset>
+									<legend>大数据分析表单:</legend>
+									性别: <input type="radio" name="sex" value="1">男<input type="radio" name="sex" value="2">女<br><br>
+									年龄: <select>
+										<option value="">16~20</option>
+										<option value="">21~25</option>
+										<option value="">26~35</option>
+										<option value="">35~40</option>
+										<option value="">45~50</option>
+										<option value="">50~55</option>
+										<option value="">55~60</option>
+									</select><br><br>
+									婚否: <input type="radio" name="marry" value="1">是<input type="radio" name="marry" value="2">否<br><br>
+									是否应届生: <input type="radio" name="Fresh_Graduate" value="1">是<input type="radio" name="Fresh_Graduate" value="2">否<br><br>
+									期望工作时间: <select>
+										<option value="">6~8</option>
+										<option value="">8~10</option>
+										<option value="">10~12</option>
+										<option value="">12以上</option>
+									</select><br><br>
+									学历简况: <select>
+										<option value="">本科</option>
+										<option value="">小学</option>
+										<option value="">初中</option>
+										<option value="">高中</option>
+										<option value="">中专</option>
+										<option value="">大专</option>
+										<option value="">研究生</option>
+										<option value="">博士生</option>
+										<option value="">博士后</option>
+									</select><br><br>
+									期望工作城市: <select>
+										<option value="">北京</option>
+										<option value="">上海</option>
+										<option value="">深圳</option>
+										<option value="">杭州</option>
+										<option value="">广州</option>
+										<option value="">宁波</option>
+										<option value="">南京</option>
+										<option value="">厦门</option>
+										<option value="">东莞</option>
+										<option value="">苏州</option>
+										<option value="">佛山</option>
+										<option value="">重庆</option>
+										<option value="">海口</option>
+										<option value="">成都</option>
+										<option value="">武汉</option>
+										<option value="">贵阳</option>
+										<option value="">长沙</option>
+										<option value="">福州</option>
+										<option value="">长沙</option>
+										<option value="">乌鲁木齐</option>
+										<option value="">无锡</option>
+										<option value="">昆明</option>
+										<option value="">合肥</option>
+										<option value="">济南</option>
+										<option value="">南宁</option>
+										<option value="">南昌</option>
+										<option value="">天津</option>
+										<option value="">郑州</option>
+										<option value="">青岛</option>
+										<option value="">西安</option>
+										<option value="">大连</option>
+										<option value="">石家庄</option>
+										<option value="">兰州</option>
+										<option value="">烟台</option>
+										<option value="">长春</option>
+										<option value="">太原</option>
+										<option value="">哈尔滨</option>
+										<option value="">沈阳</option>
+									</select><br><br>
+									期望行业: <select>
+										<option value="">英语相关行业</option>
+										<option value="">会计</option>
+										<option value="">财务管理</option>
+										<option value="">土木工程</option>
+										<option value="">机械设计制造及其自动化</option>
+										<option value="">IT</option>
+										<option value="">电信通讯</option>
+										<option value="">电气工程以及自动化</option>
+										<option value="">国际贸易</option>
+										<option value="">建筑业</option>
+										<option value="">工厂</option>
+										<option value="">室外工作</option>
+										<option value="">快递</option>
+										<option value="">产品业务</option>
+									</select><br><br>
+									加班意向: <select>
+										<option value="">可接受加一小时</option>
+										<option value="">可接受加俩小时</option>
+										<option value="">可接受加三小时</option>
+										<option value="">可接受加四小时</option>
+										<option value="">可接受加五小时</option>
+									</select><br><br>
+									曾担任过相关期望工作的职位: <input type="radio" name="job" value="1">是<input type="radio" name="job" value="2">否<br><br>
+									以前是否为期望工作的专业（技术）人员: <input type="radio" name="technology" value="1">是<input type="radio" name="technology"
+									 value="2">否<br><br>
+									个人性格：（可不填）<select>
+										<option value="">偏内向</option>
+										<option value="">腼腆</option>
+										<option value="">开朗乐观</option>
+										<option value="">开放</option>
+									</select>
+									<button type="submit" onclick="load()">提交</button>
+								</fieldset>
+							</form>
+							<iframe name="test" style="display:none" frameborder="0"></iframe>
+						</div>
+
+						</<div>
+					</div>>
+				</div>
+				<div id="case_footer"></div>
+			</article>
+
+		</section>
+
+   
+		<footer>
+			<div id="footerlink">
+				<nav class="wrapper">
+					<a href="../index.htm">首页</a>
+					<a href="index.htm">分析</a>
+					<a href="../case/index.htm">公司</a>
+					<a href="../fangan/index.htm">校园</a>
+					<a href="../contact/index.htm">联系</a>
+					<a href="../news/index.htm">新闻</a>
+					<a href="../about/index.htm">关于</a>
+					<a id="gotop" href="javascript:void(0)">top</a>
+				</nav>
+			</div>
+			<div id="footerinfo">
+				<div class="wrapper">
+					<h2>联系我们<strong>Contact</strong></h2>
+					<p>
+						<a target="_blank" href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=429592913&site=qq&menu=yes))window.location='http://wpa.qq.com/msgrd?v=3&uin=89091392&site=qq&menu=yes'"
+						 tppabs="http://wpa.qq.com/msgrd?v=3&uin=429592913&site=qq&menu=yes"><img border="0" src="../images/qq.png" alt="点击这里给我发消息"
+							 title="点击这里给我发消息" /></a><br />
+						电话：400 8888 8888<br />
+						传真：400 8888 8888<br />
+						电子邮件：1295263075@qq.com<br />
+						公司地址：广州市某某某某某某某某某<br />
+						备案编号：粤xxxxxxxxxx1<br />
+					</p>
+					<img src="../images/map.gif" id="homemap" width="258" height="190" alt="公司位置" />
+				</div>
+			</div>
+		</footer>
+		
+		<!--[if IE 6]>
+<script type="text/javascript" src="../js/killie6.js"></script>
+<![endif]-->
+          <!--选择年份-->
+         <script type="text/javascript">
+               
+                $(document).ready(function  ()　{
+				       var catTitleBox = $(".catTitle_box");
+					   var catTitleMenu = $(".catTitle_menu");
+					   var catTitleContent = $(".catTitle_content");
+					   catTitleMenu.click(function ()　{
+						　　　catTitleBox.slideToggle("fast");　   
+					　　});
+					   
+					   for(var i = 0; i < catTitleContent.length; i ++) {
+					   	   
+					   	     catTitleContent.eq(i).click(function () {
+					   	           catTitleMenu.text($(this).text());
+					   	           catTitleBox.slideUp("fast");
+					   	           option.title.text = $(this).text() + "年冬季求职";
+					   	           for(var j = 0; j < option.series[0].data.length; j ++) {
+					   	           	   option.series[0].data[j].value = Math.floor(Math.random() * 1000) + option.series[0].data[j].value;
+					   	           };
+					   	           for(var k = 0; k < option1.series.length; k ++) {
+					   	           	   
+					   	           	   	   option1.series[k].data[0].value = Math.floor(Math.random() * 100);
+					   	           	   	   option1.series[k].data[1].value = 100 - (option1.series[k].data[0].value);
+					   	           }
+					   	           myChart1.setOption(option);
+					   	           myChart.setOption(option1);
+					         });
+					       
+					   }
+			   })
+         
+         </script>
+
+                           <!-- 加载条 -->
+          <script type="text/javascript">
+    	  var bigBox = document.getElementsByClassName("bigBox")[0];
+          var big1 = document.getElementsByClassName("big1")[0];
+          var sum = 0;
+          var num = document.getElementsByClassName("num")[0];
+          // var jiazai = document.getElementsByClassName("jiazai_theme
+          // 	")[0];
+          
+          function load() {
+          	bigBox.style.display = "block";
+          var time = window.setInterval(function () {
+               if(sum > 50) {
+               	   big1.style.background = "#f40";
+               }else if(sum > 80) {
+               	   big1.style.background = "#f0f"
+               }
+               if(sum > 92) {
+                   big1.style.width = "100%";
+                   num.innerHTML = 100;
+                   window.clearInterval(time);
+                   self.location.href = "gongzuo.jsp";
+               }else{
+                  sum += Math.floor(Math.random() * 10);
+                  big1.style.width = sum + "%";
+                  num.innerHTML = sum;
+               }
+          }, 800)
+      }
+      
+
+
+    </script>
+	</body>
+</html>
