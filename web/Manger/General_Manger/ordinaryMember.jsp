@@ -33,6 +33,7 @@
                 <option >JAVA</option>
                 <option >PYTHON</option>
                 <option>JAVASCRIPT</option>
+                <option >前端</option>
                 <option>大数据</option>
                 <option>人工智能</option>
                 <option>PHP</option>
@@ -47,7 +48,7 @@
             </div>
             <div class="dataBoxInp_box">
                 <i class="dataBoxInp_text">招聘类型：</i>
-                <select name="jobInfo.type">
+                <select name="jobInfo.jobType">
                     <option >社招</option>
                     <option >校招</option>
                 </select>

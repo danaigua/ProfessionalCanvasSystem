@@ -44,11 +44,17 @@ html,body{
 }
 .wages_text{
 	margin-bottom:50px;
-	font-size:18px;
+	font-size:21px;
+	letter-spacing: 2px;
 }
 .estimate{
-	font-size:20px;
+	font-size:23px;
+	font-weight:bold;
+	width:400px;
+	height:80px;
+	line-height:40px;
 	color:#663;
+
 }
 .industry_tex{
 	font-size:20px;
@@ -59,12 +65,12 @@ html,body{
 .industry_box{
 	width:500px;
 	height:400px;
-	border:1px solid black;
 }
 
          /*地区工作推荐*/
 .region1, .region2{
     padding-top:50px;
+	clear:both;
 }
 .region1{ 
 	clear:both;
@@ -138,4 +144,10 @@ html,body{
 }
 .company:hover, .company1:hover{
 	text-decoration:none;
+}
+
+.wages_renshu{
+	color:#663;
+	font-weight:bold;
+	font-size:21px;
 }

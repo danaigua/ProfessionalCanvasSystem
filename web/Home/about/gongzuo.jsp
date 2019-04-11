@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>工作</title>
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/gongzi1.css">
+	<link rel="stylesheet" href="../css/gongzi.css">
 </head>
 <body>
 	<header>
@@ -26,38 +26,38 @@
     <div class="wages_box">
     	<div class="wages">
     		<p class="wages_text estimate">${analyzeResult.errorInfo}</p>
-			<p class="wages_text">您的理论工资为${analyzeResult.budgetSalary1}~${analyzeResult.budgetSalary2}</p>
-    		<p class="wages_text">本地区平均工资${analyzeResult.addrAveSalary}</p>
-    		<p class="wages_text">本行业平均工资${analyzeResult.industrySalary}</p>
-    		<p class="wages_text">该行业的人才缺口${analyzeResult.talentGap}</p>
+            <p class="wages_text">您的理论工资为 &nbsp;&nbsp;<span class="wages_renshu">${analyzeResult.budgetSalary1}~${analyzeResult.budgetSalary2}</span></p>
+    		<p class="wages_text">本地区平均工资 &nbsp;&nbsp;<span class="wages_renshu">${analyzeResult.addrAveSalary}</span></p>
+    		<p class="wages_text">本行业平均工资 &nbsp;&nbsp;<span class="wages_renshu">${analyzeResult.industrySalary}</span></p>
+    		<p class="wages_text">该行业人才缺口 &nbsp;&nbsp;<span class="wages_renshu">${analyzeResult.talentGap}</span></p>
     	</div>
     	<div class="industry">
     		<div id="industry_box1" class="industry_box"></div>
     	</div>
 
-    	<!-- 地区工作推荐 -->
-        <div class="region1">
-    	    <p class="region_text1">地区工作推荐</p>
-    	    <div class="region_box1">
-				<a class="company">
-					<div class="company_box">
-						<i class="companyBox_job">JAVA</i>
-						<i class="companyBox_name">茂名有限责任公司</i>
-					</div>
-					<div class="companyEdu_box">
-						学历 :<i class="company_education">本科</i>
-					</div>
-					<i class="company_address">广东省茂名市电白区水东镇</i>
-					<div class="company_money">
-						6000￥~10000￥
-					</div>
-				</a>
-			</div>
-        </div>
+    	<%--<!-- 地区工作推荐 -->--%>
+        <%--<div class="region1">--%>
+    	    <%--<p class="region_text1">工作推荐</p>--%>
+    	    <%--<div class="region_box1">--%>
+				<%--<a class="company">--%>
+					<%--<div class="company_box">--%>
+						<%--<i class="companyBox_job">JAVA</i>--%>
+						<%--<i class="companyBox_name">茂名有限责任公司</i>--%>
+					<%--</div>--%>
+					<%--<div class="companyEdu_box">--%>
+						<%--学历 :<i class="company_education">本科</i>--%>
+					<%--</div>--%>
+					<%--<i class="company_address">广东省茂名市电白区水东镇</i>--%>
+					<%--<div class="company_money">--%>
+						<%--6000￥~10000￥--%>
+					<%--</div>--%>
+				<%--</a>--%>
+			<%--</div>--%>
+        <%--</div>--%>
 
              <!-- 行业工作推荐 -->
         <div class="region2">
-    	    <p class="region_text2">行业工作推荐</p>
+    	    <p class="region_text2">工作推荐</p>
     	    <div class="region_box2">
 				<a class="company1">
 					<div class="company_box1">
@@ -263,6 +263,9 @@
 									// $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
 									$(".company1").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
 									// $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
+                                    console.log(result[a1][b1]);
+                                    console.log(result[a1]);
+                                    console.log(result[b1]);
 									length++;
 								}
 

@@ -78,6 +78,7 @@
                         工作类型：</i><select name="jobInfo.type">
                     <option >JAVA</option>
                     <option >PYTHON</option>
+                    <option >前端</option>
                     <option>JAVASCRIPT</option>
                     <option>大数据</option>
                     <option>人工智能</option>
@@ -95,7 +96,7 @@
                 </div>
                 <div class="dataBoxInp_box">
                     <i class="dataBoxInp_text">招聘类型：</i>
-                    <select name="jobInfo.type">
+                    <select name="jobInfo.jobType">
                         <option >社招</option>
                         <option >校招</option>
                     </select>
@@ -568,10 +569,10 @@
                     dataType: 'json',
                     data: {},
                     success: function (result) {
-                        alert("修改成功");
+                        alert("添加成功");
                     },
                     error: function () {
-                        alert("修改失败");
+                        alert("添加失败");
                     }
                 });
 

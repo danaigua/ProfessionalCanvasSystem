@@ -35,6 +35,16 @@ public class JobInfo {
     private String channelPromotion1;
     private String channelPromotion2;
 
+    //工作类型
+    private String jobType;
+
+    public String getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
 
     public String getExperience() {
         return experience;

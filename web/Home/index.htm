@@ -11,9 +11,9 @@
 <!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
 </head>
 <body id="ruifoxHome">
-  <form action="gotosearch" class="mydataHome_form" method="post" >
-     <input type="text" class="myDataHome_input" name="typeJob">
-     <button type="submit" class="myData_home">搜索</button>
+  <form class="mydataHome_form" method="post" >
+     <input type="text" class="myDataHome_input" name="typeJob" id="type">
+     <button type="button" class="myData_home">搜索</button>
      <i class="myDataHome_image"></i>
   </form>
 <header>
@@ -376,7 +376,7 @@
 </footer>
 <script type="text/javascript" src="js/jquery.1.8.2.min.js" ></script>
 <script type="text/javascript" src="js/jquery.plugin.min.js"></script>
-            <!-- 鼠标点击搜索图标弹出搜索栏 -->
+            <!-- 鼠标点击搜索图标弹出搜索栏, 点击搜索框手动跳转 -->
 <script type="text/javascript">
      $(document).ready(function () {
           var myDataHome = $(".myData_home");
@@ -398,6 +398,15 @@
              $(".myDataHome_image").slideDown("slow");
              $(".myDataHome_input, .myData_home").css("display","none");  
            })
+
+                        // 点击搜索框手动跳转
+           var type = $("#type");
+           var myDataHome = $(".myData_home");
+         myDataHome.click(function () {
+            var url =  "/ProfessionalCanvasSystem_war/Home/searchResult/company.jsp?typeJob="+ type.val();
+            console.log(1);
+            self.location.href = url;
+         })
      })
 </script>
 <!--[if IE 6]>
