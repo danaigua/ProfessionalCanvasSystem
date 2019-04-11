@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>工作</title>
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/gongzi.css">
+	<link rel="stylesheet" href="../css/gongzi1.css">
 </head>
 <body>
 	<header>
@@ -32,19 +32,47 @@
     		<p class="wages_text">该行业的人才缺口${analyzeResult.talentGap}</p>
     	</div>
     	<div class="industry">
-    		<div class="industry_box"></div>
+    		<div id="industry_box1" class="industry_box"></div>
     	</div>
 
     	<!-- 地区工作推荐 -->
         <div class="region1">
     	    <p class="region_text1">地区工作推荐</p>
-    	    <div class="region_box1">sdfgasdfasdfdasfdasf</div>
+    	    <div class="region_box1">
+				<a class="company">
+					<div class="company_box">
+						<i class="companyBox_job">JAVA</i>
+						<i class="companyBox_name">茂名有限责任公司</i>
+					</div>
+					<div class="companyEdu_box">
+						学历 :<i class="company_education">本科</i>
+					</div>
+					<i class="company_address">广东省茂名市电白区水东镇</i>
+					<div class="company_money">
+						6000￥~10000￥
+					</div>
+				</a>
+			</div>
         </div>
 
              <!-- 行业工作推荐 -->
         <div class="region2">
     	    <p class="region_text2">行业工作推荐</p>
-    	    <div class="region_box2"></div>
+    	    <div class="region_box2">
+				<a class="company1">
+					<div class="company_box1">
+						<i class="companyBox_job1">JAVA</i>
+						<i class="companyBox_name1">茂名有限责任公司</i>
+					</div>
+					<div class="companyEdu_box1">
+						学历 :<i class="company_education1">本科</i>
+					</div>
+					<i class="company_address1">广东省茂名市电白区水东镇</i>
+					<div class="company_money1">
+						6000￥~10000￥
+					</div>
+				</a>
+			</div>
         </div>
                   <!-- 免责声明 -->
         <hr class="exemtion_xian">
@@ -92,11 +120,39 @@
 				</div>
 			</div>
 		</footer>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+	</script>
+	  					<%--地区工作推荐阿贾克斯--%>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			window.onload = function () {
+				//获取参数
+				var strHref = document.location.toString();
+				var intPos = strHref.indexOf("?");
+				var strRight = strHref.substr(intPos + 1); //==========获取到右边的参数部分
+
+
 				var count = 0;
 				var length = 0;
+				var company = $(".company");
+				var companyLink = "<a href='javascript:' class='company'>" +
+						"<div class=\"company_box\">\n" +
+						"\t\t\t<i class=\"companyBox_job\"></i>\n" +
+						"\t\t\t<i class=\"companyBox_name\"></i>\n" +
+						"\t\t</div>\n" +
+						"        <div class=\"companyEdu_box\">\n" +
+						"        \t学历 :<i class=\"company_education\"></i>\n" +
+						"        </div>\n" +
+						"        <i class=\"company_address\"></i>\n" +
+						"        <div class=\"company_money\">\n" +
+						"        \t\n" +
+						"        </div>" +
+						"</a>";
+
+				var url = 'searchJobByteAddr?' + strRight;
+				var aa = 0;
+				var sum = 0;
 				if(count == 0) {
 					$.ajax({
 						type: 'post',
@@ -109,28 +165,28 @@
 							for (var a in result) {
 								if (count==0) {
 									for (var b in result[a]) {
-										// if(b != 0) {
-										// 	console.log(1);
-										// 	company.after(companyLink);
-										// }
-										// if (b==0){
-										// 	count++;
-										// }
+										if(b != 0) {
+											console.log(1);
+											company.after(companyLink);
+										}
+										if (b==0){
+											count++;
+										}
 									}
 								}
 							}
 							;
 							for (var a1 in result) {
 								for (var b1 in result[a1]) {
-									// $(".company").eq(length).children().eq(0).children().eq(0).text(result[a1][b1].job);
-									// $(".company").eq(length).children().eq(0).children().eq(1).text(result[a1][b1].address);
-									// $(".company").eq(length).children().eq(1).children().text(result[a1][b1].academic);
-									// $(".company").eq(length).children().eq(2).text(result[a1][b1].company);
-									// $(".company").eq(length).children().eq(3).text(result[a1][b1].salary);
-									// // $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
-									// $(".company").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
-									// // $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
-									// length++;
+									$(".company").eq(length).children().eq(0).children().eq(0).text(result[a1][b1].job);
+									$(".company").eq(length).children().eq(0).children().eq(1).text(result[a1][b1].address);
+									$(".company").eq(length).children().eq(1).children().text(result[a1][b1].academic);
+									$(".company").eq(length).children().eq(2).text(result[a1][b1].company);
+									$(".company").eq(length).children().eq(3).text(result[a1][b1].salary);
+									// $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
+									$(".company").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
+									// $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
+									length++;
 								}
 
 							}
@@ -143,6 +199,141 @@
 				}
 			}
 		})
+	</script>
+	               <%--行业工作推荐阿贾克斯--%>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			window.onload = function () {
+				//获取参数
+				var strHref = document.location.toString();
+				var intPos = strHref.indexOf("?");
+				var strRight = strHref.substr(intPos + 1); //==========获取到右边的参数部分
+
+
+				var count = 0;
+				var length = 0;
+				var company1 = $(".company1");
+				var companyLink1 = "<a href='javascript:' class='company1'>" +
+						"<div class=\"company_box1\">\n" +
+						"\t\t\t<i class=\"companyBox_job1\"></i>\n" +
+						"\t\t\t<i class=\"companyBox_name1\"></i>\n" +
+						"\t\t</div>\n" +
+						"        <div class=\"companyEdu_box1\">\n" +
+						"        \t学历 :<i class=\"company_education1\"></i>\n" +
+						"        </div>\n" +
+						"        <i class=\"company_address1\"></i>\n" +
+						"        <div class=\"company_money1\">\n" +
+						"        \t\n" +
+						"        </div>" +
+						"</a>";
+
+				var url = 'searchJobBytetype?' + strRight;
+				var aa = 0;
+				var sum = 0;
+				if(count == 0) {
+					$.ajax({
+						type: 'post',
+						url: url,
+						dataType: 'json',
+						async: true,
+						data: {},
+						success: function (result) {
+							console.log(url);
+							for (var a in result) {
+								if (count==0) {
+									for (var b in result[a]) {
+										if(b != 0) {
+											console.log(1);
+											company1.after(companyLink1);
+										}
+										if (b==0){
+											count++;
+										}
+									}
+								}
+							}
+							;
+							for (var a1 in result) {
+								for (var b1 in result[a1]) {
+									$(".company1").eq(length).children().eq(0).children().eq(0).text(result[a1][b1].job);
+									$(".company1").eq(length).children().eq(0).children().eq(1).text(result[a1][b1].address);
+									$(".company1").eq(length).children().eq(1).children().text(result[a1][b1].academic);
+									$(".company1").eq(length).children().eq(2).text(result[a1][b1].company);
+									$(".company1").eq(length).children().eq(3).text(result[a1][b1].salary);
+									// $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
+									$(".company1").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
+									// $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
+									length++;
+								}
+
+							}
+
+						},
+						error: function () {
+							alert("加载失败")
+						}
+					});
+				}
+			}
+		})
+	</script>
+	           <%--可视化分析结果--%>
+	<script type="text/javascript">
+	 var myChart = echarts.init(document.getElementById('industry_box1'));
+	 option = {
+		 title : {
+			 text: '分析结果',
+			 subtext: '过的痕迹',
+			 x:'center'
+		 },
+		 tooltip : {
+			 trigger: 'item',
+			 formatter: "{a} <br/>{b} : {c} ({d}%)"
+		 },
+		 legend: {
+			 orient : 'vertical',
+			 x : 'left',
+			 data:['理论工资','本地区平均工资','本行业平均工资','该行业的人才缺口']
+		 },
+		 toolbox: {
+			 show : true,
+			 feature : {
+				 mark : {show: true},
+				 dataView : {show: true, readOnly: false},
+				 magicType : {
+					 show: true,
+					 type: ['pie', 'funnel'],
+					 option: {
+						 funnel: {
+							 x: '25%',
+							 width: '50%',
+							 funnelAlign: 'left',
+							 max: 1548
+						 }
+					 }
+				 },
+				 restore : {show: true},
+				 saveAsImage : {show: true}
+			 }
+		 },
+		 calculable : true,
+		 series : [
+			 {
+				 name:'访问来源',
+				 type:'pie',
+				 radius : '55%',
+				 center: ['50%', '60%'],
+				 data:[
+					 {value:335, name:'理论工资'},
+					 {value:310, name:'本地区平均工资'},
+					 {value:234, name:'本行业平均工资'},
+					 {value:135, name:'该行业的人才缺口'}
+				 ]
+			 }
+		 ]
+	 };
+
+	 myChart.setOption(option);
 	</script>
 </body>
 </html>

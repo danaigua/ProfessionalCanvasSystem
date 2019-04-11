@@ -13,7 +13,17 @@ import java.util.Map;
 
 public class SearchJobBytetypeController extends ActionSupport {
     private String typeJob;
+    private String addr;
     private int id;
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
+
     JobInfo job = new JobInfo();
 //    private JobInfo job;
     private JobInfo jobInfo;
@@ -130,7 +140,7 @@ public class SearchJobBytetypeController extends ActionSupport {
             job.setType("c");
             System.out.println(job.getType());
             jobInfos = JobService.showAllJob(job);
-        }else  if ("java".equals(typeJob)){
+        }else  if ("java".equals(typeJob)||"JAVA".equals(typeJob)){
             job.setType("java");
             System.out.println(job.getType());
             jobInfos = JobService.showAllJob(job);
@@ -160,11 +170,15 @@ public class SearchJobBytetypeController extends ActionSupport {
     }
 //    //通过地区来查找
     public String searchJobByteAddr(){
-        jobInfos1 = JobService.selectByteAddr(job2);
+        job.setAddress(addr);
+        jobInfos1 = JobService.selectByteAddr(job);
         return SUCCESS;
     }
 ////    通过类型来查找
     public String searchJobBytetype(){
+        JobInfo job1 = new JobInfo();
+        job1.setType(typeJob);
+        System.out.println(job1);
         jobInfos2 = JobService.showAllJob(job1);
         return SUCCESS;
     }

@@ -34,7 +34,7 @@ public class SalaryController extends ActionSupport {
     private AnalyzeJobService analyzeJobService;
     @Resource
     private AnalyzeSalaryService analyzeSalaryService;
-    public String showSalaryByJobAndTime(){
+    public String showSalaryByJobAndTime() {
         //根据工作经验来判断薪资
         AnalyzeJob analyzeJob = new AnalyzeJob();
         System.out.println(analyzeSalary.getJob());
@@ -42,87 +42,99 @@ public class SalaryController extends ActionSupport {
         System.out.println(analyzeSalary.getWorktime());
         analyzeJob.setJobWorktime(analyzeSalary.getWorktime());
         AnalyzeJob analyzeJob1 = analyzeJobService.showSalaryByJobAndTime(analyzeJob);
-        System.out.println(analyzeJob1);
-        int salary1 = analyzeJob1.getSalary1();
-        int salary2 = analyzeJob1.getSalary2();
-        if (analyzeJob1==null){
-            errorInfo="小主对不起，在定向爬取的网站没有爬到相关职业信息，下次一定会尽力给您爬取到的";
-            return SUCCESS;
-        }else{
-            errorInfo="以下是本系统拼尽全力为您爬取分析到的，希望可以给小主一点帮助";
-            int random = (int)(1+Math.random()*(1000));
-            salary1 = salary1 - random;
-            salary2 = salary2 + random;
-            if ("女".equals(analyzeSalary.getSex())){
-                if ("未婚".equals(analyzeSalary.getMarry())){
-                    salary1 = salary1+300;
-                    salary2 = salary2+300;
+        if (analyzeJob1 != null) {
+            System.out.println(analyzeJob1);
+            int salary1 = analyzeJob1.getSalary1();
+            int salary2 = analyzeJob1.getSalary2();
+            if (analyzeJob1 == null) {
+                errorInfo = "在定向爬取的网站没有爬到相关信息，下次一定会尽力给您爬取到的";
+                return SUCCESS;
+            } else {
+                errorInfo = "以下是本系统拼尽全力为您爬取分析到的，希望可以给小主一点帮助";
+                int random = (int) (1 + Math.random() * (1000));
+                salary1 = salary1 - random;
+                salary2 = salary2 + random;
+                if ("女".equals(analyzeSalary.getSex())) {
+                    if ("未婚".equals(analyzeSalary.getMarry())) {
+                        salary1 = salary1 + 300;
+                        salary2 = salary2 + 300;
+                    }
+
                 }
+                if ("偏内向".equals(analyzeSalary.getCharacter())) {
+                    salary1 = salary1 - 100;
+                }
+                if ("开朗乐观".equals(analyzeSalary.getCharacter())) {
+                    salary1 = salary1 + 100;
+                }
+                if ("开放".equals(analyzeSalary.getCharacter())) {
+                    salary1 = salary1 + 300;
+                }
+                if ("本科".equals(analyzeSalary.getEducation())) {
+                    salary1 = salary1 + 300;
+                    salary2 = salary2 + 300;
+                }
+                if ("研究生".equals(analyzeSalary.getEducation())) {
+                    salary1 = salary1 + 600;
+                    salary2 = salary2 + 600;
+                }
+                if ("博士生".equals(analyzeSalary.getEducation())) {
+                    salary1 = salary1 + 2000;
+                    salary2 = salary2 + 2000;
+                }
+                if ("博士后".equals(analyzeSalary.getEducation())) {
+                    salary1 = salary1 + 2200;
+                    salary2 = salary2 + 2200;
+                }
+                if ("是".equals(analyzeSalary.getTechnology())) {
+                    salary1 = salary1 + 362;
+                    salary2 = salary2 + 312;
+                }
+                if ("是".equals(analyzeSalary.getTechnology())) {
+                    salary1 = salary1 + 362;
+                    salary2 = salary2 + 312;
+                }
+                if ("是".equals(analyzeSalary.getEverjob())) {
+                    salary1 = salary1 + 632;
+                    salary2 = salary2 + 462;
+                }
+                SalaryResult result = new SalaryResult();
+                result.setAddr(analyzeSalary.getAddr());
+                result.setJob(analyzeSalary.getJob());
+                System.out.println(result.getAddr());
+                System.out.println(result.getJob());
+                //bug
+                //analyzeSalaryService.selectSalaryByteAddrandJob(salaryResult);
+                SalaryResult result1 = analyzeSalaryService.selectSalaryByteAddrandJob(result);
+                if (result1 == null) {
+                    AnalyzeResult analyzeResult = new AnalyzeResult();
+                    analyzeResult.setErrorInfo("在定向爬取的网站没有爬到相关信息，下次一定会尽力给您爬取到的");
+                    ActionContext actionContext = ActionContext.getContext();
+                    Map<String, Object> session = actionContext.getSession();
+                    session.put("analyzeResult", analyzeResult);
+                } else {
+                    AnalyzeResult analyzeResult = new AnalyzeResult();
+                    analyzeResult.setBudgetSalary1(salary1);
+                    analyzeResult.setBudgetSalary2(salary2);
+                    analyzeResult.setErrorInfo(errorInfo);
+                    analyzeResult.setAddrAveSalary(result1.getAddraveSalary());
+                    analyzeResult.setIndustrySalary(result1.getJobaveSalary());
+                    analyzeResult.setTalentGap(result1.getTalentGap());
+                    ActionContext actionContext = ActionContext.getContext();
+                    Map<String, Object> session = actionContext.getSession();
+                    session.put("analyzeResult", analyzeResult);
+                }
+                return SUCCESS;
 
             }
-            if ("偏内向".equals(analyzeSalary.getCharacter())){
-                salary1 = salary1 - 100;
-            }
-            if ("开朗乐观".equals(analyzeSalary.getCharacter())){
-                salary1 = salary1 + 100;
-            }
-            if ("开放".equals(analyzeSalary.getCharacter())){
-                salary1 = salary1 + 300;
-            }
-            if ("本科".equals(analyzeSalary.getEducation())){
-                salary1 = salary1 + 300;
-                salary2 = salary2 + 300;
-            }
-            if ("研究生".equals(analyzeSalary.getEducation())){
-                salary1 = salary1 + 600;
-                salary2 = salary2 + 600;
-            }
-            if ("博士生".equals(analyzeSalary.getEducation())){
-                salary1 = salary1 + 2000;
-                salary2 = salary2 + 2000;
-            }
-            if ("博士后".equals(analyzeSalary.getEducation())){
-                salary1 = salary1 + 2200;
-                salary2 = salary2 + 2200;
-            }
-            if ("是".equals(analyzeSalary.getTechnology())){
-                salary1 = salary1 + 362;
-                salary2 = salary2 + 312;
-            }
-            if ("是".equals(analyzeSalary.getTechnology())){
-                salary1 = salary1 + 362;
-                salary2 = salary2 + 312;
-            }
-            if ("是".equals(analyzeSalary.getEverjob())){
-                salary1 = salary1 + 632;
-                salary2 = salary2 + 462;
-            }
-            SalaryResult result = new SalaryResult();
-            result.setAddr(analyzeSalary.getAddr());
-            result.setJob(analyzeSalary.getJob());
-            System.out.println(result.getAddr());
-            System.out.println(result.getJob());
-            //bug
-            //analyzeSalaryService.selectSalaryByteAddrandJob(salaryResult);
-            SalaryResult result1 = analyzeSalaryService.selectSalaryByteAddrandJob(result);
-            if(result1==null){
-                AnalyzeResult analyzeResult = new AnalyzeResult();
-                analyzeResult.setErrorInfo("小主对不起，在定向爬取的网站没有爬到相关职业信息，下次一定会尽力给您爬取到的");
-            }else {
-                AnalyzeResult analyzeResult = new AnalyzeResult();
-                analyzeResult.setBudgetSalary1(salary1);
-                analyzeResult.setBudgetSalary2(salary2);
-                analyzeResult.setErrorInfo(errorInfo);
-                analyzeResult.setAddrAveSalary(result1.getAddraveSalary());
-                analyzeResult.setIndustrySalary(result1.getJobaveSalary());
-                analyzeResult.setTalentGap(result1.getTalentGap());
-                ActionContext actionContext = ActionContext.getContext();
-                Map<String, Object> session = actionContext.getSession();
-                session.put("analyzeResult", analyzeResult);
-            }
+
+        }else{
+            AnalyzeResult analyzeResult = new AnalyzeResult();
+            analyzeResult.setErrorInfo("在定向爬取的网站没有爬到相关信息，我们会努力完善的");
+            ActionContext actionContext = ActionContext.getContext();
+            Map<String, Object> session = actionContext.getSession();
+            session.put("analyzeResult", analyzeResult);
             return SUCCESS;
-
         }
-
     }
 }

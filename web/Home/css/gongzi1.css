@@ -78,7 +78,6 @@ html,body{
 .region_box1, .region_box2{
 	padding:30px 20px;
 	font-size:17px;
-    height:300px;
     border:1px solid black;
 }
 
@@ -108,3 +107,35 @@ html,body{
 }
 
 
+          /*地区工作推荐样式*/
+.company, .company1{
+	height:120px;
+	padding:15px;
+	position:relative;
+	border:2px solid #999;
+	margin-bottom: 10px;
+	display: block;
+}
+.company_box, .companyEdu_box, .company_box1, .companyEdu_box1{
+	margin-bottom:10px;
+}
+.companyBox_job, .companyBox_job1{
+	font-size:20px;
+	color:#f40;
+	font-weight:bold;
+	margin-right:40px;
+}
+.companyBox_name, .companyBox_name1{
+	font-size:14px;
+	color:#c6c6c6;
+}
+.company_money, .company_money1{
+	font-size:32px;
+	color:#f40;
+	position:absolute;
+	right:50px;
+	top:40px;
+}
+.company:hover, .company1:hover{
+	text-decoration:none;
+}

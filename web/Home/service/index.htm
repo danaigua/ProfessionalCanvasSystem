@@ -94,7 +94,7 @@
             </
             <div>
                 <div class="FormFont" style="float: left;width: 500px;height: 540px;">
-                    <form action="showSalaryByJobAndTime" method="post" target="test">
+                    <form action="showSalaryByJobAndTime" method="post" target="test" id="serviceForm">
                         <fieldset>
                             <legend class="form_theme">大数据分析表单:</legend>
                             性别: <input type="radio" name="analyzeSalary.sex">男<input type="radio" name="analyzeSalary.sex">女<br><br>
@@ -130,7 +130,7 @@
                                 <option>3年~5年</option>
                                 <option>5年~</option>
                             </select><br><br>
-                            期望工作城市: <select name="analyzeSalary.addr">
+                            期望工作城市: <select name="analyzeSalary.addr" id="addr">
                             <option>北京</option>
                             <option>上海</option>
                             <option>深圳</option>
@@ -169,7 +169,7 @@
                             <option>哈尔滨</option>
                             <option>沈阳</option>
                         </select><br><br>
-                            期望行业: <select name="analyzeSalary.job">
+                            期望行业: <select name="analyzeSalary.job" id="job">
                             <option>JAVA</option>
                             <option>PYTHON</option>
                             <option>JAVASCRIPT</option>
@@ -712,14 +712,16 @@
             //     dian1.innerHTML = " "
             // }
             // ji ++;
+            var job = document.getElementById('job');
+            var addr = document.getElementById('addr');
             if(sum > 30 && sum < 50) {
                 big1.style.background = "#f40";
-                big1.style.boxShadow = "0 0 20px #f40"
+                big1.style.boxShadow = "0 0 20px #f40";
                 jiazai.style.color = "#f40";
                 num1.innerHTML = "获悉中"
             }else if(sum > 50 && sum < 70) {
                 big1.style.background = "#f0f";
-                big1.style.boxShadow = "0 0 20px #f0f"
+                big1.style.boxShadow = "0 0 20px #f0f";
                 jiazai.style.color = "#f0f"
             }else if(sum > 70) {
                 big1.style.background = "#c3c";
@@ -727,7 +729,7 @@
                 jiazai.style.color = "#c3c";
                 num1.innerHTML = "loading"
             }else{
-                big1.style.boxShadow = "0 0 20px #00f"
+                big1.style.boxShadow = "0 0 20px #00f";
                 jiazai.style.color = "#00f";
                 num1.innerHTML = "爬取中";
             }
@@ -737,7 +739,11 @@
                 big1.style.width = "100%";
                 num.innerHTML = 100;
                 window.clearInterval(time);
-                self.location.href = "../about/gongzuo.jsp";
+                console.log(addr);
+                console.log(job);
+                var url="../about/gongzuo.jsp?typeJob="+job.value+"&addr="+addr.value;
+                self.location.href = url;
+                console.log(url);
             }else{
                 sum += Math.floor(Math.random() * 10);
                 big1.style.width = sum + "%";
