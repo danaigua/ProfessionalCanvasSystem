@@ -40,4 +40,8 @@ public class JobInfoServiceImpl implements IJobInfoService {
         return iJobInfoDao.slectByteId(jobInfo);
     }
 
+    public List<JobInfo> selectTypeButeSchool() {
+        return iJobInfoDao.selectTypeButeSchool();
+    }
+
 }

@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	<div class="company_recommend">
-		<h1 class="companyRec_theme">精品推荐</h1>
+		<h1 class="companyRec_theme">本站推荐</h1>
 		<hr class="companyRec_line">
 		<div class="companyRec_box">
 			<a href="../job/baidu1.html" class="companyRec_link">

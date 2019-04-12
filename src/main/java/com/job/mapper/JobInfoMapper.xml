@@ -44,4 +44,7 @@
     <select id="slectByteId" resultMap="BaseResultMap">
         select * from jobinfo where id = #{id}
     </select>
+    <select id="selectTypeButeSchool" resultMap="BaseResultMap">
+        select * from jobinfo where job_type="校招"
+    </select>
 </mapper>

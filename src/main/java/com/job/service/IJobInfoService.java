@@ -28,4 +28,5 @@ public interface IJobInfoService {
      */
     JobInfo selectByteId(JobInfo jobInfo);
 
+    List<JobInfo> selectTypeButeSchool();
 }

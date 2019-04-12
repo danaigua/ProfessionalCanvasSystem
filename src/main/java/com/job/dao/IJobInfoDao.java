@@ -14,4 +14,6 @@ public interface IJobInfoDao {
     public List<JobInfo> selectByteAddr(JobInfo jobInfo);
     //通过id查找工作，动态添加到网页上面
     public JobInfo slectByteId(JobInfo jobInfo);
+    //返回校招工作
+    public List<JobInfo> selectTypeButeSchool();
 }

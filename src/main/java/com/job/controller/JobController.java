@@ -9,8 +9,17 @@ import java.util.List;
 
 public class JobController extends ActionSupport {
     private List<JobInfo> jobs;
+    private List<JobInfo> jobs2;
 
     private JobInfo jobInfo;
+
+    public List<JobInfo> getJobs2() {
+        return jobs2;
+    }
+
+    public void setJobs2(List<JobInfo> jobs2) {
+        this.jobs2 = jobs2;
+    }
 
     public JobInfo getJobInfo() {
         return jobInfo;
@@ -33,6 +42,11 @@ public class JobController extends ActionSupport {
     //返回数据给搜索栏
     public String showAllJob(){
             jobs = JobService.selectAll();
+        return SUCCESS;
+    }
+    //返回校招的所以求职信息
+    public String selectTypeButeSchool(){
+        jobs2 = JobService.selectTypeButeSchool();
         return SUCCESS;
     }
 }

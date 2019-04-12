@@ -172,10 +172,10 @@
 					<a href="javascript:" class="companyRec_link">
 						<i class="companyRec_img">斗象科技</i>
 						<h2 class="companyRec_name">前端工程师</h2>
-						<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : 五险一金</p>
-						<p class="companyRec_experience companyRec_text"><strong>经验</strong> : 三年以上</p>
+						<p class="companyRec_welfare companyRec_text"><strong>福利</strong> : <i class="company_wuxian">五险一金</i></p>
+						<p class="companyRec_experience companyRec_text"><strong>经验</strong> : <i class="company_sannian">三年以上</i></p>
 						<p class="companyRec_describe companyRec_text">
-							<strong>职位描述</strong>: 良好的团队合作能力，工作积极主动，责任心强。</p>
+							<strong>职位描述</strong>: <i class="company_liang">良好的团队合作能力，工作积极主动，责任心强。</i></p>
 						<p class="companyRec_money">8000￥~15000￥</p>
                         <p class="leixing">asdfasf</p>
 					</a>
@@ -547,6 +547,9 @@
 					 var count = 0;
 					 var length = 0;
 					 var companyRecLink = $(".companyRec_link");
+					 var companySan = $(".campany_sannian");
+					 var companyWuxian = $(".company_wuxian");
+					 var companyLiang = $(".company_liang");
 					 //获取参数
 					 var strHref = document.location.toString();
 					 var intPos = strHref.indexOf("?");
@@ -554,10 +557,10 @@
 					 var companyLink = "<a href=\"javascript:\" class=\"companyRec_link\">\n" +
 							 "\t\t\t\t\t <i class=\"companyRec_img\"></i>\n" +
 							 "\t\t\t\t\t\t\t <h2 class=\"companyRec_name\"></h2>\n" +
-							 "\t\t\t\t\t\t\t <p class=\"companyRec_welfare companyRec_text\"><strong>福利</strong> : </p>\n" +
-							 "\t\t\t\t\t <p class=\"companyRec_experience companyRec_text\"><strong>经验</strong> : </p>\n" +
+							 "\t\t\t\t\t\t\t <p class=\"companyRec_welfare companyRec_text\"><strong>福利</strong> : <i class='company_wuxian'></i></p>\n" +
+							 "\t\t\t\t\t <p class=\"companyRec_experience companyRec_text\"><strong>经验</strong> : <i class='company_sannian'></i></p>\n" +
 							 "\t\t\t\t\t <p class=\"companyRec_describe companyRec_text\">\n" +
-							 "\t\t\t\t\t\t\t <strong>职位描述</strong>: </p>\n" +
+							 "\t\t\t\t\t\t\t <strong>职位描述</strong>: <i class='company_liang'></i></p>\n" +
 							 "\t\t\t\t\t <p class=\"companyRec_money\"></p>\n" +
 							 "\t\t\t\t\t </a>\""
 
@@ -567,7 +570,7 @@
 					 if(count == 0) {
 						 $.ajax({
 							 type: 'post',
-							 url: url,
+							 url: 'selectTypeButeSchool',
 							 dataType: 'json',
 							 async: true,
 							 data: {},
@@ -586,20 +589,21 @@
 									 }
 								 }
 								 ;
-								 // for (var a1 in result) {
-									//  for (var b1 in result[a1]) {
-									// 	 $(".company").eq(length).children().eq(0).children().eq(0).text(result[a1][b1].job);
-									// 	 $(".company").eq(length).children().eq(0).children().eq(1).text(result[a1][b1].address);
-									// 	 $(".company").eq(length).children().eq(1).children().text(result[a1][b1].academic);
-									// 	 $(".company").eq(length).children().eq(2).text(result[a1][b1].company);
-									// 	 $(".company").eq(length).children().eq(3).text(result[a1][b1].salary);
-									// 	 // $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
-									// 	 $(".company").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
-									// 	 // $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
-									// 	 length++;
-									//  }
-								 //
-								 // }
+								 for (var a1 in result) {
+									 for (var b1 in result[a1]) {
+										 $(".companyRec_link").eq(length).children().eq(0).text(result[a1][b1].company);
+										 $(".companyRec_link").eq(length).children().eq(1).text(result[a1][b1].job);
+										 $(".companyRec_link").eq(length).children().eq(2).children().eq(1).text(result[a1][b1].welfare);
+										 $(".companyRec_link").eq(length).children().eq(3).children().eq(1).text(result[a1][b1].experience);
+										 $(".companyRec_link").eq(length).children().eq(4).children().eq(1).text(result[a1][b1].descrive);
+										 $(".companyRec_link").eq(length).children().eq(5).text(result[a1][b1].salary);
+										 // $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
+										 $(".companyRec_link").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
+										 // $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
+										 length++;
+									 }
+
+								 }
 
 							 },
 							 error: function () {

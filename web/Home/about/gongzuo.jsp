@@ -1,3 +1,4 @@
+<%@ page import="com.job.pojo.AnalyzeResult" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -84,6 +85,9 @@
         		<p class="exemtion_text">
         			2.对由于使用本网站所产生的任何直接、间接或偶然性的损失或破坏，我们不承担任何责任，无论该损失或破坏是否源于疏忽、违约、诽谤、侵权甚至电脑病毒。
         		</p>
+				<p class="exemtion_text">
+					3.本站所有的数据均来着互联网爬取，可能会有一些误差，用户默认同意接受这些误差，本站的数据拒绝商用，如商业产生的一切后果本站概不负责。
+				</p>
         	</div>
         </div>
     </div>
@@ -123,7 +127,70 @@
 	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
 	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
 	</script>
-	  					<%--地区工作推荐阿贾克斯--%>
+	<%--可视化分析结果--%>
+	<script type="text/javascript">
+	 var myChart = echarts.init(document.getElementById('industry_box1'));
+	 option = {
+		 title : {
+			 text: '分析结果',
+			 subtext: '',
+			 x:'center'
+		 },
+		 tooltip : {
+			 trigger: 'item',
+			 formatter: "{a} <br/>{b} : {c} ({d}%)"
+		 },
+		 legend: {
+			 orient : 'vertical',
+			 x : 'left',
+			 data:['理论工资','本地区平均工资','本行业平均工资','该行业的人才缺口']
+		 },
+		 toolbox: {
+			 show : true,
+			 feature : {
+				 mark : {show: true},
+				 dataView : {show: true, readOnly: false},
+				 magicType : {
+					 show: true,
+					 type: ['pie', 'funnel'],
+					 option: {
+						 funnel: {
+							 x: '25%',
+							 width: '50%',
+							 funnelAlign: 'left',
+							 max: 1548000
+						 }
+					 }
+				 },
+				 restore : {show: true},
+				 saveAsImage : {show: true}
+			 }
+		 },
+		 calculable : true,
+		 series : [
+			 {
+				 name:'',
+				 type:'pie',
+				 radius : '55%',
+				 center: ['50%', '60%'],
+				 data:[
+					 {value:335, name:'理论工资'},
+					 {value:310, name:'本地区平均工资'},
+					 {value:234, name:'本行业平均工资'},
+					 {value:135, name:'该行业的人才缺口'}
+				 ]
+			 }
+		 ]
+	 };
+
+	 myChart.setOption(option);
+
+
+
+
+	</script>
+
+	<%--地区工作推荐阿贾克斯--%>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			window.onload = function () {
@@ -153,6 +220,20 @@
 				var url = 'searchJobByteAddr?' + strRight;
 				var aa = 0;
 				var sum = 0;
+
+
+				// var xhr = getXmlHttpRequest();
+				// xhr.onreadystatechange = function () {
+				// 	if(xhr.readyState === 4 && xhr.status === 200){
+				// 		for(var i = 0; i < option.series[0].data.length; i ++) {
+				// 			alert("1");
+				// 			option.series[0].data[i].value = parseInt(wagesRenshu[i].text())
+				// 		}
+				// 		myChart.setOption(option);
+				// 	}
+				// };
+
+
 				if(count == 0) {
 					$.ajax({
 						type: 'post',
@@ -189,7 +270,8 @@
 									length++;
 								}
 
-							}
+							};
+
 
 						},
 						error: function () {
@@ -198,9 +280,16 @@
 					});
 				}
 			}
+			var wagesRenshu = $(".wages_renshu");		//数据可视化
+			var exemption = $(".exemption");
+			// 数据可视化信息填写
+			for(var i = 0; i < option.series[0].data.length; i ++) {
+				option.series[0].data[i].value = parseInt(wagesRenshu.eq(i).text())
+			}
+			myChart.setOption(option);
 		})
 	</script>
-	               <%--行业工作推荐阿贾克斯--%>
+	<%--行业工作推荐阿贾克斯--%>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			window.onload = function () {
@@ -263,9 +352,9 @@
 									// $(".company").eq(length).attr("href", $(".company").eq(length).attr("href") + "?id=" + result[a1][b1].id);
 									$(".company1").eq(length).attr("href","searchJobByteId?id=" + result[a1][b1].id);
 									// $(".company").eq(length).attr("href",  "searchJobByteId?id=" + result[a1][b1].id);
-                                    console.log(result[a1][b1]);
-                                    console.log(result[a1]);
-                                    console.log(result[b1]);
+									console.log(result[a1][b1]);
+									console.log(result[a1]);
+									console.log(result[b1]);
 									length++;
 								}
 
@@ -279,64 +368,6 @@
 				}
 			}
 		})
-	</script>
-	           <%--可视化分析结果--%>
-	<script type="text/javascript">
-	 var myChart = echarts.init(document.getElementById('industry_box1'));
-	 option = {
-		 title : {
-			 text: '分析结果',
-			 subtext: '过的痕迹',
-			 x:'center'
-		 },
-		 tooltip : {
-			 trigger: 'item',
-			 formatter: "{a} <br/>{b} : {c} ({d}%)"
-		 },
-		 legend: {
-			 orient : 'vertical',
-			 x : 'left',
-			 data:['理论工资','本地区平均工资','本行业平均工资','该行业的人才缺口']
-		 },
-		 toolbox: {
-			 show : true,
-			 feature : {
-				 mark : {show: true},
-				 dataView : {show: true, readOnly: false},
-				 magicType : {
-					 show: true,
-					 type: ['pie', 'funnel'],
-					 option: {
-						 funnel: {
-							 x: '25%',
-							 width: '50%',
-							 funnelAlign: 'left',
-							 max: 1548
-						 }
-					 }
-				 },
-				 restore : {show: true},
-				 saveAsImage : {show: true}
-			 }
-		 },
-		 calculable : true,
-		 series : [
-			 {
-				 name:'访问来源',
-				 type:'pie',
-				 radius : '55%',
-				 center: ['50%', '60%'],
-				 data:[
-					 {value:335, name:'理论工资'},
-					 {value:310, name:'本地区平均工资'},
-					 {value:234, name:'本行业平均工资'},
-					 {value:135, name:'该行业的人才缺口'}
-				 ]
-			 }
-		 ]
-	 };
-
-	 myChart.setOption(option);
 	</script>
 </body>
 </html>

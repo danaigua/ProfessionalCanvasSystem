@@ -142,5 +142,11 @@
                 <param name="jobInfos2"></param>
             </result>
         </action>
+        <!--返回校招的工作-->
+        <action name="selectTypeButeSchool" class="com.job.controller.JobController" method="selectTypeButeSchool">
+            <result name="success" type="json">
+                <param name="jobs2"></param>
+            </result>
+        </action>
     </package>
 </struts>
