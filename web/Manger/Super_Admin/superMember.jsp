@@ -58,7 +58,7 @@
     <!-- 右边信息显示 -->
     <div class="dataBox_right">
         <!-- 表单控制 -->
-        <form method="post" action="AddJob.action">
+        <form method="post" action="AddJob.action"  enctype="multipart/form-data" accept-charset="UTF-8">
             <!-- 右边求职信息 -->
             <div class="dataBox_jobInformation dataBox_information">
                 <div class="dataBoxInp_box">

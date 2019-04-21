@@ -12,7 +12,7 @@
     <div class="dataBox_nav">     <!-- 左边导航栏 -->
         <i class="dataBoxNav_theme">求职资料</i>
     </div>
-    <form method="post" action="AddJobOri.action">
+    <form method="post" action="AddJobOri.action" enctype="multipart/form-data" accept-charset="UTF-8">
         <div class="dataBox_form">
         <div class="dataBox_jobInformation dataBox_information">
             <div class="dataBoxInp_box">
