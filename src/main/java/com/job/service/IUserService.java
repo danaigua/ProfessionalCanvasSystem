@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
-@Service
 public interface IUserService {
    User login(User user);
    int Register(User user);
@@ -26,8 +24,8 @@ public interface IUserService {
    List<User> selectAll();
 
    //分页查询
-   List<User> selectUserBytePage();
+   List<User> selectUserBytePage(int page,int limit);
 
    //查询总数
-   int findUserCount(int page,int limit);
+   int findUserCount();
 }

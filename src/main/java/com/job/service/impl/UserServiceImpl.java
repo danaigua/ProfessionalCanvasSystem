@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 @Service("userService")
-public abstract class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements IUserService {
     @Resource
     private IUserDao userDao;
 
@@ -45,17 +44,25 @@ public abstract class UserServiceImpl implements IUserService {
         return userDao.selectAll();
     }
 
-    public List<User> selectUserBytePage(int page,int limit) {
+    public List<User> selectUserBytePage(int page, int limit) {
         page = (page - 1)*limit;
         return userDao.selectUserBytePage(page,limit);
     }
 
     public int findUserCount() {
-        return userDao.findUserCount();
+//        return 8;
+//        return userDao.findUserCount();
+        List<User> users = userDao.selectAll();
+        return users.size();
     }
 
-//    public int SelectOne(User user) {
-//        return userDao.SelectOne(user);
+    //    public List<User> selectUserBytePage(int page,int limit) {
+//        page = (page - 1)*limit;
+//        return userDao.selectUserBytePage(page,limit);
+//    }
+//
+//    public int findUserCount() {
+//        return userDao.findUserCount();
 //    }
 
 

@@ -149,6 +149,9 @@ public class UserController extends ActionSupport implements ServletResponseAwar
          userList = userService.selectAll();
         return SUCCESS;
     }
+    public String helloWorld(){
+        return SUCCESS;
+    }
     public void setServletResponse(HttpServletResponse response) {
         this.response = response;
     }

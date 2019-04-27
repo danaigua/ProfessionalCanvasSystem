@@ -75,8 +75,6 @@
         <action name="searchJobByteId" class="com.job.controller.SearchJobBytetypeController" method="searchJobByteId">
             <result name="success" type="redirect">/Home/jobVo/dynamicJob.jsp</result>
         </action>
-
-
     </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
@@ -148,6 +146,12 @@
                 <param name="jobs2"></param>
             </result>
         </action>
+        <action name="list" class="com.job.controller.UserManagerController" method="list">
+            <result name="success" type="json">
+                <param name="jsonData"></param>
+            </result>
+        </action>
+
     </package>
 
 </struts>

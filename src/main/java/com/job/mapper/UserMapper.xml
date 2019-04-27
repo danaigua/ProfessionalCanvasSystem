@@ -40,7 +40,7 @@
     <select id="selectUserBytePage" resultMap="BaseResultMap">
         select * from user limit #{page},#{limit};
     </select>
-    <select id="findUserCount" resultMap="BaseResultMap">
+    <select id="findUserCount" resultMap="BaseResultMap" resultType="java.lang.Integer">
         select count(*) from user;
     </select>
 
