@@ -36,8 +36,13 @@
     <select id="selectAll" parameterType="User" resultMap="BaseResultMap">
         select * from user;
     </select>
-
-
+    <!--  分页查询     -->
+    <select id="selectUserBytePage" resultMap="BaseResultMap">
+        select * from user limit #{page},#{limit};
+    </select>
+    <select id="findUserCount" resultMap="BaseResultMap">
+        select count(*) from user;
+    </select>
 
 
 </mapper>

@@ -102,8 +102,8 @@
 								<dd><a href="">新闻管理</a></dd>
 							</dl>
 						</li>
-						<li class="layui-nav-item"><a href="">用户管理</span></a></li>
-						<li class="layui-nav-item"><a href="">管理员管理</span></a></li>
+						<li class="layui-nav-item"><a href="">用户管理</a></li>
+						<li class="layui-nav-item"><a href="">管理员管理</a></li>
 					</ul>
 				</div>
 			</div>
@@ -111,7 +111,7 @@
 				<div class="layui-tab-item layui-show" style="">
 					<div class="layui-main">
 						<div id="LAY_preview">
-							<table class="layui-hide" id="test" lay-filter="test"></table>
+							<table class="layui-hide" id="userTable" lay-filter="test"></table>
 						</div>
 					</div>
 				</div>
@@ -135,25 +135,26 @@
 		<script>
 			layui.use('table', function() {
 				var table = layui.table;
-
 				table.render({
-					elem: '#test',
-					url: '/test/table/demo1.json',
+					elem: '#userTable',
+					url: 'newname.action',
 					toolbar: '#toolbarDemo',
+					limits:[10,20,30,40],
+					limit:10,
 					title: '用户数据表',
 					cols: [
 						[{
 							type: 'checkbox',
 							fixed: 'left'
 						}, {
-							field: 'id',
+							field: 'userId',
 							title: 'ID',
 							width: 100,
 							fixed: 'left',
 							unresize: true,
 							sort: true
 						}, {
-							field: 'username',
+							field: 'userName',
 							title: '用户名',
 							width: 150,
 							edit: 'text'
@@ -166,13 +167,13 @@
 								return '<em>' + res.email + '</em>'
 							}
 						}, {
-							field: 'phone',
+							field: 'userPassword',
 							title: '密码',
 							width: 150,
 							edit: 'text',
 							sort: true
 						}, {
-							field: 'phone',
+							field: 'telephone',
 							title: '手机号码',
 							width: 150
 						}]

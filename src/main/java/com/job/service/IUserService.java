@@ -24,4 +24,10 @@ public interface IUserService {
 
    //查询所有用户
    List<User> selectAll();
+
+   //分页查询
+   List<User> selectUserBytePage();
+
+   //查询总数
+   int findUserCount(int page,int limit);
 }

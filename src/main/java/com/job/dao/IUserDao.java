@@ -2,6 +2,8 @@ package com.job.dao;
 
 
 import com.job.pojo.User;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -22,6 +24,8 @@ public interface IUserDao {
 
     //列出所有的用户来增删改查
     public List<User> selectAll();
-
-
+    //分页查询
+    public List<User> selectUserBytePage(@Param(value = "page")int page,@Param(value = "limit")int limit);
+    //查询出总数
+    public int findUserCount();
 }

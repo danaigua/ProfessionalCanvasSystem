@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service("userService")
-public class UserServiceImpl implements IUserService {
+public abstract class UserServiceImpl implements IUserService {
     @Resource
     private IUserDao userDao;
 
@@ -43,6 +43,15 @@ public class UserServiceImpl implements IUserService {
 
     public List<User> selectAll() {
         return userDao.selectAll();
+    }
+
+    public List<User> selectUserBytePage(int page,int limit) {
+        page = (page - 1)*limit;
+        return userDao.selectUserBytePage(page,limit);
+    }
+
+    public int findUserCount() {
+        return userDao.findUserCount();
     }
 
 //    public int SelectOne(User user) {
