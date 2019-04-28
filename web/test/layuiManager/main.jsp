@@ -17,28 +17,35 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>大数据智能求职系统后台</title>
-    <link href="${pageContext.request.contextPath}/test/layui后台/css/style.css"
+    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style.css"
           rel="stylesheet">
     <link
-            href="${pageContext.request.contextPath}/test/layui后台/bootstrap/css/bootstrap.css"
+            href="${pageContext.request.contextPath}/test/layuiManager/bootstrap/css/bootstrap.css"
             rel="stylesheet">
     <link
-            href="${pageContext.request.contextPath}/test/layui后台/bootstrap/css/bootstrap-responsive.css"
+            href="${pageContext.request.contextPath}/test/layuiManager/bootstrap/css/bootstrap-responsive.css"
             rel="stylesheet">
-    <script src="${pageContext.request.contextPath}/test/layui后台/bootstrap/js/jQuery.js"></script>
+    <script src="${pageContext.request.contextPath}/test/layuiManager/bootstrap/js/jQuery.js"></script>
     <script
-            src="${pageContext.request.contextPath}/test/layui后台/bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/test/layui后台/layui/css/layui.css" media="all">
+            src="${pageContext.request.contextPath}/test/layuiManager/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/test/layuiManager/layui/css/layui.css" media="all">
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
     <jsp:include page="common/head.jsp"></jsp:include>
     <jsp:include page="common/manu.jsp"></jsp:include>
-    <jsp:include page="common/nav.jsp"></jsp:include>
-    <jsp:include page="<%=mainPage%>"></jsp:include>m
+        <div class="layui-body layui-tab-content site-demo site-demo-body">
+            <div class="layui-tab-item layui-show" style="">
+                <div class="layui-main">
+                    <jsp:include page="common/nav.jsp"></jsp:include>
+                    <jsp:include page="userList/users.jsp"></jsp:include>
+                </div>
+            </div>
+        </div>
+    <%--<jsp:include page="<%=mainPage%>"></jsp:include>--%>
     <jsp:include page="common/foot.jsp"></jsp:include>
 </div>
-<script src="${pageContext.request.contextPath}/test/layui后台/layui/layui.js" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/test/layuiManager/layui/layui.js" charset="utf-8"></script>
 <script>
     layui.use('element', function() {
         var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块

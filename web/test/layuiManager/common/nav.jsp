@@ -12,19 +12,15 @@
     <title>Title</title>
 </head>
 <body>
-<div class="layui-body layui-tab-content site-demo site-demo-body">
-    <div class="layui-tab-item layui-show" style="">
-        <div class="layui-main">
+
             <span class="layui-breadcrumb">
                 <c:choose>
                     <c:when test="${navCode==null }">
-                        当前位置：<a href="${pageContext.request.contextPath}/test/layui后台/main.jsp">主页</a>
+                        当前位置：<a href="${pageContext.request.contextPath}/test/layuiManager/main.jsp">主页</a>
                     </c:when>
                     <c:otherwise>${navCode }</c:otherwise>
                 </c:choose>
             </span>
-        </div>
-    </div>
-</div>
+
 </body>
 </html>

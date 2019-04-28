@@ -5,6 +5,7 @@ import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -17,15 +18,6 @@ public class UserManagerController extends ActionSupport {
     private int page = 1;
     private int limit = 1;
     private Map<String, Object> result = null;
-    private JSONArray jsonData = null;
-
-    public JSONArray getJsonData() {
-        return jsonData;
-    }
-
-    public void setJsonData(JSONArray jsonData) {
-        this.jsonData = jsonData;
-    }
 
     public Map<String, Object> getResult() {
         return result;
@@ -61,13 +53,8 @@ public class UserManagerController extends ActionSupport {
         result.put("msg","");
         result.put("count",userService2.findUserCount());
         JSONArray array = JSONArray.fromObject(users);
-
-
-//        System.out.println(array.toString());
         result.put("data",array);
-        jsonData = JSONArray.fromObject(result);
-//        System.out.println(jsonData.toString());
-        ActionContext.getContext().getValueStack().set("jsonData",jsonData);
+        ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
         return SUCCESS;
     }
 }

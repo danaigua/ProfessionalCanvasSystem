@@ -148,7 +148,7 @@
         </action>
         <action name="list" class="com.job.controller.UserManagerController" method="list">
             <result name="success" type="json">
-                <param name="jsonData"></param>
+                <param name="root">jsonData</param>
             </result>
         </action>
 
