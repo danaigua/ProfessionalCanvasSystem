@@ -24,8 +24,13 @@ public interface IUserDao {
 
     //列出所有的用户来增删改查
     public List<User> selectAll();
+
+
     //分页查询
     public List<User> selectUserBytePage(@Param(value = "page")int page,@Param(value = "limit")int limit);
     //查询出总数
     public int findUserCount();
+
+//    通过id来删除用户
+    public int deleteUserByteId(@Param(value = "id") int id);
 }

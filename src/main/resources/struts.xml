@@ -146,12 +146,19 @@
                 <param name="jobs2"></param>
             </result>
         </action>
+
+        <!--返回laiui用户列表-->
         <action name="list" class="com.job.controller.UserManagerController" method="list">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
             </result>
         </action>
-
+        <!--layui的删除操作-->
+        <action name="deleteUser" class="com.job.controller.UserManagerController" method="deleteUserByteId">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
     </package>
 
 </struts>

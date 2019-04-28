@@ -28,4 +28,6 @@ public interface IUserService {
 
    //查询总数
    int findUserCount();
+   //删除用户
+   int deleteUserByteId(int id);
 }

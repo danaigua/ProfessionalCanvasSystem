@@ -136,7 +136,7 @@
 			layui.use('table', function() {
 				var table = layui.table;
 				table.render({
-					elem: '#userTable',
+					elem: 'list',
 					url: 'newname.action',
 					toolbar: '#toolbarDemo',
 					limits:[10,20,30,40],
@@ -170,12 +170,13 @@
 							field: 'userPassword',
 							title: '密码',
 							width: 150,
-							edit: 'text',
-							sort: true
+							edit: 'text'
+							edit: 'text'
 						}, {
 							field: 'telephone',
 							title: '手机号码',
-							width: 150
+							width: 150,
+							edit: 'text'
 						}]
 					],
 					page: true

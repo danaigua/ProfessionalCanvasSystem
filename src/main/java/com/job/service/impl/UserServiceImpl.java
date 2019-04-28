@@ -56,6 +56,10 @@ public class UserServiceImpl implements IUserService {
         return users.size();
     }
 
+    public int deleteUserByteId(int id) {
+        return userDao.deleteUserByteId(id);
+    }
+
     //    public List<User> selectUserBytePage(int page,int limit) {
 //        page = (page - 1)*limit;
 //        return userDao.selectUserBytePage(page,limit);

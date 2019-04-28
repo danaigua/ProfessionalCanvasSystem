@@ -18,6 +18,15 @@ public class UserManagerController extends ActionSupport {
     private int page = 1;
     private int limit = 1;
     private Map<String, Object> result = null;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Map<String, Object> getResult() {
         return result;
@@ -44,8 +53,10 @@ public class UserManagerController extends ActionSupport {
     }
 
 
-
-
+    /**
+     * 返回用户列表
+     * @return
+     */
     public String list(){
         List<User> users = userService2.selectUserBytePage(page, limit);
         result = new HashMap<String,Object>();
@@ -55,6 +66,28 @@ public class UserManagerController extends ActionSupport {
         JSONArray array = JSONArray.fromObject(users);
         result.put("data",array);
         ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
+        return SUCCESS;
+    }
+
+    /**
+     * layui的删除操作
+     * @return
+     */
+    public String deleteUserByteId(){
+        int x = userService2.deleteUserByteId(id);
+        if (x !=0 ){
+            result = new HashMap<String,Object>();
+            result.put("code",1);
+            result.put("msg","");
+            ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
+
+        }else{
+
+            result = new HashMap<String,Object>();
+            result.put("code",-1);
+            result.put("msg","");
+            ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
+        }
         return SUCCESS;
     }
 }
