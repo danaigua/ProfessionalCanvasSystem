@@ -35,10 +35,12 @@
     <jsp:include page="common/head.jsp"></jsp:include>
     <jsp:include page="common/manu.jsp"></jsp:include>
         <div class="layui-body layui-tab-content site-demo site-demo-body">
-            <div class="layui-tab-item layui-show" style="">
+            <div class="layui-tab-item layui-show">
                 <div class="layui-main">
-                    <jsp:include page="common/nav.jsp"></jsp:include>
-                    <jsp:include page="userList/users.jsp"></jsp:include>
+                    <div class="bread"><jsp:include page="common/nav.jsp"></jsp:include></div>
+                    <div class="layuitable">
+                        <table class="layui-hide" id="users" lay-filter="test"></table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,6 +56,28 @@
         element.on('nav(demo)', function(elem) {
             //console.log(elem)
             layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        table.render({
+            elem: '#users'
+            ,url:'list'
+            ,page: true
+            ,skin: 'line' //行边框风格
+            ,even: true //开启隔行背景
+            ,size: 'sm' //小尺寸的表格
+            ,cols: [[
+                {field:'userId', width:160, title: 'ID', sort: true}
+                ,{field:'userName', width:160, title: '用户名', edit: 'text'}
+                ,{field:'userPassword', width:160, title: '密码',  edit: 'text'}
+                ,{field:'telephone', width:160, title: '手机号码', edit: 'text'}
+                ,{field:'email', width:160, title: '邮箱',  edit: 'text'}
+            ]]
+
         });
     });
 </script>

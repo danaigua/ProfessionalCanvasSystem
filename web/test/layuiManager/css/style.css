@@ -2,3 +2,14 @@
 .b{text-align: center;line-height: 60px;}
 .foot{text-align: center;}
 .default{font: 24px Red;text-align: center;}
+.layuitable{
+    /*border: solid #000;*/
+    width: 800px;
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+.bread{
+    height: 20px;
+    width: 100%;
+}

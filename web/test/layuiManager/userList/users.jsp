@@ -26,11 +26,11 @@
             ,even: true //开启隔行背景
             ,size: 'sm' //小尺寸的表格
             ,cols: [[
-                {field:'userId', width:180, title: 'ID', sort: true}
-                ,{field:'userName', width:180, title: '用户名', edit: 'text'}
-                ,{field:'userPassword', width:180, title: '密码',  edit: 'text'}
-                ,{field:'telephone', width:180, title: '手机号码', edit: 'text'}
-                ,{field:'email', width:180, title: '邮箱',  edit: 'text'}
+                {field:'userId', width:150, title: 'ID', sort: true}
+                ,{field:'userName', width:150, title: '用户名', edit: 'text'}
+                ,{field:'userPassword', width:150, title: '密码',  edit: 'text'}
+                ,{field:'telephone', width:150, title: '手机号码', edit: 'text'}
+                ,{field:'email', width:150, title: '邮箱',  edit: 'text'}
             ]]
 
         });
