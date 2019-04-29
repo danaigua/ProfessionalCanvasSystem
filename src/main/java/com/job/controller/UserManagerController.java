@@ -19,6 +19,42 @@ public class UserManagerController extends ActionSupport {
     private int limit = 1;
     private Map<String, Object> result = null;
     private int id;
+    private User user;
+    private int updateid;
+    private String updatefield;
+    private String updatevalue;
+//    private String[] names = {"userPassword","userName","email","telephone"};
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getUpdateid() {
+        return updateid;
+    }
+
+    public void setUpdateid(int updateid) {
+        this.updateid = updateid;
+    }
+
+    public String getUpdatefield() {
+        return updatefield;
+    }
+
+    public void setUpdatefield(String updatefield) {
+        this.updatefield = updatefield;
+    }
+
+    public String getUpdatevalue() {
+        return updatevalue;
+    }
+
+    public void setUpdatevalue(String updatevalue) {
+        this.updatevalue = updatevalue;
+    }
 
     public int getId() {
         return id;
@@ -88,6 +124,50 @@ public class UserManagerController extends ActionSupport {
             result.put("msg","");
             ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
         }
+        return SUCCESS;
+    }
+    public String updateUserInfo(){
+        user = new User();
+        user.setUserId(updateid);
+        result = new HashMap<String,Object>();
+        result.put("msg","");
+        if ("userPassword".equals(updatefield)){
+            user.setUserPassword(updatevalue);
+            int i = userService2.updateUserInfo(user);
+            if (i>0){
+                result.put("code",2);
+            }else{
+                result.put("code",-1);
+            }
+        }
+        if ("userName".equals(updatefield)){
+            user.setUserName(updatevalue);
+            int i = userService2.updateUserInfo(user);
+            if (i>0){
+                result.put("code",2);
+            }else{
+                result.put("code",-1);
+            }
+        }
+        if ("email".equals(updatefield)){
+            user.setEmail(updatevalue);
+            int i = userService2.updateUserInfo(user);
+            if (i>0){
+                result.put("code",2);
+            }else{
+                result.put("code",-1);
+            }
+        }
+        if ("telephone".equals(updatefield)){
+            user.setTelephone(updatevalue);
+            int i = userService2.updateUserInfo(user);
+            if (i>0){
+                result.put("code",2);
+            }else{
+                result.put("code",-1);
+            }
+        }
+        ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
         return SUCCESS;
     }
 }

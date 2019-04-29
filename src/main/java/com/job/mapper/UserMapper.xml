@@ -43,8 +43,19 @@
     <select id="findUserCount" resultMap="BaseResultMap" resultType="java.lang.Integer">
         select count(*) from user;
     </select>
+    <!--删除一个用户-->
     <delete id="deleteUserByteId" >
         delete from user where user_id = #{id}
     </delete>
-
+    <!--修改一个用户的信息-->
+    <update id="updateUserInfo">
+        update user
+          <set>
+              <if test="userName!=null">user_name = #{userName}</if>
+              <if test="userPassword!=null">user_password = #{userPassword}</if>
+              <if test="email!=null">Email = #{email}</if>
+              <if test="telephone!=null">user_name = #{telephone}</if>
+          </set>
+          where user_id = #{userId}
+    </update>
 </mapper>

@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!-- [if lt IE 9]> -->
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
 <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
         <ul class="layui-nav layui-nav-tree layui-inline " lay-filter="demo " style="margin-right: 10px;">
@@ -39,8 +43,15 @@
                     <dd><a href="">新闻管理</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">用户管理</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">用户管理<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">用户资料</a></dd>
+                    <dd><a href="">用户添加</a></dd>
+                </dl>
+            </li>
             <li class="layui-nav-item"><a href="">管理员管理</a></li>
+            <li class="layui-nav-item"><a href="">用户日志管理</a></li>
         </ul>
     </div>
 </div>

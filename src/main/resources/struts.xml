@@ -159,6 +159,12 @@
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--layui的修改用户信息操作-->
+        <action name="updateUserInfo" class="com.job.controller.UserManagerController" method="updateUserInfo">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
     </package>
 
 </struts>

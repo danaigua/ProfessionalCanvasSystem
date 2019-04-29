@@ -30,4 +30,6 @@ public interface IUserService {
    int findUserCount();
    //删除用户
    int deleteUserByteId(int id);
+   //通过动态sql来修改用户信息
+   int updateUserInfo(User user);
 }

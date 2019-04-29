@@ -59,15 +59,10 @@ public class UserServiceImpl implements IUserService {
     public int deleteUserByteId(int id) {
         return userDao.deleteUserByteId(id);
     }
-
-    //    public List<User> selectUserBytePage(int page,int limit) {
-//        page = (page - 1)*limit;
-//        return userDao.selectUserBytePage(page,limit);
-//    }
-//
-//    public int findUserCount() {
-//        return userDao.findUserCount();
-//    }
+    //通过动态sql来修改用户的信息，展示再layui后台
+    public int updateUserInfo(User user){
+        return userDao.updateUserInfo(user);
+    }
 
 
 }

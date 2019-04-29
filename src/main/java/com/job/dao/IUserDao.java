@@ -33,4 +33,6 @@ public interface IUserDao {
 
 //    通过id来删除用户
     public int deleteUserByteId(@Param(value = "id") int id);
+    //通过动态sql来修改用户信息
+    public int updateUserInfo(User user);
 }
