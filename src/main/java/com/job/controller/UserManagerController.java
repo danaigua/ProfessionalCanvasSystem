@@ -23,7 +23,17 @@ public class UserManagerController extends ActionSupport {
     private int updateid;
     private String updatefield;
     private String updatevalue;
-//    private String[] names = {"userPassword","userName","email","telephone"};
+    private boolean flag;
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    //    private String[] names = {"userPassword","userName","email","telephone"};
     public User getUser() {
         return user;
     }
@@ -168,6 +178,15 @@ public class UserManagerController extends ActionSupport {
             }
         }
         ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
+        return SUCCESS;
+    }
+    public String addUser(){
+        int i = userService2.Register(user);
+        if(i>0){
+            flag = true;
+        }else{
+            flag = false;
+        }
         return SUCCESS;
     }
 }
