@@ -7,6 +7,9 @@
         <result column="admin_id" jdbcType="VARCHAR" property="adminId"/>
         <result column="admin_password" jdbcType="VARCHAR" property="adminPassword"/>
         <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="company" jdbcType="VARCHAR" property="company"/>
+        <result column="adminName" jdbcType="VARCHAR" property="adminName"/>
+        <result column="adminDesc" jdbcType="VARCHAR" property="adminDesc"/>
     </resultMap>
 
     <select id="loginBackstage" parameterType="Admin" resultMap="BaseResultMap">
@@ -16,4 +19,21 @@
     <insert id="ResAdmin" parameterType="Admin">
         insert into admin (admin_id, admin_password, type) values (#{adminId},#{adminPassword},"admin")
     </insert>
+    <!--列出所有的管理员信息，并且分页-->
+    <select id="listAllAdmin" resultMap="BaseResultMap">
+        select * from admin limit #{page},#{limit};
+    </select>
+    <delete id="deleteAdmin">
+        delete from admin where admin_id = #{adminId};
+    </delete>
+    <update id="updateAdminInfo">
+        update admin
+        <set>
+            <if test="adminName != null">adminName = #{adminName}</if>
+            <if test="adminPassword != null">admin_password = #{adminPassword}</if>
+            <if test="company != null">company = #{company}</if>
+            <if test="adminDesc != null">adminDesc = #{adminDesc}</if>
+        </set>
+        where admin_id = #{adminId}
+    </update>
 </mapper>

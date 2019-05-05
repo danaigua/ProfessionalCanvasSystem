@@ -171,5 +171,22 @@
         </action>
 
     </package>
+    <package name="admin" extends="json-default,struts-default">
+        <action name="listAllAdmin" class="com.job.controller.AdminManagerController" method="listAllAdmin">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <action name="deleteAdmin" class="com.job.controller.AdminManagerController" method="deleteAdmin">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <action name="updateAdminInfo" class="com.job.controller.AdminManagerController" method="updateAdminInfo">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
 
+    </package>
 </struts>

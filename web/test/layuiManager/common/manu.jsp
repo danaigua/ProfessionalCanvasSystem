@@ -46,8 +46,8 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">用户管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">用户资料</a></dd>
-                    <dd><a href="">用户添加</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/user/users.jsp">用户资料</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/user/addUser.jsp">用户添加</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="">管理员管理</a></li>
