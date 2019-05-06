@@ -17,7 +17,7 @@
 	</select>
     <!--注册一个管理员账号-->
     <insert id="ResAdmin" parameterType="Admin">
-        insert into admin (admin_id, admin_password, type) values (#{adminId},#{adminPassword},"admin")
+        insert into admin (admin_id, admin_password, type, company, adminName, adminDesc) values (#{adminId},#{adminPassword},"admin",#{company},#{adminName},#{adminDesc})
     </insert>
     <!--列出所有的管理员信息，并且分页-->
     <select id="listAllAdmin" resultMap="BaseResultMap">

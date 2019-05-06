@@ -79,6 +79,10 @@
         <action name="addUser" class="com.job.controller.UserManagerController" method="addUser">
             <result name="success">/test/layuiManager/main.jsp</result>
         </action>
+        <!--layui后台用于添加管理员用-->
+        <action name="addAdmin" class="com.job.controller.AdminManagerController" method="addAdmin">
+            <result name="success">/test/layuiManager/adminManager/addAdmin.jsp</result>
+        </action>
     </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">

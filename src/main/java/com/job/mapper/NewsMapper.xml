@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.INewsDao">
+    <resultMap id="BaseResultMap" type="com.job.pojo.news">
+        <result column="news_id" jdbcType="VARCHAR" property="newsId"/>
+        <result column="news_title" jdbcType="VARCHAR" property="newsTitle"/>
+        <result column="news_info" jdbcType="VARCHAR" property="newsInfo"/>
+        <result column="bestWeight" jdbcType="VARCHAR" property="bestWeight"/>
+    </resultMap>
+
+
+</mapper>

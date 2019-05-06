@@ -8,6 +8,11 @@ import java.util.List;
 
 public interface IAdminDao {
     public Admin loginBackstage(Admin admin);
+    /**
+     * 添加普通管理员
+     * @param admin
+     * @return
+     */
     public int ResAdmin(Admin admin);
 
     /**
@@ -31,4 +36,6 @@ public interface IAdminDao {
      * @return
      */
     public int updateAdminInfo(Admin admin);
+
+
 }

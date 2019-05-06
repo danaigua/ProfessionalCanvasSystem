@@ -20,6 +20,15 @@ public class AdminManagerController extends ActionSupport {
     private String updateid;
     private String updatefield;
     private String updatevalue;
+    private Admin admin;
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
 
     public String getUpdateid() {
         return updateid;
@@ -141,5 +150,18 @@ public class AdminManagerController extends ActionSupport {
         }
         ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
         return SUCCESS;
+    }
+
+    /**
+     * 添加一个普通管理员
+     * @return
+     */
+    public String addAdmin(){
+        int i = adminService.ResAdmin(admin);
+        if (i > 0){
+            return SUCCESS;
+        }else{
+            return ERROR;
+        }
     }
 }

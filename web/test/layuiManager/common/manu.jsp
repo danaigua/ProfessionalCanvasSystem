@@ -50,7 +50,13 @@
                     <dd><a href="${pageContext.request.contextPath}/test/layuiManager/user/addUser.jsp">用户添加</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">管理员管理</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">管理员管理<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/adminManager/admin.jsp">管理员资料</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/adminManager/addAdmin.jsp">管理员添加</a></dd>
+                </dl>
+            </li>
             <li class="layui-nav-item"><a href="">用户日志管理</a></li>
         </ul>
     </div>
