@@ -47,4 +47,37 @@
     <select id="selectTypeButeSchool" resultMap="BaseResultMap">
         select * from jobinfo where job_type="校招"
     </select>
+    <!--layui后台查出所有的工作信息-->
+    <select id="jobList" resultMap="BaseResultMap">
+        select * from jobinfo limit #{page},#{limit};
+    </select>
+    <!--layui后台删除一个job-->
+    <delete id="jobDelete">
+        delete from jobinfo where id = #{id}
+    </delete>
+    <!--layui后台修改job信息-->
+    <update id="jobUpdate">
+        update jobinfo
+        <set>
+            <if test="Company!=null">Company=#{Company}</if>
+            <if test="Department!=null">Department=#{Department}</if>
+            <if test="Job!=null">Job=#{Job}</if>
+            <if test="Welfare!=null">Welfare=#{Welfare}</if>
+            <if test="Academic!=null">Academic=#{Academic}</if>
+            <if test="Descrive!=null">Descrive=#{Descrive}</if>
+            <if test="type!=null">type=#{type}</if>
+            <if test="Salary!=null">Salary=#{Salary}</if>
+            <if test="experience!=null">experience=#{experience}</if>
+            <if test="workTime!=null">workTime=#{workTime}</if>
+            <if test="jobRequirements1!=null">jobRequirements1=#{jobRequirements1}</if>
+            <if test="jobRequirements2!=null">jobRequirements2=#{jobRequirements2}</if>
+            <if test="jobRequirements3!=null">jobRequirements3=#{jobRequirements3}</if>
+            <if test="jobRequirements4!=null">jobRequirements4=#{jobRequirements4}</if>
+            <if test="jobRequirements5!=null">jobRequirements5=#{jobRequirements5}</if>
+            <if test="channelPromotion1!=null">channelPromotion1=#{channelPromotion1}</if>
+            <if test="channelPromotion2!=null">channelPromotion2=#{channelPromotion2}</if>
+            <if test="jobType!=null">job_type=#{jobType}</if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper>

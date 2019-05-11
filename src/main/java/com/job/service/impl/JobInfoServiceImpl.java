@@ -44,4 +44,28 @@ public class JobInfoServiceImpl implements IJobInfoService {
         return iJobInfoDao.selectTypeButeSchool();
     }
 
+    /**
+     * layui分页查找出job的信息
+     * @param page
+     * @param limit
+     * @return
+     */
+    public List<JobInfo> jobList(int page, int limit) {
+        page = (page - 1)*limit;
+        return iJobInfoDao.jobList(page, limit);
+    }
+
+    /**
+     * 删除一个job
+     * @param id
+     * @return
+     */
+    public int jobDelete(int id) {
+        return iJobInfoDao.jobDelete(id);
+    }
+
+    public int jobUpdate(JobInfo jobInfo) {
+        return iJobInfoDao.jobUpdate(jobInfo);
+    }
+
 }

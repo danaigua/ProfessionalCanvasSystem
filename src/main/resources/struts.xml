@@ -75,14 +75,7 @@
         <action name="searchJobByteId" class="com.job.controller.SearchJobBytetypeController" method="searchJobByteId">
             <result name="success" type="redirect">/Home/jobVo/dynamicJob.jsp</result>
         </action>
-        <!--layui后台用于添加用户用的-->
-        <action name="addUser" class="com.job.controller.UserManagerController" method="addUser">
-            <result name="success">/test/layuiManager/main.jsp</result>
-        </action>
-        <!--layui后台用于添加管理员用-->
-        <action name="addAdmin" class="com.job.controller.AdminManagerController" method="addAdmin">
-            <result name="success">/test/layuiManager/adminManager/addAdmin.jsp</result>
-        </action>
+
     </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
@@ -154,7 +147,8 @@
                 <param name="jobs2"></param>
             </result>
         </action>
-
+    </package>
+    <package name="layui" extends="json-default,struts-default">
         <!--返回laiui用户列表-->
         <action name="list" class="com.job.controller.UserManagerController" method="list">
             <result name="success" type="json">
@@ -173,24 +167,52 @@
                 <param name="root">jsonData</param>
             </result>
         </action>
-
-    </package>
-    <package name="admin" extends="json-default,struts-default">
+        <!--layui列出管理员信息表-->
         <action name="listAllAdmin" class="com.job.controller.AdminManagerController" method="listAllAdmin">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--layui用于删除管理员-->
         <action name="deleteAdmin" class="com.job.controller.AdminManagerController" method="deleteAdmin">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--layui后台用于更新管理员信息用-->
         <action name="updateAdminInfo" class="com.job.controller.AdminManagerController" method="updateAdminInfo">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
             </result>
         </action>
-
+        <!--layui后台用于添加用户用的-->
+        <action name="addUser" class="com.job.controller.UserManagerController" method="addUser">
+            <result name="success">/test/layuiManager/user/users.jsp</result>
+        </action>
+        <!--layui后台用于添加管理员用-->
+        <action name="addAdmin" class="com.job.controller.AdminManagerController" method="addAdmin">
+            <result name="success">/test/layuiManager/adminManager/admin.jsp</result>
+        </action>
+        <!--layui后台用于添加职位信息-->
+        <action name="jobAdd" class="com.job.controller.layuiJobController" method="jobAdd">
+            <result name="success">/test/layuiManager/job/jobs.jsp</result>
+        </action>
+        <!--layui后台用于列出职位信息-->
+        <action name="jobList" class="com.job.controller.layuiJobController" method="list">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--layui后台用于修改和编辑表格-->
+        <action name="updateJobInfo" class="com.job.controller.layuiJobController" method="update">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <action name="deleteJob" class="com.job.controller.layuiJobController" method="delete">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
     </package>
 </struts>

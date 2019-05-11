@@ -1,6 +1,7 @@
 package com.job.dao;
 
 import com.job.pojo.JobInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,4 +17,10 @@ public interface IJobInfoDao {
     public JobInfo slectByteId(JobInfo jobInfo);
     //返回校招工作
     public List<JobInfo> selectTypeButeSchool();
+    //layui后台通过分页查找职位信息
+    public List<JobInfo> jobList(@Param(value = "page")int page,@Param(value = "limit")int limit);
+    //删除一个工作
+    public int jobDelete(@Param(value = "id")int id);
+    //对工作信息的编辑和修改
+    public int jobUpdate(JobInfo jobInfo);
 }

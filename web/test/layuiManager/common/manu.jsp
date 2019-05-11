@@ -28,29 +28,29 @@
                     <dd><a href="javascript:;">数据处理</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">求职资料管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">增加求职资料</a></dd>
-                    <dd><a href="">管理求职资料</a></dd>
-                    <dd><a href="">公司管理</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/job/addJob.jsp">增加求职资料</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/job/jobs.jsp">管理求职资料</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/job/company.jsp">公司管理</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">新闻管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
                     <dd><a href="">新闻发布</a></dd>
                     <dd><a href="">新闻管理</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">用户管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
                     <dd><a href="${pageContext.request.contextPath}/test/layuiManager/user/users.jsp">用户资料</a></dd>
                     <dd><a href="${pageContext.request.contextPath}/test/layuiManager/user/addUser.jsp">用户添加</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">管理员管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
                     <dd><a href="${pageContext.request.contextPath}/test/layuiManager/adminManager/admin.jsp">管理员资料</a></dd>

@@ -29,4 +29,14 @@ public interface IJobInfoService {
     JobInfo selectByteId(JobInfo jobInfo);
 
     List<JobInfo> selectTypeButeSchool();
+
+    /**
+     * layui通过分页查找出内容
+     * @param page
+     * @param limit
+     * @return
+     */
+    List<JobInfo> jobList(int page,int limit);
+    int jobDelete(int id);
+    int jobUpdate(JobInfo jobInfo);
 }
