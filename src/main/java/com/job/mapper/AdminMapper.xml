@@ -10,6 +10,7 @@
         <result column="company" jdbcType="VARCHAR" property="company"/>
         <result column="adminName" jdbcType="VARCHAR" property="adminName"/>
         <result column="adminDesc" jdbcType="VARCHAR" property="adminDesc"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
     </resultMap>
 
     <select id="loginBackstage" parameterType="Admin" resultMap="BaseResultMap">

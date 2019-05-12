@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IResumeDisposeDao">
+        <resultMap id="BaseResultMap" type="com.job.pojo.ResumeDispose">
+            <id column="resumedispose_id" jdbcType="INTEGER" property="resumeDisposeId" />
+            <result column="admin_id" jdbcType="VARCHAR" property="adminId" />
+            <result column="user_id" jdbcType="INTEGER" property="userId" />
+            <result column="resumedispose_schedule" jdbcType="VARCHAR" property="resumeDisposeSchedule" />
+            <result column="resume_id" jdbcType="INTEGER" property="resumeId" />
+        </resultMap>
+
+</mapper>

@@ -34,6 +34,15 @@ public class JobInfo {
     //晋升渠道
     private String channelPromotion1;
     private String channelPromotion2;
+    private String adminId;
+
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
 
     //工作类型
     private String jobType;

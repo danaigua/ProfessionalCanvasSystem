@@ -14,6 +14,16 @@ public class Admin {
 
     private String adminDesc;
 
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getAdminDesc() {
         return adminDesc;
     }

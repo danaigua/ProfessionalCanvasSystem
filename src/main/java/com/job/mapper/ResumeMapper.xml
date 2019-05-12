@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IResumeDao">
+        <resultMap id="BaseResultMap" type="com.job.pojo.Resume">
+            <id column="resume_id" jdbcType="INTEGER" property="resumeId" />
+            <result column="user_id" jdbcType="INTEGER" property="userId" />
+            <result column="resume_userName" jdbcType="VARCHAR" property="resumeUserName" />
+            <result column="resume_userSex" jdbcType="VARCHAR" property="resumeUsersex" />
+            <result column="resume_birthday" jdbcType="VARCHAR" property="resumeBirthday" />
+            <result column="resume_educationBackground" jdbcType="VARCHAR" property="resumeEducationBackground" />
+            <result column="resume_positionApplied" jdbcType="VARCHAR" property="resumePositionApplied" />
+            <result column="resume_address" jdbcType="VARCHAR" property="resumeAddress" />
+            <result column="resume_almamater" jdbcType="VARCHAR" property="almamater" />
+            <result column="resume_englishLevel" jdbcType="VARCHAR" property="englishLevel" />
+            <result column="resume_computerLevel" jdbcType="VARCHAR" property="cpmputerLevel" />
+            <result column="resume_major" jdbcType="VARCHAR" property="major" />
+            <result column="resume_awards" jdbcType="VARCHAR" property="awards" />
+            <result column="resume_workExperience" jdbcType="VARCHAR" property="workExperience" />
+            <result column="resume_userimage" jdbcType="VARCHAR" property="userImage" />
+            <result column="resume_userTelephone" jdbcType="VARCHAR" property="userTelephone" />
+        </resultMap>
+
+</mapper>

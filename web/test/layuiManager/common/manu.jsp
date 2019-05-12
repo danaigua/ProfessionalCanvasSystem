@@ -39,8 +39,8 @@
             <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">新闻管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">新闻发布</a></dd>
-                    <dd><a href="">新闻管理</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/news/addNews.jsp">新闻发布</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/news/news.jsp">新闻管理</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item layui-nav-itemed">

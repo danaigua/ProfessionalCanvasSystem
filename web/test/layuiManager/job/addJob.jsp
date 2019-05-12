@@ -28,18 +28,18 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">公司</label>
                             <div class="layui-input-block">
-                                <input type="text" name="jobInfo.Company" lay-verify="title" autocomplete="off" placeholder="请输入公司名" class="layui-input">
+                                <input type="text" name="jobInfo.Company" lay-verify="title" autocomplete="off" placeholder="请输入公司名" class="layui-input" required>
                             </div>
                             <br>
                             <label class="layui-form-label">招聘部门</label>
                             <div class="layui-input-block">
                                 <%--<input type="text" name="user.userPassword" lay-verify="pass" placeholder="请输入需要招聘的部门" autocomplete="off" class="layui-input">--%>
-                                <input type="password" name="jobInfo.Department"  lay-verify="pass" autocomplete="off" placeholder="请输入需要招聘的部门" class="layui-input">
+                                <input type="password" name="jobInfo.Department"  lay-verify="pass" autocomplete="off" placeholder="请输入需要招聘的部门" class="layui-input" required>
                             </div>
                             <br>
                             <label class="layui-form-label">薪资区间</label>
                             <div class="layui-input-block">
-                                <input type="text" name="jobInfo.salary" lay-verify="title" autocomplete="off" placeholder="请输入招聘该职位的薪资区间" class="layui-input">
+                                <input type="text" name="jobInfo.salary" lay-verify="title" autocomplete="off" placeholder="请输入招聘该职位的薪资区间" class="layui-input" required>
                             </div>
                             <br>
                             <label class="layui-form-label">工作类型</label>
@@ -72,12 +72,12 @@
                             <br>
                             <label class="layui-form-label">工作：</label>
                             <div class="layui-input-block">
-                                <input type="text" name="jobInfo.Job" lay-verify="title" autocomplete="off" placeholder="请输入该岗位的名称（如JAVA工程师）" class="layui-input">
+                                <input type="text" name="jobInfo.Job" lay-verify="title" autocomplete="off" placeholder="请输入该岗位的名称（如JAVA工程师）" class="layui-input" required>
                             </div>
                             <br>
                             <label class="layui-form-label">工作时间：</label>
                             <div class="layui-input-block">
-                                <input type="text" name="jobInfo.workTime" lay-verify="title" autocomplete="off" placeholder="请输入该岗位的需要的工作时间（如996）" class="layui-input">
+                                <input type="text" name="jobInfo.workTime" lay-verify="title" autocomplete="off" placeholder="请输入该岗位的需要的工作时间（如996）" class="layui-input" required>
                             </div>
                             <br>
                             <label class="layui-form-label">工作经验：</label>

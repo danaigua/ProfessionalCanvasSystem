@@ -3,12 +3,42 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.job.dao.INewsDao">
-    <resultMap id="BaseResultMap" type="com.job.pojo.news">
-        <result column="news_id" jdbcType="VARCHAR" property="newsId"/>
+    <resultMap id="BaseResultMap" type="com.job.pojo.News">
+        <result column="news_id"    jdbcType="INTEGER" property="newsId"/>
         <result column="news_title" jdbcType="VARCHAR" property="newsTitle"/>
-        <result column="news_info" jdbcType="VARCHAR" property="newsInfo"/>
-        <result column="bestWeight" jdbcType="VARCHAR" property="bestWeight"/>
+        <result column="news_info"  jdbcType="VARCHAR" property="newsInfo"/>
+        <result column="bestWeight" jdbcType="INTEGER" property="bestWeight"/>
+        <result column="newsAuthor" jdbcType="VARCHAR" property="newsAuthor"/>
+        <result column="status"     jdbcType="VARCHAR" property="status"/>
     </resultMap>
-
-
+    <!--修改新闻信息-->
+    <update id="newUpdate">
+        update news
+        <set>
+            <if test="newsTitle != null">news_title = #{newsTitle}</if>
+            <if test="newsInfo != null">news_info = #{newsInfo}</if>
+            <if test="bestWeight != null">bestWeight = #{bestWeight}</if>
+            <if test="newsAuthor != null">newsAuthor = #{newsAuthor}</if>
+            <if test="status != null">status = #{status}</if>
+        </set>
+        where news_id = #{newsId}
+    </update>
+    <!--删除新闻信息-->
+    <delete id="newsDelete">
+        delete from news where news_id = #{newsId}
+    </delete>
+    <!--增加新闻信息-->
+    <insert id="newsAdd" parameterType="News">
+        insert into news (news_id, news_title, news_info, bestWeight, newsAuthor,status)
+            values
+        (#{newsId}, #{newsTitle}, #{newsInfo}, #{bestWeight}, #{newsAuthor}, #{status} )
+    </insert>
+    <!--查出所有的新闻条目-->
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from news
+    </select>
+    <!--通过分页查出新闻信息-->
+    <select id="newsList" resultMap="BaseResultMap">
+        select * from news limit #{page}, #{limit}
+    </select>
 </mapper>

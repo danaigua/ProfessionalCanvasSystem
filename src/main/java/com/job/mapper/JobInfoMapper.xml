@@ -24,6 +24,7 @@
         <result column="channelPromotion1" jdbcType="VARCHAR" property="channelPromotion1"/>
         <result column="channelPromotion2" jdbcType="VARCHAR" property="channelPromotion2"/>
         <result column="job_type" jdbcType="VARCHAR" property="jobType"/>
+        <result column="admin_id" jdbcType="VARCHAR" property="adminId"/>
     </resultMap>
     <insert id="addJobInfo" parameterType="JobInfo" >
         insert into jobinfo (Company,Department,Job,Welfare,Academic,Descrive,Address,type,Salary,experience,workTime,jobRequirements1,jobRequirements2,jobRequirements3,jobRequirements4,jobRequirements5,channelPromotion1,channelPromotion2,job_type)

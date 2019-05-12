@@ -209,7 +209,30 @@
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--删除工作-->
         <action name="deleteJob" class="com.job.controller.layuiJobController" method="delete">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--删除一条新闻-->
+        <action name="newsDelete" class="com.job.controller.NewsManagerController" method="delete">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--添加一条新闻-->
+        <action name="newsAdd" class="com.job.controller.NewsManagerController" method="add">
+            <result name="success">/test/layuiManager/news/news.jsp</result>
+        </action>
+        <!--修改新闻表格-->
+        <action name="newsUpdate" class="com.job.controller.NewsManagerController" method="update">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--列出新闻表格-->
+        <action name="newsList"  class="com.job.controller.NewsManagerController" method="list">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
             </result>
