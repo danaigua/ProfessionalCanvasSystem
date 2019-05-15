@@ -45,8 +45,8 @@
 
         <!-- 管理员登陆 -->
         <action name="loginBackstage" class="com.job.controller.AdminController" method="loginBackstage">
-            <result name="loginOri" type="redirect">/Manger/General_Manger/ordinaryMember.jsp</result>
-            <result name="loginSuper" type="redirect">/Manger/Super_Admin/superMember.jsp</result>
+            <result name="loginOri" type="redirect">/test/layuiManager/ordinaryManager.jsp</result>
+            <result name="loginSuper" type="redirect">/test/layuiManager/main.jsp</result>
             <result name="error" type="redirect">/error2.jsp</result>
         </action>
         <!--添加管理员-->
