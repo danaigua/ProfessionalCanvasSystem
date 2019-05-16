@@ -1,13 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=1024" />
-		<title>关于_基于大数据的智能求职系统</title>
+		<title>个人资料</title>
 		<meta name="keywords" content="这里填写关键词" />
 		<meta name="description" content="这里填写描述" />
 		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
-		<!--[if lt IE 9]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+		<link rel="stylesheet" href="../css/user.css" type="text/css" />
+		<script type="text/javascript" src="../js/html5.js"></script>
 	</head>
 	<body>
 
@@ -28,183 +31,354 @@
 				</nav>
 			</div>
 		</header>
-		<section id="single" class="singleImg">
-			<!-- background:url(../images/我的资料2.jpg)
-			background-size:100% 100%; -->
-			<div class="cat_title">
-				<div class="wrapper">
-					<h2><strong>我的资料</strong></h2>
-					    <!-- color:#fff -->
+		<nav class="nav">
+			<div class="navBox">
+				<div class="img"></div>
+				<div class="linckBox" style="background:rgb(101,108,125);">
+					<i class="linkImg ziliao"></i>
+					<a href="${pageContext.request.contextPath}/Home/about/index1.2.jsp" class="data navLink" style="color:rgb(181,185,194);background:rgb(101,108,125);">个人资料</a>
+				</div>
+				<div class="linckBox">
+					<i class="linkImg fankui"></i>
+					<a href="${pageContext.request.contextPath}/Home/about/feedback.jsp" class="feedback navLink">用户反馈</a>
+				</div>
+				<div class="linckBox">
+					<i class="linkImg jianli"></i>
+					<a href="javascript:" class="resume navLink">个人简历</a>
+					<i class="xiala"></i>
+				</div>
+				<div class="sonLinckBox">
+					<a href="${pageContext.request.contextPath}/Home/about/resume.jsp" class="navLinkSon sonOne">个人简历</a>
+					<a href="${pageContext.request.contextPath}/Home/about/resume1.jsp" class="navLinkSon sonTwo)">已发布简历</a>
+				</div>
+				<div class="linckBox">
+					<i class="linkImg gongsi"></i>
+					<a href="${pageContext.request.contextPath}/Home/about/company.jsp" class="entrance navLink">公司入口</a>
 				</div>
 			</div>
-			<div class="category">
-				<div class="wrapper">
-					<!--  
-						width: 986px;
-						margin: 0 auto;
-						position: relative;
-					-->
+		</nav>
 
-					<!--  
-						  margin: 0 auto;
-						  *margin-top: 20px;
-						  *margin-left: 5px
-							
-						  -->
-					<div class="aboutMy">
-						<fieldset>
-							<legend class="myData_title">
-                                 <!-- position:relative;
-	                             left:30px; -->
-								修改我的信息</legend>
-
-								      <!-- 修改后的输入框内容及结构 -->
-							<div class="myData_box">
-								<label for="myData" class="myDataBox_name">昵称</label>
-								<input type="text" id="myData" class="myDataBox_input" value="${currentUser.userName}" name="user.userName">
-								<a href="javascript:" class="myDataBox_link">修改</a>
-							</div>
-							<div class="myData_box">
-								<label for="myData" class="myDataBox_name">邮箱</label>
-								<input type="text" id="myData" class="myDataBox_input" value="${currentUser.email}" name="user.email">
-								<a href="javascript:" class="myDataBox_link">修改</a>
-							</div>
-							<div class="myData_box">
-								<label for="myData" class="myDataBox_name">电话</label>
-								<input type="text" id="myData" class="myDataBox_input" value="${currentUser.telephone}" name="user.telephone">
-								<a href="javascript:" class="myDataBox_link">修改</a>
-							</div>
-							<div class="myData_box">
-								<label for="myData" class="myDataBox_name">编号</label>
-								<input type="text" id="myData" class="myDataBox_input" value="${currentUser.userId}" name="user.userId">
-							</div>
-							<!-- 昵称：<input type="text" size="29"><a href="">修改</a><br>
-							E-mail: <input type="text" size="28"><a href="">修改</a><br>
-							电话号码：<input type="text" size="25"><a href="">修改</a><br>
-							我的编号：<input type="text" size="25"><br> -->
-							<input type="button" value="注销"  class="myData_input">
-							         <!-- margin-left: 30px;
-	                                 width:150px;
-	                                 height:40px;
-	                                 line-height: 40px;
-	                                 text-align:center;
-	                                 border-radius: 40px;
-	                                 border:2px solid #fff;
-                                     background:#a11e21;
-                                     color:#fff;
-                                     cursor:pointer;
-                                     font-weight:550;
-                                     transition:all 0.3s;
-                                     -webkit-transition:all .3s; -->
-						</fieldset>
+	<section class="userdata">
+		
+							<!-- 基本信息 -->
+			<div class="basicBox">
+			<span class="basic_edit">编辑</span>
+			<div class="basic_bigbox">              <!-- 预览的框 -->
+			   
+			  <div class="basic_big">
+				
+				<h1 class="basic_theme">基本信息</h1>
+				<div class="basicInsi_box">
+					<div class="basicInsiImg_box" title="点击上传图片">
+						<img src="${pageContext.request.contextPath}/userImage/${currentUser.userPicimg}" alt="" class="basicInsi_img">
 					</div>
-				</div>
-			</div>
-			<article class="serv_detailed">
-				<div class="aboutFont">
-					<div id="detailed" class="datailedColor">
-						<p class="t4">[专业+专注]</p>
-						<div class="t4Content">
-							<ul>
-								<li>我们致力于为顾客提供通过大数据分析出就业的期望工作，以及期望工资</li>
-								<li>我们专注于在大量数据种爬取出有用的数据进行分析</li>
-							</ul>
-						</div>
-						<p class="t4">做大数据分析就业前景以及期望工资的网站并不多</p>
-						<div class="t4Content">
-							<ul>
-								<li>我们通过python爬虫以及hadoop大数据框架在网上爬取大量的数据进行许多道清洗数据之后得到了比较可靠的期望值，然而这个值可能误差。但是我们会尽量地减少误差，让我们的网站变得更加的可靠</li>
-								<li>网址：<a href="" target="_blank">http://www.xxxx.com/</a></li>
-							</ul>
-						</div>
-					</div>
-					
-				</div>
-			</article>
-		</section>
-		<footer>
-			<div id="footerlink">
-				<nav class="wrapper">
-					<a href="../index.htm">首页</a>
-					<a href="index.htm">关于</a>
-				<a href=" ../service/index.htm">服务 </a> <a href="../case/index.htm">案例</a>
-					<a href="../fangan/index.htm">方案</a>
-					<a href="../contact/index.htm">联系</a>
-					<a href="../news/index.htm">技巧</a>
-					<a id="gotop" href="javascript:void(0)">top</a>
-				</nav>
-			</div>
-			<div id="footerinfo">
-				<div class="wrapper">
-					<h2>联系我们<strong>Contact</strong></h2>
-					<p>
-						<a target="_blank" href="">
-							<img border="0" src="../images/qq.png" alt="点击这里给我发消息" title="点击这里给我发消息" />
-						</a><br />
-						电话：400 8888 8888<br />
-						传真：400 8888 8888<br />
-						电子邮件：1295263075@qq.com.com<br />
-						公司地址：广州市某某某某某某某某某<br />
-						备案编号：粤xxxxxxxxxxx<br />
+					<h2 class="basic_name">${currentUser.userName}</h2>
+					<p class="basic_infor">
+						<span class="basicInfor_text basicInfor_xing">${currentUser.userSex}</span>
+						<i class="basicInfor_text">|</i>
+						<span class="basicInfor_text basicInfor_xue">${currentUser.userEducationBackground}</span>
+						<i class="basicInfor_text">|</i>
+						<span class="basicInfor_text basicInfor_nian">${currentUser.userAge}</span>
 					</p>
-					<img src="../images/map.gif" width="258" height="190" style="text-align: right; margin-left: 500px;" alt="公司位置" />
+					<p class="basic_infor">
+						<i class="phone_img"></i>
+						电话:<span class="basic_phone basicMar">${currentUser.telephone}</span>
+						<i class="email_img"></i>
+						邮箱:<span class="basic_email basicMar">${currentUser.email}</span>
+					</p>
+					<p class="basic_infor">
+						<i class="address_img"></i>
+						现居住地址:<span class="basic_address basicMar">${currentUser.userAddress}</span>
+						<i class="experience_img"></i>
+						工作经历:<span class="basic_experience basicMar">${currentUser.workExperience}</span>
+						<span class="" style="color: red">${message.info}</span>
+					</p>
+				</div>
+				</div>
+				</div>
+				
+				
+				<!-- 隐藏的表单 -->
+					<div class="basic_form">
+							<form action="saveUserInfoInUserCenter" method="post" enctype="multipart/form-data">
+								<div class="basicForm_box">
+									<label for="city" class="basic_label">姓名</label>
+									<i class="basicForm_xiao"></i>
+									<input type="text" id="city" class="basic_input basicInp_mar" name = "user.userName" value="${currentUser.userName}" />
+									<label class="basic_label xingbie">性别</label>
+									<span class="basic_man xingbieNN basic_taobao"><i class="man_img"></i>男</span>
+									<span class="basic_girl xingbieNN"><i class="girl_img"></i>女</span>
+									<input type="hidden" value="${currentUser.userSex}" class="basic_input" name="user.userSex" />
+								</div>
+								<div class="basicForm_box">
+									<label for="city_number" class="basic_label">学历</label>
+									<i class="basicForm_xiao"></i>
+									<input type="tel" id="city_number"  class="basic_input basicInp_mar" list="education_basic" name="user.userEducationBackground" value="${currentUser.userEducationBackground}" />
+									<datalist id="education_basic">
+										<option value="高中" ${currentUser.userEducationBackground=="高中"?'selected':''}></option>
+										<option value="中专" ${currentUser.userEducationBackground=="中专"?'selected':''}></option>
+										<option value="大专" ${currentUser.userEducationBackground=="大专"?'selected':''}></option>
+										<option value="本科" ${currentUser.userEducationBackground=="本科"?'selected':''}></option>
+										<option value="硕士" ${currentUser.userEducationBackground=="硕士"?'selected':''}></option>
+									</datalist>
+									
+									<label for="city_email" class="basic_label">年龄</label>
+									<i class="basicForm_xiao"></i>
+									<input type="text" id="city_email"  class="basic_input" name="user.userAge" value="${currentUser.userAge}" />
+								</div>
+								<div class="basicForm_box">
+									<label for="city_credit" class="basic_label">电话</label>
+									<i class="basicForm_xiao"></i>
+									<input type="text" id="city_credit"  class="basic_input basicInp_mar" name="user.telephone" value="${currentUser.telephone}" />
+									<label for="city_number" class="basic_label">现居住地址</label>
+									<i class="basicForm_xiao"></i>
+									<input type="tel" id="city_number"  class="basic_input" name="user.userAddress" value="${currentUser.userAddress}" />
+								</div>
+								<div class="basicForm_box">
+									<label for="city_email" class="basic_label" >电子邮箱</label>
+									<i class="basicForm_xiao"></i>
+									<input type="email" id="city_email"  class="basic_input basicInp_mar" name="user.email" value="${currentUser.email}" />
+									<label for="city_credit" class="basic_label">工作经验</label>
+									<i class="basicForm_xiao"></i>
+									<input type="text" id="city_credit"  class="basic_input" name="user.workExperience" value="${currentUser.workExperience}" />
+								</div>
+								<div class="basicForm_box">
+									<label for="city_email" class="basic_label">上传头像</label>
+									<i class="basicForm_xiao"></i>
+									<input type="file" name="userPic" id="userPic" />
+									<input type="hidden" id="userId" name="userId" value="${currentUser.userId}"/>
+								</div>
+								<div class="baocun_box">
+								<input type="submit" value="保存" class="preservation" onclick="alertInfo()" 	/>
+								<input type="button" value="取消" class="cancel" />
+								</div>
+							</form>
+					</div>
+				
+				</div>
+				
+								<!-- 求职意愿 -->
+			<div class="desire_bigbox">
+				<span class="basic_edit">编辑</span>
+				<div class="desire">
+					
+					<h1 class="desire_theme">求职意愿</h1>
+					<p class="desire_box">
+						期望薪资 : <span class="desice_money desireMar">10000~20000</span>
+						期望工作地点 : <span class="desice_address desireMar">深圳</span>
+					</p>
+					<p class="desire_box">
+						期望从事职位 : <span class="desire_position desireMar">前端工程师</span>
+						期望工作性质 : <span class="desire_nature desireMar">全职</span>
+					</p>
+					<p class="desire_box">
+						自我评价 : <span class="desire_evaluate desireMar">积极向上，乐观开朗，具有很好的团队精神。</span>
+					</p>
+					<p class="desire_box">
+						求职状态 : <span class="desire_state desireMar">离职</span>
+					</p>
+				</div>
+				<div class="desire_form">    		<!--求职意愿隐藏-->
+					<form action="">
+						<div class="basicForm_box">
+							<label for="city_credit" class="desire_label">期望薪资</label>
+							<i class="basicForm_xiao"></i>
+							<input type="text" id="city_credit"  class="desire_input basicInp_mar">
+							<label for="city_number" class="desire_label">期望工作地点</label>
+							<i class="basicForm_xiao"></i>
+							<input type="tel" id="city_number"  class="desire_input">
+						</div>
+						<div class="basicForm_box">
+							<label for="city_credit" class="desire_label">期望从事职位</label>
+							<i class="basicForm_xiao"></i>
+							<input type="text" id="city_credit"  class="desire_input basicInp_mar" list="congshi">
+							<datalist id="congshi">
+								<option value="硬件工程师"></option>
+								<option value="网络应用工程师"></option>
+								<option value="前端开发"></option>
+								<option value="后端开发"></option>
+								<option value="运维工程师"></option>
+							</datalist>
+							<label for="city_number" class="desire_label">期望工作性质</label>
+							<i class="basicForm_xiao"></i>
+							<input type="tel" id="city_number"  class="desire_input">
+						</div>
+						<div class="basicForm_box">
+						  <div class="desire_littlebox">
+							<label for="city_credit" class="desire_label">求职状态</label>
+							<i class="basicForm_xiao"></i>
+							<input type="text" id="city_credit"  class="desire_input basicInp_mar" list="zhuangtai">
+							<datalist id="zhuangtai">
+								<option value="就职"></option>
+								<option value="离职"></option>
+							</datalist>
+						   </div>
+						   <div class="desire_littlebox">
+							<label for="city_number" class="desire_label">自我评价</label>
+							<i class="basicForm_xiao"></i>
+						    </div>
+							<textarea type="tel" id="city_number"  class="desire_input desire_duohang"></textarea>
+						</div>
+						<div class="baocun_box">
+						<input type="button" value="保存" class="preservation">
+						<input type="button" value="取消" class="cancel">
+						</div>
+					</form>
 				</div>
 			</div>
-		</footer>
+			</div>
+		</section>
+			
 		<script type="text/javascript" src="../js/jquery.1.8.2.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.plugin.min.js"></script>
 		<!--[if IE 6]>
 <script type="text/javascript" src="../js/killie6.js"></script>
 <![endif]-->
+		<%--<script type="text/javascript">--%>
+			<%--function alertInfo() {--%>
+				<%--alert("修改成功，下次登陆的时候生效");--%>
+			<%--}--%>
+		<%--</script>--%>
         <script type="text/javascript">
                             
                $(document).ready(function () {
-               	    var myDataBoxInput = $(".myDataBox_input");
-               	    var myDataBoxName = $(".myDataBox_name");
-               	                   // 鼠标聚焦输入框border变蓝边
-               	   
-               	    for(var i = 0; i < myDataBoxInput.length; i ++) {
-               	      var mouseTop = function (k) {
-               	    	myDataBoxInput.eq(k).focus(function () {
-                               $(this).css({
-                               	   "box-shadow":"0 0 20px black",
-                               	   "border-color":"#00f"
-                               });
-                               myDataBoxName.eq(k).animate({
-                               	   "top":"-20px"
-                               },"1s");
-                               myDataBoxName.eq(k).animate({
-                               	   "top":"0px"
-                               },"1s");
-               	    	})
-               	    	myDataBoxInput.eq(k).blur(function() {
-               	    		   $(this).css({
-               	    		   	   "box-shadow":"0 0 0 balck",
-               	    		   	   "border-color":"#fff"
-               	    		   });
-
-               	    	});
-               	    }
-               	    mouseTop(i);
-               	   };
-               	   
-                                // 提交按钮鼠标移动红字红边
-                    var myDataInput = $(".myData_input");
-                    myDataInput.mouseenter(function () {
-                    	    $(this).css({
-                    	    	 "background":"none",
-                    	    	 "border-color":"#a11e21",
-                    	    	 "color":"#a11e21"
-                    	    })
-                    })
-                    myDataInput.mouseleave(function () {
-                    	    $(this).css({
-                    	    	 "background":"#a11e21",
-                    	    	 "color":"#fff",
-                    	    	 "border-color":"#fff"
-
-                    	    })
-                    })
+               	    var linckBox = $(".linckBox");
+					var navLink = $(".navLink");
+							
+									// 鼠标移动到导航栏出现聚焦样式开始
+					for(var i = 0; i < linckBox.length; i ++) {
+						(function (k) {
+							linckBox.eq(k).mouseenter(function () {
+								if($(this).css("background") != "rgb(101,108,125)") {
+									navLink.eq(k).addClass("linckFirst")
+								}
+							});
+							linckBox.eq(k).mouseleave(function () {
+									navLink.eq(k).removeClass("linckFirst")
+							});
+						}(i))
+					}
+										// 鼠标移动到导航栏出现聚焦样式结束
+					// 个人简历点击下拉开始
+					$(".linckBox").eq(2).click(function () {
+						$(".sonLinckBox").slideToggle("slow")
+					})
+										// 个人简历点击下拉结束		
+													
+										
+					
+											// 点击编辑的时候出现输入框,且有边框;
+					var basicEdit = $(".basic_edit");
+					var basicBox = $(".basicBox");
+					var basicBigbox = $(".basic_bigbox");
+					var cancel = $(".cancel");
+					var basicForm = $(".basic_form");
+					var desireForm = $(".desire_form");
+					var desireBigbox = $(".desire_bigbox");
+					var desire = $(".desire")
+								// 点击编辑后输入框出现信息
+					var basicName = $(".basic_name");
+					var basicInforXing = $(".basicInfor_xing");
+					var basicInforXue = $(".basicInfor_xue");
+					var basicInforNian = $(".basicInfor_nian")
+					var basicPhone = $(".basic_phone");
+					var basicEmail = $(".basic_email");
+					var basicAddress = $(".basic_address");
+					var basicExperience = $(".basic_experience");
+					var basicInput = $(".basic_input");
+					var desireInput = $(".desire_input");
+												// 求职意向
+					var desiceMoney = $(".desice_money");
+					var desiceAddress = $(".desice_address");
+					var desirePosition = $(".desire_position");
+					var desireNature = $(".desire_nature");
+					var desireEvaluate = $(".desire_evaluate");
+					var desireState = $(".desire_state");
+					var preservation = $(".preservation")
+					for(var i = 0; i < basicEdit.length; i ++) {
+						basicEdit.eq(i).click(function () {
+							       // 大框有边框
+							$(this).parent().css({
+								"border":"2px solid rgb(42,45,52)"
+							});
+										// 预览信息隐藏
+							$(this).parent().children().eq(1).css({
+								"display":"none"
+							})
+										// 修改表显示
+							$(this).parent().children().eq(2).css({
+								"display":"block"
+							})
+										// 编辑隐藏
+							$(this).css({
+								"display":"none"
+							})
+						})
+						}
+					
+					            // 编辑的性别/
+					var xingbie = $(".xingbieNN");
+					function clearBasic() {
+						for(var i = 0; i < xingbie.length; i ++) {
+							
+							xingbie.eq(i).removeClass("basic_taobao")
+						}
+					}
+					for(var i = 0; i < xingbie.length; i ++) {
+						xingbie.eq(i).click(function () {
+							clearBasic();
+							$(this).addClass("basic_taobao");
+							basicInput.eq(1).val($(this).text())
+						})
+					}
+					
+					
+					// 鼠标移动到模块出现编辑;
+					
+					$(".basicBox, .desire_bigbox").mouseenter(function () {
+						if($(this).children().eq(1).css("display") == "block"){
+							$(this).children(".basic_edit").css("display","block")
+						}
+					})
+					$(".basicBox, .desire_bigbox").mouseleave(function () {
+						
+							$(this).children(".basic_edit").css("display","none")
+					})
+					
+					// 按下取消后恢复原来(基础信息)
+					cancel.eq(0).click(function () {
+						// 预览信息显示
+						basicBox.children().eq(1).css({
+							"display":"block"
+						})
+									// 修改表隐藏
+						basicBox.children().eq(2).css({
+							"display":"none"
+						})
+						// 大框没边框
+						basicBox.css({
+							"border":"transparent"
+						});
+					})
+					
+					
+					// 按下取消后恢复原来(求职意向)
+					cancel.eq(1).click(function () {
+						// 预览信息显示
+						desireBigbox.children().eq(1).css({
+							"display":"block"
+						})
+									// 修改表隐藏
+						desireBigbox.children().eq(2).css({
+							"display":"none"
+						})
+						// 大框没边框
+						desireBigbox.css({
+							"border":"transparent"
+						});
+					})
+					
+						
                })
         </script>
 	</body>

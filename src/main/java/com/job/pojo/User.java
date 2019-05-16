@@ -11,6 +11,65 @@ public class User {
 
     private String telephone;
 
+    private String userPicimg;
+
+    private String userAge;
+
+    private String workExperience;
+
+    private String userAddress;
+
+    private String userSex;
+    private String userEducationBackground;
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
+    }
+
+    public String getUserEducationBackground() {
+        return userEducationBackground;
+    }
+
+    public void setUserEducationBackground(String userEducationBackground) {
+        this.userEducationBackground = userEducationBackground;
+    }
+
+    public String getUserPicimg() {
+        return userPicimg;
+    }
+
+    public void setUserPicimg(String userPicimg) {
+        this.userPicimg = userPicimg;
+    }
+
+    public String getUserAge() {
+        return userAge;
+    }
+
+    public void setUserAge(String userAge) {
+        this.userAge = userAge;
+    }
+
+    public String getWorkExperience() {
+        return workExperience;
+    }
+
+    public void setWorkExperience(String workExperience) {
+        this.workExperience = workExperience;
+    }
+
+    public String getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
+    }
+
     public User() {
     }
 

@@ -237,5 +237,9 @@
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--保存和修改用户信息-->
+        <action name="saveUserInfoInUserCenter" class="com.job.controller.UserManagerController" method="saveUserInfoInUserCenter">
+            <result name="success">/Home/about/index1.2.jsp</result>
+        </action>
     </package>
 </struts>

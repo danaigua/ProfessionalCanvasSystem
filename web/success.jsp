@@ -13,5 +13,11 @@
 <body>
 <h1>HelloWorld</h1>
 当前用户：${currentUser.telephone}
+<form action="saveUserInfoInUserCenter" method="post" enctype="multipart/form-data">
+    <input type="file" name = "userPic">
+    <input type="file" name = "userPic1">
+    <input type="hidden" id="userId" name="userId" value="10000"/>
+    <input type="submit" value="保存" class="preservation" 	/>
+</form>
 </body>
 </html>

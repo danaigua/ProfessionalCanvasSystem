@@ -64,5 +64,7 @@ public class UserServiceImpl implements IUserService {
         return userDao.updateUserInfo(user);
     }
 
-
+    public int saveAndUpdateUserInfoInUserCenter(User user){
+        return userDao.saveAndUpdateUserInfoInUserCenter(user);
+    }
 }

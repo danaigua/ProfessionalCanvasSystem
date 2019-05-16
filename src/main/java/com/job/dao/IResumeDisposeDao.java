@@ -1,4 +1,4 @@
 package com.job.dao;
 
-public class IResumeDisposeDao {
+public interface IResumeDisposeDao {
 }

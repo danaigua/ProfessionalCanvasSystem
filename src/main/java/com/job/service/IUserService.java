@@ -10,6 +10,7 @@ public interface IUserService {
    int Register(User user);
    int ForgetPassword(User user);
    boolean LoginHomeIndex(User user);
+   int saveAndUpdateUserInfoInUserCenter(User user);
    //查询一个的所有信息
 //   int SelectOne(User user);
 

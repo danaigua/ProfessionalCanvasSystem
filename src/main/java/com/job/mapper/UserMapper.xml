@@ -9,6 +9,12 @@
             <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
             <result column="Email" jdbcType="VARCHAR" property="email" />
             <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+            <result column="user_Picimg" jdbcType="VARCHAR" property="userPicimg" />
+            <result column="user_age" jdbcType="VARCHAR" property="userAge" />
+            <result column="user_workExperience" jdbcType="VARCHAR" property="workExperience" />
+            <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+            <result column="user_sex" jdbcType="VARCHAR" property="userSex" />
+            <result column="user_educationBackground" jdbcType="VARCHAR" property="userEducationBackground" />
         </resultMap>
 
     <select id="login" parameterType="User" resultMap="BaseResultMap">
@@ -54,8 +60,30 @@
               <if test="userName!=null">user_name = #{userName}</if>
               <if test="userPassword!=null">user_password = #{userPassword}</if>
               <if test="email!=null">Email = #{email}</if>
-              <if test="telephone!=null">user_name = #{telephone}</if>
+              <if test="telephone!=null">telephone = #{telephone}</if>
+              <if test="userPicimg!=null">user_Picimg = #{userPicimg}</if>
+              <if test="userAge!=null">user_age = #{userAge}</if>
+              <if test="workExperience!=null">user_workExperience = #{workExperience}</if>
+              <if test="userAddress!=null">user_address = #{userAddress}</if>
+              <if test="userSex!=null">user_sex = #{userSex}</if>
+              <if test="userEducationBackground!=null">user_educationBackground = #{userEducationBackground}</if>
           </set>
           where user_id = #{userId}
+    </update>
+    <update id="saveAndUpdateUserInfoInUserCenter">
+        update user
+        <set>
+            <if test="userName!=null">user_name = #{userName},</if>
+            <if test="userPassword!=null"> user_password = #{userPassword},</if>
+            <if test="email!=null">Email = #{email},</if>
+            <if test="telephone!=null">telephone = #{telephone},</if>
+            <if test="userPicimg!=null">user_Picimg = #{userPicimg},</if>
+            <if test="userAge!=null"> user_age = #{userAge},</if>
+            <if test="workExperience!=null">user_workExperience = #{workExperience},</if>
+            <if test="userAddress!=null">user_address = #{userAddress},</if>
+            <if test="userSex!=null">user_sex = #{userSex},</if>
+            <if test="userEducationBackground!=null">user_educationBackground = #{userEducationBackground}</if>
+        </set>
+        where user_id = #{userId}
     </update>
 </mapper>

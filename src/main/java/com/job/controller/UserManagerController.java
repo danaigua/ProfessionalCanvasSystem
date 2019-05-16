@@ -1,13 +1,20 @@
 package com.job.controller;
 
+import com.job.Utils.DateUtil;
+import com.job.Utils.StringUtil;
+import com.job.pojo.Mesessage;
 import com.job.pojo.User;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
+import org.aspectj.bridge.Message;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +31,54 @@ public class UserManagerController extends ActionSupport {
     private String updatefield;
     private String updatevalue;
     private boolean flag;
+    private String userPic1;
+
+    private String userId;
+
+    private File userPic;
+    private String userPicFileName;
+    private String info;
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getUserPicFileName() {
+        return userPicFileName;
+    }
+
+    public void setUserPicFileName(String userPicFileName) {
+        this.userPicFileName = userPicFileName;
+    }
+
+
+    public String getUserPic1() {
+        return userPic1;
+    }
+
+    public void setUserPic1(String userPic1) {
+        this.userPic1 = userPic1;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public File getUserPic() {
+        return userPic;
+    }
+
+    public void setUserPic(File userPic) {
+        this.userPic = userPic;
+    }
 
     public boolean isFlag() {
         return flag;
@@ -186,6 +241,39 @@ public class UserManagerController extends ActionSupport {
             flag = true;
         }else{
             flag = false;
+        }
+        return SUCCESS;
+    }
+
+    /**
+     * 在用户个人中心修改用户个人信息
+     * @return
+     * @throws Exception
+     */
+    public String saveUserInfoInUserCenter() throws Exception {
+
+        System.out.println(userPic);
+        if(userPic != null){
+            String imageName = DateUtil.getCurrentDateStr();
+            String realPath = ServletActionContext.getServletContext().getRealPath("/userImage");
+            String imageFile=imageName+"."+userPicFileName.split("\\.")[1];
+            System.out.println(imageFile);
+            File saveFile=new File(realPath,imageFile);
+            FileUtils.copyFile(userPic, saveFile);
+            user.setUserPicimg(imageFile);
+        }else{
+            user.setUserPicimg("");
+        }
+        if(StringUtil.isNotEmpty(userId)){
+            user.setUserId(Integer.parseInt(userId));
+            int i = userService2.saveAndUpdateUserInfoInUserCenter(user);
+            Mesessage message = new Mesessage();
+            message.setInfo("修改成功，下次登陆登陆生效");
+            ActionContext actionContext = ActionContext.getContext();
+            Map<String, Object> session = actionContext.getSession();
+            session.put("message", message);
+        }else{
+            int register = userService2.Register(user);
         }
         return SUCCESS;
     }
