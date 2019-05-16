@@ -1,6 +1,8 @@
 package com.job.controller;
 
 import com.job.pojo.User;
+import com.job.pojo.UserAspriation;
+import com.job.service.impl.UserAspriationServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -41,6 +43,9 @@ public class UserController extends ActionSupport implements ServletResponseAwar
     @Resource
     private UserServiceImpl userService;
 
+    @Resource
+    private UserAspriationServiceImpl userAspriationService;
+
     public User getUser() {
         return user;
     }
@@ -76,13 +81,16 @@ public class UserController extends ActionSupport implements ServletResponseAwar
     //登陆
     public String login() {
         User user1 = userService.login(user);
+        UserAspriation userAspriation = new UserAspriation();
+        userAspriation.setUserId(user1.getUserId());
+        UserAspriation userAspriation1 = userAspriationService.showUserAspriation(userAspriation);
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String, Object> session = actionContext.getSession();
+        session.put("userAspriation", userAspriation1);
         if (user1 == null) {
             this.error = "用户名密码错误";
             return "error";
         } else {
-
-            ActionContext actionContext = ActionContext.getContext();
-            Map<String, Object> session = actionContext.getSession();
             session.put("currentUser", user1);
             return "success";
         }

@@ -4,6 +4,8 @@ import com.job.Utils.DateUtil;
 import com.job.Utils.StringUtil;
 import com.job.pojo.Mesessage;
 import com.job.pojo.User;
+import com.job.pojo.UserAspriation;
+import com.job.service.impl.UserAspriationServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -22,6 +24,10 @@ import java.util.Map;
 public class UserManagerController extends ActionSupport {
     @Resource
     private UserServiceImpl userService2;
+    @Resource
+    private UserAspriationServiceImpl userAspriationService;
+
+
     private int page = 1;
     private int limit = 1;
     private Map<String, Object> result = null;
@@ -38,6 +44,16 @@ public class UserManagerController extends ActionSupport {
     private File userPic;
     private String userPicFileName;
     private String info;
+
+    private UserAspriation userAspriation;
+
+    public UserAspriation getUserAspriation() {
+        return userAspriation;
+    }
+
+    public void setUserAspriation(UserAspriation userAspriation) {
+        this.userAspriation = userAspriation;
+    }
 
     public String getInfo() {
         return info;
@@ -275,6 +291,13 @@ public class UserManagerController extends ActionSupport {
         }else{
             int register = userService2.Register(user);
         }
+        return SUCCESS;
+    }
+    /**
+     * 修改个人中心的用户意愿
+     */
+    public String updateUserAspriationInUserCenter(){
+        int i = userAspriationService.userUpdateAspriation(userAspriation);
         return SUCCESS;
     }
 }

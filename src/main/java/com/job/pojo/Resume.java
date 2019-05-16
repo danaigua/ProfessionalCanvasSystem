@@ -3,20 +3,20 @@ package com.job.pojo;
 public class Resume {
     private int resumeId;
     private int userId;
-    private String resumeUserName;
-    private String resumeUsersex;
-    private String resumeBirthday;
-    private String resumeEducationBackground;
-    private String resumePositionApplied;
-    private String resumeAddress;
-    private String almamater;
-    private String englishLevel;
-    private String cpmputerLevel;
-    private String major;
-    private String awards;
-    private String workExperience;
-    private String userImage;
-    private String userTelephone;
+    private String resumeUserName;    //投简历者的真实姓名
+    private String resumeUsersex;     //投简历者的性别
+    private String resumeBirthday;     //投简历者的生日
+    private String resumeEducationBackground;  //投简历者的学历
+    private String resumePositionApplied;   //投简历者的申请的职位
+    private String resumeAddress;           //投简历者的住址
+    private String almamater;               //投简历者的毕业学校
+    private String englishLevel;               //投简历者的英语水平
+    private String cpmputerLevel;   //投简历者的计算机水平
+    private String major;           //投简历者的专业
+    private String awards;          //投简历者的获得奖项
+    private String workExperience;  //投简历者的工作经历
+    private String userImage;       //投简历者的用户图片
+    private String userTelephone;   //投简历者的手机号
 
     public int getResumeId() {
         return resumeId;

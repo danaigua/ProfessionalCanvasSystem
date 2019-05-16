@@ -241,5 +241,19 @@
         <action name="saveUserInfoInUserCenter" class="com.job.controller.UserManagerController" method="saveUserInfoInUserCenter">
             <result name="success">/Home/about/index1.2.jsp</result>
         </action>
+        <!--修改个人中心的个人意愿-->
+        <action name="updateUserAspriationInUserCenter" class="com.job.controller.UserManagerController" method="updateUserAspriationInUserCenter">
+            <result name="success">/Home/about/index1.2.jsp</result>
+        </action>
+        <!--用户反馈-->
+        <action name="userFeedback" class="com.job.controller.FeedbackController" method="userFeedback">
+            <result name="success">/Home/about/feedback.jsp</result>
+        </action>
+        <!--返回用户反馈的信息在layui后台-->
+        <action name="listFeedback" class="com.job.controller.FeedbackController" method="listFeedback">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
     </package>
 </struts>

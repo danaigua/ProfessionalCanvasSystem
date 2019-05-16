@@ -5,12 +5,20 @@ public class UserAspriation {
     private int userId;
     private int userAspriationId;
     private String userExpectSalary;
-    private String userExpectSalary;
     private String userExpectAddress;
     private String userExpectJob;
-    private String userExceptionJobType;//比如全职，兼职
+    private String userExceptJobType;//比如全职，兼职
     private String userAddress;
     private String userType;
+    private String userAssess;//用户自我评价
+
+    public String getUserAssess() {
+        return userAssess;
+    }
+
+    public void setUserAssess(String userAssess) {
+        this.userAssess = userAssess;
+    }
 
     public int getUserId() {
         return userId;
@@ -52,12 +60,12 @@ public class UserAspriation {
         this.userExpectJob = userExpectJob;
     }
 
-    public String getUserExceptionJobType() {
-        return userExceptionJobType;
+    public String getUserExceptJobType() {
+        return userExceptJobType;
     }
 
-    public void setUserExceptionJobType(String userExceptionJobType) {
-        this.userExceptionJobType = userExceptionJobType;
+    public void setUserExceptJobType(String userExceptJobType) {
+        this.userExceptJobType = userExceptJobType;
     }
 
     public String getUserAddress() {

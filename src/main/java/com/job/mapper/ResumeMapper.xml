@@ -21,5 +21,30 @@
             <result column="resume_userimage" jdbcType="VARCHAR" property="userImage" />
             <result column="resume_userTelephone" jdbcType="VARCHAR" property="userTelephone" />
         </resultMap>
-
+    <update id="resumeUpdate">
+        update resume
+        <set>
+            <if test="resumeUserName != null">resume_userName = #{resumeUserName}</if>
+            <if test="resumeUsersex != null"> ,resume_userSex = #{resumeUsersex}</if>
+            <if test="resumeBirthday != null"> ,resume_birthday = #{resumeBirthday}</if>
+            <if test="resumeEducationBackground != null"> ,resume_educationBackground = #{resumeEducationBackground}</if>
+            <if test="resumePositionApplied != null"> ,resume_positionApplied = #{resumePositionApplied}</if>
+            <if test="resumeAddress != null"> ,resume_address = #{resumeAddress}</if>
+            <if test="almamater != null"> ,resume_almamater = #{almamater}</if>
+            <if test="englishLevel != null"> ,resume_englishLevel = #{englishLevel}</if>
+            <if test="cpmputerLevel != null"> ,resume_computerLevel = #{cpmputerLevel}</if>
+            <if test="major != null"> ,resume_major = #{major}</if>
+            <if test="awards != null"> ,resume_awards = #{awards}</if>
+            <if test="workExperience != null"> ,resume_workExperience = #{workExperience}</if>
+            <if test="userImage != null"> ,resume_userimage = #{userImage}</if>
+            <if test="userTelephone != null"> ,resume_userTelephone = #{userTelephone}</if>
+        </set>
+        where resume_id = #{resumeId}
+    </update>
+    <select id="resumelist" resultMap="BaseResultMap">
+        select * from resume where user_id = #{userId}
+    </select>
+    <insert id="resumeAdd">
+        insert into resume (user_id,resume_id)values (#{userId},#{resumeId})
+    </insert>
 </mapper>

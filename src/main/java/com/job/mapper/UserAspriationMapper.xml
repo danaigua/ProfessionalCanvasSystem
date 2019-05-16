@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IUserAspriationDao">
+        <resultMap id="BaseResultMap" type="com.job.pojo.UserAspriation">
+            <id column="userAspriation_id" jdbcType="INTEGER" property="userAspriationId" />
+            <result column="user_id" jdbcType="INTEGER" property="userId" />
+            <result column="userExpectSalary" jdbcType="VARCHAR" property="userExpectSalary" />
+            <result column="userExpectAddress" jdbcType="VARCHAR" property="userExpectAddress" />
+            <result column="userExpectJob" jdbcType="VARCHAR" property="userExpectJob" />
+            <result column="userExpectJobType" jdbcType="VARCHAR" property="userExceptJobType" />
+            <result column="userType" jdbcType="VARCHAR" property="userType" />
+            <result column="userAssess" jdbcType="VARCHAR" property="userAssess" />
+        </resultMap>
+    <update id="userUpdateAspriation">
+        update user_aspriation
+        <set>
+            <if test="userExpectSalary != null"> userExpectSalary = #{userExpectSalary}</if>
+            <if test="userExpectAddress != null"> ,userExpectAddress = #{userExpectAddress}</if>
+            <if test="userExpectJob != null"> ,userExpectJob = #{userExpectJob}</if>
+            <if test="userAssess != null"> ,userAssess = #{userAssess}</if>
+            <if test="userType != null"> ,userType = #{userType}</if>
+            <if test="userExceptJobType != null"> ,userExpectJobType = #{userExceptJobType}</if>
+        </set>
+        where userAspriation_id = #{userAspriationId}
+    </update>
+   <insert id="userAddAspriation">
+        insert into user_aspriation
+        (user_id, userExpectSalary, userExpectAddress, userExpectJob, userExpectJobType, userAssess, userType)
+        values
+        (#{userId}, #{userExpectSalary}, #{userExpectAddress}, #{userExpectJob}, #{userExceptJobType}, #{userAddress}, #{userType})
+   </insert>
+    <select id="showUserAspriation" resultMap="BaseResultMap">
+        select * from user_aspriation where user_id = #{userId}
+    </select>
+</mapper>

@@ -106,7 +106,7 @@
 									<i class="basicForm_xiao"></i>
 									<input type="text" id="city" class="basic_input basicInp_mar" name = "user.userName" value="${currentUser.userName}" />
 									<label class="basic_label xingbie">性别</label>
-									<span class="basic_man xingbieNN basic_taobao"><i class="man_img"></i>男</span>
+									<span class="basic_man xingbieNN"><i class="man_img"></i>男</span>
 									<span class="basic_girl xingbieNN"><i class="girl_img"></i>女</span>
 									<input type="hidden" value="${currentUser.userSex}" class="basic_input" name="user.userSex" />
 								</div>
@@ -164,34 +164,34 @@
 					
 					<h1 class="desire_theme">求职意愿</h1>
 					<p class="desire_box">
-						期望薪资 : <span class="desice_money desireMar">10000~20000</span>
-						期望工作地点 : <span class="desice_address desireMar">深圳</span>
+						期望薪资 : <span class="desice_money desireMar">${userAspriation.userExpectSalary}</span>
+						期望工作地点 : <span class="desice_address desireMar">${userAspriation.userExpectAddress}</span>
 					</p>
 					<p class="desire_box">
-						期望从事职位 : <span class="desire_position desireMar">前端工程师</span>
-						期望工作性质 : <span class="desire_nature desireMar">全职</span>
+						期望从事职位 : <span class="desire_position desireMar">${userAspriation.userExpectJob}</span>
+						期望工作性质 : <span class="desire_nature desireMar">${userAspriation.userExceptJobType}</span>
 					</p>
 					<p class="desire_box">
-						自我评价 : <span class="desire_evaluate desireMar">积极向上，乐观开朗，具有很好的团队精神。</span>
+						自我评价 : <span class="desire_evaluate desireMar">${userAspriation.userAssess}</span>
 					</p>
 					<p class="desire_box">
-						求职状态 : <span class="desire_state desireMar">离职</span>
+						求职状态 : <span class="desire_state desireMar">${userAspriation.userType}</span>
 					</p>
 				</div>
 				<div class="desire_form">    		<!--求职意愿隐藏-->
-					<form action="">
+					<form action="updateUserAspriationInUserCenter" enctype="multipart/form-data" method="post">
 						<div class="basicForm_box">
 							<label for="city_credit" class="desire_label">期望薪资</label>
 							<i class="basicForm_xiao"></i>
-							<input type="text" id="city_credit"  class="desire_input basicInp_mar">
+							<input type="text" id="city_credit" name="userAspriation.userExpectSalary" value="${userAspriation.userExpectSalary}"  class="desire_input basicInp_mar">
 							<label for="city_number" class="desire_label">期望工作地点</label>
 							<i class="basicForm_xiao"></i>
-							<input type="tel" id="city_number"  class="desire_input">
+							<input type="tel" id="city_number" name="userAspriation.userExpectAddress" value="${userAspriation.userExpectAddress}" class="desire_input">
 						</div>
 						<div class="basicForm_box">
 							<label for="city_credit" class="desire_label">期望从事职位</label>
 							<i class="basicForm_xiao"></i>
-							<input type="text" id="city_credit"  class="desire_input basicInp_mar" list="congshi">
+							<input type="text" id="city_credit"  name="userAspriation.userExpectJob" value="${userAspriation.userExpectJob}"  class="desire_input basicInp_mar" list="congshi">
 							<datalist id="congshi">
 								<option value="硬件工程师"></option>
 								<option value="网络应用工程师"></option>
@@ -201,13 +201,13 @@
 							</datalist>
 							<label for="city_number" class="desire_label">期望工作性质</label>
 							<i class="basicForm_xiao"></i>
-							<input type="tel" id="city_number"  class="desire_input">
+							<input type="tel" id="city_number"  name="userAspriation.userExceptJobType" value="${userAspriation.userExceptJobType}"  class="desire_input">
 						</div>
 						<div class="basicForm_box">
 						  <div class="desire_littlebox">
 							<label for="city_credit" class="desire_label">求职状态</label>
 							<i class="basicForm_xiao"></i>
-							<input type="text" id="city_credit"  class="desire_input basicInp_mar" list="zhuangtai">
+							<input type="text" id="city_credit"  name="userAspriation.userType" value="${userAspriation.userType}"  class="desire_input basicInp_mar" list="zhuangtai">
 							<datalist id="zhuangtai">
 								<option value="就职"></option>
 								<option value="离职"></option>
@@ -217,11 +217,13 @@
 							<label for="city_number" class="desire_label">自我评价</label>
 							<i class="basicForm_xiao"></i>
 						    </div>
-							<textarea type="tel" id="city_number"  class="desire_input desire_duohang"></textarea>
+							<textarea type="tel" id="city_number"  name="userAspriation.userAssess" value="${userAspriation.userAssess}"   class="desire_input desire_duohang"></textarea>
 						</div>
 						<div class="baocun_box">
-						<input type="button" value="保存" class="preservation">
-						<input type="button" value="取消" class="cancel">
+							<input type="hidden" value="${userAspriation.userAspriationId}" name="userAspriation.userAspriationId">
+							<input type="hidden" value="${userAspriation.userId}" name="userAspriation.userId">
+							<input type="submit" value="保存" class="preservation">
+							<input type="button" value="取消" class="cancel">
 						</div>
 					</form>
 				</div>
@@ -314,7 +316,17 @@
 								"display":"none"
 							})
 						})
+						};
+				   var basicInforXing = $("basicInfor_xing");
+				   var basicMan = $(".basic_man");
+				   var basicGirl = $(".basic_girl")
+				   basicEdit.eq(0).click(function () {
+						if(basicInforXing.text() == basicMan.text()) {
+							basicMan.addClass("basic_taobao");
+						}else{
+							basicGirl.addClass("basic_taobao");
 						}
+				   })
 					
 					            // 编辑的性别/
 					var xingbie = $(".xingbieNN");

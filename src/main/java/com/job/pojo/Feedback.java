@@ -5,6 +5,15 @@ public class Feedback {
     private String feedbacktitle;
     private String feedbackInfo;
     private int feedId;
+    private String feedbackStatus;
+
+    public String getFeedbackStatus() {
+        return feedbackStatus;
+    }
+
+    public void setFeedbackStatus(String feedbackStatus) {
+        this.feedbackStatus = feedbackStatus;
+    }
 
     public int getUser_id() {
         return user_id;
