@@ -1,7 +1,9 @@
 package com.job.controller;
 
+import com.job.pojo.Resume;
 import com.job.pojo.User;
 import com.job.pojo.UserAspriation;
+import com.job.service.impl.ResumeServiceImpl;
 import com.job.service.impl.UserAspriationServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
@@ -46,6 +48,10 @@ public class UserController extends ActionSupport implements ServletResponseAwar
     @Resource
     private UserAspriationServiceImpl userAspriationService;
 
+    @Resource
+    private ResumeServiceImpl resumeService;
+
+
     public User getUser() {
         return user;
     }
@@ -80,13 +86,17 @@ public class UserController extends ActionSupport implements ServletResponseAwar
 
     //登陆
     public String login() {
+        Resume resume = new Resume();
         User user1 = userService.login(user);
+        resume.setUserId(user1.getUserId());
+        Resume resume1 = resumeService.resumelist(resume);
         UserAspriation userAspriation = new UserAspriation();
         userAspriation.setUserId(user1.getUserId());
         UserAspriation userAspriation1 = userAspriationService.showUserAspriation(userAspriation);
         ActionContext actionContext = ActionContext.getContext();
         Map<String, Object> session = actionContext.getSession();
         session.put("userAspriation", userAspriation1);
+        session.put("resume", resume1);
         if (user1 == null) {
             this.error = "用户名密码错误";
             return "error";
@@ -99,6 +109,7 @@ public class UserController extends ActionSupport implements ServletResponseAwar
     //注册
     public String Register() {
         int register = userService.Register(user);
+
         if (register != 0) {
             return "success";
         } else {

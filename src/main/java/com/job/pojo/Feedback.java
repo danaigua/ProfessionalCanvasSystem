@@ -1,26 +1,19 @@
 package com.job.pojo;
 
 public class Feedback {
-    private int user_id;
+    private int userId;
     private String feedbacktitle;
     private String feedbackInfo;
     private int feedId;
     private String feedbackStatus;
+    private String feedbackImg;
 
-    public String getFeedbackStatus() {
-        return feedbackStatus;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setFeedbackStatus(String feedbackStatus) {
-        this.feedbackStatus = feedbackStatus;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getFeedbacktitle() {
@@ -45,5 +38,21 @@ public class Feedback {
 
     public void setFeedId(int feedId) {
         this.feedId = feedId;
+    }
+
+    public String getFeedbackStatus() {
+        return feedbackStatus;
+    }
+
+    public void setFeedbackStatus(String feedbackStatus) {
+        this.feedbackStatus = feedbackStatus;
+    }
+
+    public String getFeedbackImg() {
+        return feedbackImg;
+    }
+
+    public void setFeedbackImg(String feedbackImg) {
+        this.feedbackImg = feedbackImg;
     }
 }

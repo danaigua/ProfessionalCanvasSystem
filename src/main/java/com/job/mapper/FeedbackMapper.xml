@@ -9,11 +9,12 @@
             <result column="feedback_info" jdbcType="VARCHAR" property="feedbackInfo" />
             <result column="feed_id" jdbcType="VARCHAR" property="feedId" />
             <result column="feedback_status" jdbcType="VARCHAR" property="feedbackStatus" />
+            <result column="feedback_img" jdbcType="VARCHAR" property="feedbackImg" />
         </resultMap>
     <insert id="userFeedbackAdd">
-        insert into feedback values (#{userId}, #{feedbacktitle}, #{feedbackInfo}, null, #{feedbackStatus})
+        insert into feedback values (#{userId}, #{feedbacktitle}, #{feedbackInfo}, null, "未处理", #{feedbackImg})
     </insert>
     <select id="userFeedbackListByteStatusIsFalse">
-        select * from feedback where feedback_status = "已处理";
+        select * from feedback where feedback_status = "未处理";
     </select>
 </mapper>

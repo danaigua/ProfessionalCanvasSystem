@@ -56,11 +56,11 @@
                         <a href="">用户反馈<span class="layui-badge-dot"></span></a>
                     </li>
                     <li class="layui-nav-item" lay-unselect="">
-                        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+                        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">${currentAdmin.adminName}</a>
                         <dl class="layui-nav-child" style="z-index: 9999;">
                             <dd><a href="javascript:;">安全管理</a></dd>
-                            <dd><a href="javascript:;">修改信息</a></dd>
-                            <dd><a href="javascript:;">退出系统</a></dd>
+                            <dd><a href="../admin/modifyPassword.jsp">修改密码</a></dd>
+                            <dd><a href="logOut">退出系统</a></dd>
                         </dl>
                     </li>
                 </ul>

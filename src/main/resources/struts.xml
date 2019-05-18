@@ -255,5 +255,20 @@
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--简历修改-->
+        <action name="resumeUpdate" class="com.job.controller.ResumeController" method="resumeUpdate">
+            <result name="success">/Home/about/resume.jsp</result>
+        </action>
+        <!--公司后台的申请,审核-->
+        <action name="companyAudit" class="com.job.controller.CompanyAuditController" method="companyAudit">
+            <result name="success">/Home/about/company.jsp</result>
+        </action>
+        <!--管理员退出登陆-->
+        <action name="logOut" class="com.job.controller.AdminController" method="adminLogOut">
+            <result name="logOut">/Login/admin/index.html</result>
+        </action>
+        <!--管理员页面修改管理员信息-->
+        <action name="changeAdminPassword" class="com.job.controller.AdminController" method="changeAdminPassword">
+        </action>
     </package>
 </struts>

@@ -3,20 +3,21 @@ package com.job.pojo;
 public class Resume {
     private int resumeId;
     private int userId;
-    private String resumeUserName;    //投简历者的真实姓名
-    private String resumeUsersex;     //投简历者的性别
+
     private String resumeBirthday;     //投简历者的生日
-    private String resumeEducationBackground;  //投简历者的学历
+    private String resumeNation;
+
     private String resumePositionApplied;   //投简历者的申请的职位
-    private String resumeAddress;           //投简历者的住址
+
     private String almamater;               //投简历者的毕业学校
     private String englishLevel;               //投简历者的英语水平
-    private String cpmputerLevel;   //投简历者的计算机水平
+    private String computerLevel;   //投简历者的计算机水平
     private String major;           //投简历者的专业
+
     private String awards;          //投简历者的获得奖项
     private String workExperience;  //投简历者的工作经历
     private String userImage;       //投简历者的用户图片
-    private String userTelephone;   //投简历者的手机号
+
 
     public int getResumeId() {
         return resumeId;
@@ -34,22 +35,6 @@ public class Resume {
         this.userId = userId;
     }
 
-    public String getResumeUserName() {
-        return resumeUserName;
-    }
-
-    public void setResumeUserName(String resumeUserName) {
-        this.resumeUserName = resumeUserName;
-    }
-
-    public String getResumeUsersex() {
-        return resumeUsersex;
-    }
-
-    public void setResumeUsersex(String resumeUsersex) {
-        this.resumeUsersex = resumeUsersex;
-    }
-
     public String getResumeBirthday() {
         return resumeBirthday;
     }
@@ -58,12 +43,12 @@ public class Resume {
         this.resumeBirthday = resumeBirthday;
     }
 
-    public String getResumeEducationBackground() {
-        return resumeEducationBackground;
+    public String getResumeNation() {
+        return resumeNation;
     }
 
-    public void setResumeEducationBackground(String resumeEducationBackground) {
-        this.resumeEducationBackground = resumeEducationBackground;
+    public void setResumeNation(String resumeNation) {
+        this.resumeNation = resumeNation;
     }
 
     public String getResumePositionApplied() {
@@ -74,20 +59,12 @@ public class Resume {
         this.resumePositionApplied = resumePositionApplied;
     }
 
-    public String getResumeAddress() {
-        return resumeAddress;
-    }
-
-    public void setResumeAddress(String resumeAddress) {
-        this.resumeAddress = resumeAddress;
-    }
-
     public String getAlmamater() {
         return almamater;
     }
 
     public void setAlmamater(String almamater) {
-        almamater = almamater;
+        this.almamater = almamater;
     }
 
     public String getEnglishLevel() {
@@ -98,12 +75,12 @@ public class Resume {
         this.englishLevel = englishLevel;
     }
 
-    public String getCpmputerLevel() {
-        return cpmputerLevel;
+    public String getComputerLevel() {
+        return computerLevel;
     }
 
-    public void setCpmputerLevel(String cpmputerLevel) {
-        this.cpmputerLevel = cpmputerLevel;
+    public void setComputerLevel(String computerLevel) {
+        this.computerLevel = computerLevel;
     }
 
     public String getMajor() {
@@ -137,12 +114,5 @@ public class Resume {
     public void setUserImage(String userImage) {
         this.userImage = userImage;
     }
-
-    public String getUserTelephone() {
-        return userTelephone;
-    }
-
-    public void setUserTelephone(String userTelephone) {
-        this.userTelephone = userTelephone;
-    }
 }
+

@@ -1,13 +1,17 @@
 package com.job.controller;
 
+import com.job.Utils.DateUtil;
 import com.job.pojo.Feedback;
 import com.job.service.impl.FeedbackServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -15,8 +19,26 @@ public class FeedbackController extends ActionSupport {
     private Feedback feedback;
     private List<Feedback> feedbacks = null;
     private Map<String, Object> result = null;
+    private File feedbackImg;
+    private String feedbackImgFileName;
     @Resource
     private FeedbackServiceImpl feedbackService;
+
+    public String getFeedbackImgFileName() {
+        return feedbackImgFileName;
+    }
+
+    public void setFeedbackImgFileName(String feedbackImgFileName) {
+        this.feedbackImgFileName = feedbackImgFileName;
+    }
+
+    public File getFeedbackImg() {
+        return feedbackImg;
+    }
+
+    public void setFeedbackImg(File feedbackImg) {
+        this.feedbackImg = feedbackImg;
+    }
 
     public Map<String, Object> getResult() {
         return result;
@@ -41,8 +63,22 @@ public class FeedbackController extends ActionSupport {
     public void setFeedback(Feedback feedback) {
         this.feedback = feedback;
     }
-    public String userFeedback(){
+    public String userFeedback() throws Exception {
+        if(feedbackImg != null){
+            String imageName = DateUtil.getCurrentDateStr();
+            String realPath = ServletActionContext.getServletContext().getRealPath("/userImage");
+            String imageFile=imageName+"."+feedbackImgFileName.split("\\.")[1];
+            System.out.println(imageFile);
+            File saveFile=new File(realPath,imageFile);
+            FileUtils.copyFile(feedbackImg, saveFile);
+//            user.setUserPicimg(imageFile);
+            feedback.setFeedbackImg(imageFile);
+        }else{
+
+            feedback.setFeedbackImg("");
+        }
         int i = feedbackService.userFeedbackAdd(feedback);
+
         return SUCCESS;
     }
     public String listFeedback(){

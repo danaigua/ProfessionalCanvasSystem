@@ -1,5 +1,6 @@
 package com.job.controller;
 
+import com.job.Utils.ResponseUtil;
 import com.job.pojo.Admin;
 import com.job.pojo.JobInfo;
 import com.job.pojo.User;
@@ -8,20 +9,54 @@ import com.job.service.impl.JobInfoServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import net.sf.json.JSONObject;
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.interceptor.ServletRequestAware;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class AdminController extends ActionSupport {
+public class AdminController extends ActionSupport  implements ServletRequestAware {
     private Admin admin;
     private String error;
     private List<User> userList;
+    private String adminId;
+    private String password;
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public List<User> getUserList() {
         return userList;
     }
+    private HttpServletRequest request;
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
@@ -86,5 +121,27 @@ public class AdminController extends ActionSupport {
             return null;
         }
     }
+    public String adminLogOut(){
+        HttpSession session=request.getSession();
+        session.removeAttribute("currentAdmin");
+        return "logOut";
+    }
+    public String changeAdminPassword() throws Exception {
+        Admin admin = new Admin();
+        admin.setAdminId(adminId);
+        admin.setAdminPassword(password);
+        int i = adminService.updateAdminInfo(admin);
+        JSONObject resultJson=new JSONObject();
+        if(i>0){
+            resultJson.put("success", true);
+        }else{
+            resultJson.put("errorMsg", "修改密码失败");
+        }
+        ResponseUtil.write(resultJson, ServletActionContext.getResponse());
+        return null;
+    }
 
+    public void setServletRequest(HttpServletRequest request) {
+        this.request = request;
+    }
 }
