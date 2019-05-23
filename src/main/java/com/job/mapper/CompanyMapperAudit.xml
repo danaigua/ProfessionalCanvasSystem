@@ -30,4 +30,7 @@
          (null, #{userId}, #{companyName}, #{companyAddress}, #{companyTelephone}, #{companyEmail}, #{companyImg1},
          #{companyImg2}, #{companyImg3}, #{companyImg4}, #{companyImg5}, #{companyOther}, "未审核")
     </insert>
+    <select id="selectByteCompanyAuditId" resultMap="BaseResultMap">
+        select * from companyaudit where companyAudit_Id = #{compantAuditId}
+    </select>
 </mapper>

@@ -13,6 +13,15 @@ public class Companyaudit {
     private String companyOther;
     private int compantAuditId;
     private int userId;
+    private String companyAuditStatus;
+
+    public String getCompanyAuditStatus() {
+        return companyAuditStatus;
+    }
+
+    public void setCompanyAuditStatus(String companyAuditStatus) {
+        this.companyAuditStatus = companyAuditStatus;
+    }
 
     public String getCompanyName() {
         return companyName;

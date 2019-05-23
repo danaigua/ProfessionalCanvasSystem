@@ -1,0 +1,74 @@
+
+
+.b ,.b1 ,.b2 ,.b3{background: #393D49;height: 60px;font-size: 20px;color: #FFF;}
+.b{text-align: center;line-height: 60px;}
+.foot{text-align: center;}
+.default{font: 24px Red;text-align: center;}
+.layuitable{
+    /*border: solid #000;*/
+    width: 900px;
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+.layuitablebig{
+    width: 1100px;
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 60px;
+    min-width: 1000px;
+}
+.bread{
+    height: 20px;
+    width: 100%;
+}
+i{
+    font-style:normal;
+    display:inline-block;
+}
+.bread_box{
+    color:#999;
+    font-size:17px;
+    padding:10px 0;
+    position:relative;
+}
+.text_margin{
+    margin-right:327px;
+}
+.ImgBox{
+    border:1px solid black;
+    width:250px;
+    height:250px;
+    display:inline-block;
+    position:relative;
+    margin-bottom:5px;
+}
+.bread_theme{
+    width:114px;
+    text-align:right;
+}
+.ImgBox_img{
+    z-index:1;
+}
+.ImgBox_tu{
+    font-size:20px;
+    color:#eee;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:130px;
+    heigth:40px;
+    margin-left:-65px;
+    margin-top:-20px;
+}
+.breadImg{
+    margin-top:60px;
+}
+.buLay{
+    padding:20px 0 0 108px;
+}
+.breadImg_theme{
+    font-size:25px;
+    font-weight:500;
+    margin-bottom:20px;
+}

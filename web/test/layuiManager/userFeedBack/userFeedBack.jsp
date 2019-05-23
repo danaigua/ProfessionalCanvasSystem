@@ -11,25 +11,30 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>大数据智能求职系统后台</title>
-    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style.css"
+    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style1.css"
           rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/test/layuiManager/layui/css/layui.css" media="all">
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
-    <jsp:include page="common/head.jsp"></jsp:include>
-    <jsp:include page="common/manu.jsp"></jsp:include>
+    <jsp:include page="../common/head.jsp"></jsp:include>
+    <jsp:include page="../common/manu.jsp"></jsp:include>
         <div class="layui-body layui-tab-content site-demo site-demo-body">
             <div class="layui-tab-item layui-show">
                 <div class="layui-main">
-                    <div class="bread"><jsp:include page="common/nav.jsp"></jsp:include></div>
-
+                    <div class="bread"><jsp:include page="../common/nav.jsp"></jsp:include></div>
+                    <div class="layuitable">
+                        <table class="layui-hide" id="users" lay-filter="test"></table>
+                    </div>
                 </div>
             </div>
         </div>
     <%--<jsp:include page="<%=mainPage%>"></jsp:include>--%>
-    <jsp:include page="common/foot.jsp"></jsp:include>
+    <jsp:include page="../common/foot.jsp"></jsp:include>
 </div>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">查看详情</a>
+</script>
 <script src="${pageContext.request.contextPath}/test/layuiManager/layui/layui.js" charset="utf-8"></script>
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <script>
@@ -42,6 +47,44 @@
             layer.msg(elem.text());
         });
     });
+</script>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        table.render({
+            elem: '#users'
+            ,url:'listFeedback'
+            ,skin: 'line' //行边框风格
+            ,even: true //开启隔行背景
+            ,size: 'sm' //小尺寸的表格
+            ,cols: [[
+                {field:'feedId', width:100, title: 'ID', sort: true}
+                ,{field:'feedbacktitle', width:160, title: '反馈类型', edit: 'text'}
+                ,{field:'feedbackInfo', width:380, title: '反馈内容',  edit: 'text'}
+                ,{field:'feedbackStatus', width:160, title: '反馈状态', edit: 'text'}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:100}
+            ]]
+
+        });
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            var layEvent  = obj.event;
+            switch (layEvent) {
+                case 'del':
+                    $.post("showUserFeedback",{id:data.feedId},function (ret) {
+                            if(ret.code=="1"){
+                                window.location.href="${pageContext.request.contextPath}/test/layuiManager/userFeedBack/userFeedBackShow.jsp";
+                            }
+                        }
+                    )
+                    break;
+            }
+        });
+
+    });
+
 </script>
 </body>
 </html>

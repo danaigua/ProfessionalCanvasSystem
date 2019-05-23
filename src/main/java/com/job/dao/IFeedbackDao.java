@@ -7,4 +7,5 @@ import java.util.List;
 public interface IFeedbackDao {
     List<Feedback> userFeedbackListByteStatusIsFalse();
     int userFeedbackAdd(Feedback feedback);
+    Feedback selectByteFeedbackId(Feedback feedback);
 }

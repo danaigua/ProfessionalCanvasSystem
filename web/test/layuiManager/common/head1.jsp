@@ -16,7 +16,7 @@
         <div class="layui-row">
             <div class="grid-demo grid-demo-bg1">
                 <div class="layui-col-xs10">
-                    <div class="b">超级管理员</div>
+                    <div class="b">普通管理员</div>
                 </div>
                 <div class="layui-col-xs2">
                     <div class="b"></div>
@@ -49,12 +49,6 @@
             <div class="b3">
 
                 <ul class="layui-nav">
-                    <li class="layui-nav-item">
-                        <a href="">控制台<span class="layui-badge">9</span></a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="${pageContext.request.contextPath}/test/layuiManager/userFeedBack/userFeedBack.jsp">用户反馈<span class="layui-badge-dot"></span></a>
-                    </li>
                     <li class="layui-nav-item" lay-unselect="">
                         <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">${currentAdmin.adminName}</a>
                         <dl class="layui-nav-child" style="z-index: 9999;">

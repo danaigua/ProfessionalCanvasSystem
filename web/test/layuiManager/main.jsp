@@ -11,7 +11,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>大数据智能求职系统后台</title>
-    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style.css"
+    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style1.css"
           rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/test/layuiManager/layui/css/layui.css" media="all">
 </head>
@@ -24,7 +24,7 @@
                 <div class="layui-main">
                     <div class="bread"><jsp:include page="common/nav.jsp"></jsp:include></div>
                         <div class="layuitable">
-
+                            <span style="color: red; size: 30px">欢迎使用大数据系统后台</span>
                         </div>
                 </div>
             </div>

@@ -20,4 +20,8 @@ public class FeedbackServiceImpl implements IFeedbackService {
     public int userFeedbackAdd(Feedback feedback) {
         return iFeedbackDao.userFeedbackAdd(feedback);
     }
+
+    public Feedback selectByteFeedbackId(Feedback feedback) {
+        return iFeedbackDao.selectByteFeedbackId(feedback);
+    }
 }

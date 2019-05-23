@@ -21,7 +21,9 @@
 		select * from user where telephone=#{telephone} and user_password=#{userPassword}
 	</select>
     <insert id="Register" parameterType="User" useGeneratedKeys="true" keyProperty="user_id">
-        insert into user (user_name,user_password,Email,telephone)values (#{userName},#{userPassword},#{email},#{telephone})
+        insert into user (user_name,user_password,Email,telephone,user_age,user_workExperience,user_address,user_sex,user_educationBackground)
+        values
+        (#{userName},#{userPassword},#{email},#{telephone},#{userAge},#{workExperience},#{userAddress},#{userSex},#{userEducationBackground})
     </insert>
     <update id="ForgetPassword" parameterType="User">
         update user set user_password = #{userPassword} where telephone=#{telephone} and Email=#{email}

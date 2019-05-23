@@ -19,11 +19,11 @@
         </action>
         <!--注册-->
         <action name="Register" class="com.job.controller.UserController" method="Register">
-            <result name="success" type="redirect">/Home/index.htm</result>
+            <result name="success" type="redirect">/Home/about/sonIn.html</result>
         </action>
         <!--忘记密码-->
         <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
-            <result name="success" type="redirect">/Home/index.htm</result>
+            <result name="success" type="redirect">/Home/about/sonIn.html</result>
         </action>
 
         <action name="LoginHomeIndex" class="com.job.controller.UserController" method="LoginHomeIndex">
@@ -33,7 +33,7 @@
         <!--分析权限控制-->
         <action name="AnalyzeJurisdiction" class="com.job.controller.JurisdictionController"
                 method="AnalyzeJurisdictionManger">
-            <result name="NOJURISDICTION" type="redirect">/Login/login.html</result>
+            <result name="NOJURISDICTION" type="redirect">/Home/about/sonIn.html</result>
             <result name="PASS" type="redirect">/Home/service/index.htm</result>
         </action>
         <!--登陆权限控制-->
@@ -79,7 +79,7 @@
     </package>
     <package name="About" extends="struts-default">
         <action name="AboutLogin" class="com.job.controller.AboutLoginController" method="about">
-            <result name="NULLLOGIN" type="redirect">/Login/login.html</result>
+            <result name="NULLLOGIN" type="redirect">/Home/about/sonIn.html</result>
             <result name="ALREADYLOGIN" type="redirect">/Home/about/index1.2.jsp</result>
         </action>
     </package>
@@ -197,6 +197,9 @@
         <action name="jobAdd" class="com.job.controller.layuiJobController" method="jobAdd">
             <result name="success">/test/layuiManager/job/jobs.jsp</result>
         </action>
+        <action name="jobAddOrinary" class="com.job.controller.layuiJobController" method="jobAdd">
+            <result name="success">/test/layuiManager/ordinaryManager.jsp</result>
+        </action>
         <!--layui后台用于列出职位信息-->
         <action name="jobList" class="com.job.controller.layuiJobController" method="list">
             <result name="success" type="json">
@@ -265,10 +268,27 @@
         </action>
         <!--管理员退出登陆-->
         <action name="logOut" class="com.job.controller.AdminController" method="adminLogOut">
-            <result name="logOut">/Login/admin/index.html</result>
+            <result name="logOut" type="redirect">/Login/admin/index.html</result>
         </action>
         <!--管理员页面修改管理员信息-->
         <action name="changeAdminPassword" class="com.job.controller.AdminController" method="changeAdminPassword">
+        </action>
+        <action name="companyAuditList" class="com.job.controller.CompanyAuditController" method="companyAuditList">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--展示公司审核的信息-->
+        <action name="showCompanyAduit" class="com.job.controller.CompanyAuditController" method="show">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--展示用户反馈详情-->
+        <action name="showUserFeedback" class="com.job.controller.FeedbackController" method="show">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
         </action>
     </package>
 </struts>

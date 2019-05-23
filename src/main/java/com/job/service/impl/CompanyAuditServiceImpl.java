@@ -11,11 +11,15 @@ import java.util.List;
 public class CompanyAuditServiceImpl implements ICompanyAuditService {
     @Resource
     private IComapnyAuditDao iComapnyAuditDao;
-    public List<Companyaudit> companyauditList(Companyaudit companyaudit) {
-        return iComapnyAuditDao.companyauditList(companyaudit);
+    public List<Companyaudit> companyauditList() {
+        return iComapnyAuditDao.companyauditList();
     }
 
     public int companyauditAdd(Companyaudit companyaudit) {
         return iComapnyAuditDao.companyauditAdd(companyaudit);
+    }
+
+    public Companyaudit selectByteCompanyAuditId(Companyaudit companyaudit) {
+        return iComapnyAuditDao.selectByteCompanyAuditId(companyaudit);
     }
 }

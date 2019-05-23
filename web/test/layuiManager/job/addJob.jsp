@@ -11,7 +11,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>大数据智能求职系统后台</title>
-    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style.css"
+    <link href="${pageContext.request.contextPath}/test/layuiManager/css/style1.css"
           rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/test/layuiManager/layui/css/layui.css" media="all">
 </head>
@@ -34,7 +34,7 @@
                             <label class="layui-form-label">招聘部门</label>
                             <div class="layui-input-block">
                                 <%--<input type="text" name="user.userPassword" lay-verify="pass" placeholder="请输入需要招聘的部门" autocomplete="off" class="layui-input">--%>
-                                <input type="password" name="jobInfo.Department"  lay-verify="pass" autocomplete="off" placeholder="请输入需要招聘的部门" class="layui-input" required>
+                                <input type="text" name="jobInfo.Department"  lay-verify="pass" autocomplete="off" placeholder="请输入需要招聘的部门" class="layui-input" required>
                             </div>
                             <br>
                             <label class="layui-form-label">薪资区间</label>

@@ -4,12 +4,18 @@ import com.job.Utils.DateUtil;
 import com.job.Utils.ImgUtil;
 import com.job.pojo.Companyaudit;
 import com.job.service.impl.CompanyAuditServiceImpl;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CompanyAuditController extends ActionSupport {
     private Companyaudit companyaudit;
@@ -23,6 +29,27 @@ public class CompanyAuditController extends ActionSupport {
     private String companyImg4FileName;
     private File companyImg5;
     private String companyImg5FileName;
+
+    private int id;
+
+    private Map<String, Object> result = null;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Map<String, Object> getResult() {
+        return result;
+    }
+
+    public void setResult(Map<String, Object> result) {
+        this.result = result;
+    }
 
     public File getCompanyImg1() {
         return companyImg1;
@@ -147,6 +174,31 @@ public class CompanyAuditController extends ActionSupport {
         }
 
         int i = companyAuditService.companyauditAdd(companyaudit);
+        return SUCCESS;
+    }
+    public String companyAuditList(){
+        List<Companyaudit> companyaudits = companyAuditService.companyauditList();
+        result = new HashMap<String, Object>();
+        result.put("msg","");
+        result.put("code", 0);
+        JSONArray array = JSONArray.fromObject(companyaudits);
+        result.put("data", array);
+        ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
+        return SUCCESS;
+    }
+    public String show(){
+        System.out.println(id);
+        Companyaudit companyaudit = new Companyaudit();
+        companyaudit.setCompantAuditId(id);
+        Companyaudit companyaudit1 = companyAuditService.selectByteCompanyAuditId(companyaudit);
+        System.out.println(companyaudit1);
+        result = new HashMap<String, Object>();
+        result.put("msg","");
+        result.put("code", 1);
+        ActionContext context = ActionContext.getContext();
+        Map<String, Object> session = context.getSession();
+        session.put("companyaudit", companyaudit1);
+        ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
         return SUCCESS;
     }
 }

@@ -4,17 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.job.dao.IFeedbackDao">
         <resultMap id="BaseResultMap" type="com.job.pojo.Feedback">
-            <id column="user_id" jdbcType="INTEGER" property="userId" />
+            <result column="user_id" jdbcType="INTEGER" property="userId" />
             <result column="feedback_title" jdbcType="VARCHAR" property="feedbacktitle" />
             <result column="feedback_info" jdbcType="VARCHAR" property="feedbackInfo" />
-            <result column="feed_id" jdbcType="VARCHAR" property="feedId" />
+            <result column="feed_id" jdbcType="INTEGER" property="feedId" />
             <result column="feedback_status" jdbcType="VARCHAR" property="feedbackStatus" />
             <result column="feedback_img" jdbcType="VARCHAR" property="feedbackImg" />
         </resultMap>
     <insert id="userFeedbackAdd">
         insert into feedback values (#{userId}, #{feedbacktitle}, #{feedbackInfo}, null, "未处理", #{feedbackImg})
     </insert>
-    <select id="userFeedbackListByteStatusIsFalse">
+    <select id="userFeedbackListByteStatusIsFalse" resultMap="BaseResultMap">
         select * from feedback where feedback_status = "未处理";
+    </select>
+    <select id="selectByteFeedbackId" resultMap="BaseResultMap">
+        select * from feedback where feed_id = #{feedId}
     </select>
 </mapper>
