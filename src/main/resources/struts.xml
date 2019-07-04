@@ -290,5 +290,11 @@
                 <param name="root">jsonData</param>
             </result>
         </action>
+        <!--用于后台数据监听-->
+        <action name="getSearchKeyWordAndAddr" class="com.job.controller.MonitorController" method="getSearchKeyWordAndAddr">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
     </package>
 </struts>

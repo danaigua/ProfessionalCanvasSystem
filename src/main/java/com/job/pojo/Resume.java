@@ -3,17 +3,13 @@ package com.job.pojo;
 public class Resume {
     private int resumeId;
     private int userId;
-
-    private String resumeBirthday;     //投简历者的生日
+    private String resumeBirthday;  //投简历者的生日
     private String resumeNation;
-
     private String resumePositionApplied;   //投简历者的申请的职位
-
     private String almamater;               //投简历者的毕业学校
-    private String englishLevel;               //投简历者的英语水平
+    private String englishLevel;    //投简历者的英语水平
     private String computerLevel;   //投简历者的计算机水平
     private String major;           //投简历者的专业
-
     private String awards;          //投简历者的获得奖项
     private String workExperience;  //投简历者的工作经历
     private String userImage;       //投简历者的用户图片

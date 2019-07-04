@@ -267,13 +267,10 @@ public class UserManagerController extends ActionSupport {
      * @throws Exception
      */
     public String saveUserInfoInUserCenter() throws Exception {
-
-        System.out.println(userPic);
         if(userPic != null){
             String imageName = DateUtil.getCurrentDateStr();
             String realPath = ServletActionContext.getServletContext().getRealPath("/userImage");
             String imageFile=imageName+"."+userPicFileName.split("\\.")[1];
-            System.out.println(imageFile);
             File saveFile=new File(realPath,imageFile);
             FileUtils.copyFile(userPic, saveFile);
             user.setUserPicimg(imageFile);

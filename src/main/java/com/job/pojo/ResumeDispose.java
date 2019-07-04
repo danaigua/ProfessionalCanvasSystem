@@ -1,5 +1,8 @@
 package com.job.pojo;
 
+/**
+ * 简历处理类
+ */
 public class ResumeDispose {
     private int resumeDisposeId;
     private int resumeId;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job.dao.IMonitorDao">
+    <resultMap id="BaseResultMap" type="com.job.pojo.Monitor">
+        <result column="searchKeyWord" jdbcType="VARCHAR" property="searchKeyWord"/>
+        <result column="searchAddr" jdbcType="VARCHAR" property="searchAddr"/>
+        <result column="searchKeyWordNO" jdbcType="INTEGER" property="searchKeyWordNO"/>
+        <result column="searchAddrNo" jdbcType="INTEGER" property="searchAddrNo"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
+    </resultMap>
+    <update id="update" parameterType="Monitor" >
+        update monitor
+        <set>
+            <if test="searchKeyWord != null and searchKeyWord != ''">
+                 searchKeyWord = #{searchKeyWord}
+            </if>
+            <if test="searchAddr != null and searchAddr != ''">
+                 searchAddr = #{searchAddr}
+            </if>
+            <if test="searchKeyWordNO != null and searchKeyWordNO != ''">
+                 searchKeyWordNO = #{searchKeyWordNO}
+            </if>
+            <if test="searchAddrNo != null and searchAddrNo != ''">
+                 searchAddrNo = #{searchAddrNo}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <select id="findMonitor" parameterType="Map" resultMap="BaseResultMap">
+        select * from monitor
+        <where>
+            <if test="searchKeyWord != null and searchKeyWord != ''">
+                searchKeyWord = #{searchKeyWord}
+            </if>
+            <if test="searchAddr != null and searchAddr != ''">
+                searchAddr = #{searchAddr}
+            </if>
+        </where>
+    </select>
+    <insert id="addMonitor" parameterType="Monitor" >
+        insert into monitor values(#{searchKeyWord},#{searchAddr},#{searchKeyWordNO},
+        #{searchAddrNo},null);
+    </insert>
+    <select id="findSearchKeyWord" resultMap="BaseResultMap">
+        select searchKeyWord,searchKeyWordNO  from monitor order by searchKeyWordNO DESC;
+    </select>
+    <select id="findSearchAddr" resultMap="BaseResultMap">
+        select searchAddr,searchAddrNo from  monitor order by searchAddrNo DESC;
+    </select>
+    <delete id="clearInternal">
+        delete monitor where
+    </delete>
+</mapper>

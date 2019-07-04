@@ -1,13 +1,16 @@
 package com.job.controller;
 
 import com.job.pojo.JobInfo;
+import com.job.pojo.Monitor;
 import com.job.service.impl.JobInfoServiceImpl;
+import com.job.service.impl.MonitorServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +37,7 @@ public class SearchJobBytetypeController extends ActionSupport {
     private List<JobInfo> jobInfos1;
     private List<JobInfo> jobInfos2;
     private List<JobInfo> jobInfos3;
-
+    private Monitor monitor;
 
     public JobInfo getJobInfo() {
         return jobInfo;
@@ -119,6 +122,10 @@ public class SearchJobBytetypeController extends ActionSupport {
 
     @Resource
     private JobInfoServiceImpl JobService;
+
+    @Resource
+    private MonitorServiceImpl monitorService;
+
     public String  gotoS(){
         return SUCCESS;
     }
@@ -129,12 +136,23 @@ public class SearchJobBytetypeController extends ActionSupport {
 
     public String searchJobByteType(){
 
-//        HttpServletRequest request = ServletActionContext.getRequest();
-//        String type = request.getParameter("TypeJob");
-//        String type = ServletActionContext.getRequest().getParameter("typeJob");
+        monitor = new Monitor();
+        monitor.setSearchKeyWord(typeJob);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("searchKeyWord",typeJob);
+        Monitor monitor1 = monitorService.findMonitor(map);
+        if (monitor1 == null){
+            monitor.setSearchKeyWordNO(1);
+            monitorService.addMonitor(monitor);
+        }else {
+            monitor1.setSearchKeyWord(null);
+            monitor1.setSearchAddr(null);
+            monitor1.setSearchAddrNo(null);
+            monitor1.setSearchKeyWordNO(monitor1.getSearchKeyWordNO() + 1);
+            monitorService.update(monitor1);
+        }
 
-        System.out.println(typeJob);
-        System.out.println(typeJob);
+
         if ("C".equals(typeJob)||"c".equals(typeJob)){
             System.out.println(1);
             job.setType("c");

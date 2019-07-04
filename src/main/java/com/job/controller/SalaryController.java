@@ -1,20 +1,20 @@
 package com.job.controller;
 
-import com.job.pojo.AnalyzeJob;
-import com.job.pojo.AnalyzeResult;
-import com.job.pojo.AnalyzeSalary;
-import com.job.pojo.SalaryResult;
+import com.job.pojo.*;
 import com.job.service.impl.AnalyzeJobService;
 import com.job.service.impl.AnalyzeSalaryService;
+import com.job.service.impl.MonitorServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.Map;
 
 public class SalaryController extends ActionSupport {
     private AnalyzeSalary analyzeSalary;
     private String errorInfo;
+
 
     public String getErrorInfo() {
         return errorInfo;
@@ -34,6 +34,9 @@ public class SalaryController extends ActionSupport {
     private AnalyzeJobService analyzeJobService;
     @Resource
     private AnalyzeSalaryService analyzeSalaryService;
+    @Resource
+    private MonitorServiceImpl monitorService;
+
     public String showSalaryByJobAndTime() {
         //根据工作经验来判断薪资
         AnalyzeJob analyzeJob = new AnalyzeJob();
@@ -42,6 +45,23 @@ public class SalaryController extends ActionSupport {
         System.out.println(analyzeSalary.getWorktime());
         analyzeJob.setJobWorktime(analyzeSalary.getWorktime());
         AnalyzeJob analyzeJob1 = analyzeJobService.showSalaryByJobAndTime(analyzeJob);
+
+        if(analyzeSalary.getAddr() != null && analyzeSalary.getAddr() != ""){
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("searchAddr", analyzeSalary.getAddr());
+            Monitor monitor = monitorService.findMonitor(map);
+            Monitor monitor1 = new Monitor();
+            monitor1.setSearchAddr(analyzeSalary.getAddr());
+            monitor1.setSearchAddrNo(1);
+            if (monitor != null){
+                monitor.setSearchAddrNo(monitor.getSearchAddrNo()+1);
+                monitor.setSearchKeyWord(null);
+                monitor.setSearchKeyWordNO(null);
+                monitorService.addMonitor(monitor);
+            }else{
+                monitorService.addMonitor(monitor1);
+            }
+        }
         if (analyzeJob1 != null) {
             System.out.println(analyzeJob1);
             int salary1 = analyzeJob1.getSalary1();
