@@ -86,17 +86,27 @@ public class UserController extends ActionSupport implements ServletResponseAwar
 
     //登陆
     public String login() {
+
         Resume resume = new Resume();
         User user1 = userService.login(user);
+        /**
+         * 查找简历
+         */
         resume.setUserId(user1.getUserId());
         Resume resume1 = resumeService.resumelist(resume);
+        /**
+         * 把自己以及发布的简历放在个人页面
+         */
+        List<Resume> resumes = resumeService.finResumeByUserId(user1.getUserId());
         UserAspriation userAspriation = new UserAspriation();
         userAspriation.setUserId(user1.getUserId());
         UserAspriation userAspriation1 = userAspriationService.showUserAspriation(userAspriation);
         ActionContext actionContext = ActionContext.getContext();
         Map<String, Object> session = actionContext.getSession();
+        //存到session中
         session.put("userAspriation", userAspriation1);
         session.put("resume", resume1);
+        session.put("resumes", resumes);
         if (user1 == null) {
             this.error = "用户名密码错误";
             return "error";

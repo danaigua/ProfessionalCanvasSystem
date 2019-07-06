@@ -9,7 +9,7 @@
 		<meta name="keywords" content="这里填写关键词" />
 		<meta name="description" content="这里填写描述" />
 		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="../css/user.css" type="text/css" />
+		<link rel="stylesheet" href="../css/user1.css" type="text/css" />
 		<script type="text/javascript" src="../js/html5.js"></script>
 	</head>
 	<body>

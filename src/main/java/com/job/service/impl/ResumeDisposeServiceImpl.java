@@ -6,6 +6,7 @@ import com.job.service.IResumeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("resumeDisposeServiceImpl")
 public class ResumeDisposeServiceImpl implements IResumeService {
@@ -13,14 +14,26 @@ public class ResumeDisposeServiceImpl implements IResumeService {
     private IResumeDao iResumeDao;
 
     public int resumeUpdate(Resume resume) {
-        return 0;
+        return iResumeDao.resumeUpdate(resume);
     }
 
     public int resumeAdd(Resume resume) {
-        return 0;
+        return iResumeDao.resumeAdd(resume);
     }
 
     public Resume resumelist(Resume resume) {
-        return null;
+        return iResumeDao.resumelist(resume);
+    }
+
+    public List<Resume> findresumeByAdmin(String adminId) {
+        return iResumeDao.findresumeByAdmin(adminId);
+    }
+
+    public List<Resume> finResumeByUserId(Integer userId) {
+        return iResumeDao.finResumeByUserId(userId);
+    }
+
+    public Resume finResumeByResumeId(Integer resumeId) {
+        return iResumeDao.finResumeByResumeId(resumeId);
     }
 }

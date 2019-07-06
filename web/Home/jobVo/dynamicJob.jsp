@@ -51,7 +51,7 @@
 			<ul class="news wrapper">
 				<li>
 					<div class="job">
-						<a href="../job/resume.html" class="job_link">填写个人资料</a>
+						<a href="../job/resume.jsp" class="job_link">填写个人简历</a>
 						<h4>薪资区间：${jobInfo.salary}</h4>
 						<h4>地点：${jobInfo.address} </h4>
 						<h4>工作经验：${jobInfo.experience}</h4>

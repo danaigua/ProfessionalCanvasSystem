@@ -25,4 +25,14 @@ public class ResumeController extends ActionSupport {
         int i = resumeService.resumeUpdate(resume);
         return SUCCESS;
     }
+
+    /**
+     * 简历添加
+     * @return
+     */
+    public String resumeCreate(){
+        int i = resumeService.resumeAdd(resume);
+        System.out.println(1111111111);
+        return SUCCESS;
+    }
 }

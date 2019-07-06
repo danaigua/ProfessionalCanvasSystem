@@ -3,9 +3,11 @@ package com.job.controller;
 import com.job.Utils.ResponseUtil;
 import com.job.pojo.Admin;
 import com.job.pojo.JobInfo;
+import com.job.pojo.Resume;
 import com.job.pojo.User;
 import com.job.service.impl.AdminServiceImpl;
 import com.job.service.impl.JobInfoServiceImpl;
+import com.job.service.impl.ResumeServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -74,13 +76,20 @@ public class AdminController extends ActionSupport  implements ServletRequestAwa
     private AdminServiceImpl adminService;
     @Resource
     private UserServiceImpl userService;
+    @Resource
+    private ResumeServiceImpl resumeService;
+
     public String loginBackstage(){
         Admin admin1 = adminService.loginBackstage(admin);
         if (admin1!=null){
+            List<Resume> resumeList = resumeService.findresumeByAdmin(admin1.getAdminId());
             //存入管理员对象
             ActionContext context = ActionContext.getContext();
             Map<String, Object> session = context.getSession();
+            //将管理员存到session中
             session.put("currentAdmin",admin1);
+            //将与管理员有关的简历放到session中
+            session.put("resumeList",resumeList);
             System.out.println(admin1.getType());
             List<User> userList = userService.selectAll();
             System.out.println(userList);

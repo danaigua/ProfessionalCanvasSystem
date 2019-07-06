@@ -262,6 +262,10 @@
         <action name="resumeUpdate" class="com.job.controller.ResumeController" method="resumeUpdate">
             <result name="success">/Home/about/resume.jsp</result>
         </action>
+        <!--简历添加-->
+        <action name="resumeCreate" class="com.job.controller.ResumeController" method="resumeCreate">
+            <result name="success" type="redirect">/Home/job/resume.jsp</result>
+        </action>
         <!--公司后台的申请,审核-->
         <action name="companyAudit" class="com.job.controller.CompanyAuditController" method="companyAudit">
             <result name="success">/Home/about/company.jsp</result>

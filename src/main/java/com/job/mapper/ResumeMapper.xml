@@ -15,7 +15,20 @@
             <result column="resume_awards" jdbcType="VARCHAR" property="awards" />
             <result column="resume_workExperience" jdbcType="VARCHAR" property="workExperience" />
             <result column="resume_userimage" jdbcType="VARCHAR" property="userImage" />
+            <result column="resume_nation" jdbcType="VARCHAR" property="resumeNation" />
+
+            <result column="name" jdbcType="VARCHAR" property="name" />
+            <result column="sex" jdbcType="VARCHAR" property="sex" />
+            <result column="addr" jdbcType="VARCHAR" property="addr" />
+            <result column="adminId" jdbcType="VARCHAR" property="adminId" />
+            <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+            <result column="degree" jdbcType="VARCHAR" property="degree" />
         </resultMap>
+    <insert id="resumeAdd">
+        insert into resume values (null,#{userId},#{resumeBirthday},#{resumePositionApplied},#{almamater},
+        #{englishLevel},#{computerLevel},#{major},#{awards}
+        ,#{workExperience},#{userImage},#{resumeNation},#{name},#{sex},#{addr},#{adminId},#{telephone},#{degree})
+    </insert>
     <update id="resumeUpdate">
         update resume
         <set>
@@ -28,13 +41,24 @@
             <if test="awards != null"> ,resume_awards = #{awards}</if>
             <if test="workExperience != null"> ,resume_workExperience = #{workExperience}</if>
             <if test="userImage != null"> ,resume_userimage = #{userImage}</if>
+            <if test="name != null"> ,name = #{name}</if>
+            <if test="sex != null"> ,sex = #{sex}</if>
+            <if test="addr != null"> ,addr = #{addr}</if>
+            <if test="degree != null"> ,addr = #{degree}</if>
+
         </set>
         where resume_id = #{resumeId}
     </update>
     <select id="resumelist" resultMap="BaseResultMap">
         select * from resume where user_id = #{userId}
     </select>
-    <insert id="resumeAdd">
-        insert into resume (user_id,resume_id)values (#{userId},#{resumeId})
-    </insert>
+    <select id="findresumeByAdmin" parameterType="String" resultMap="BaseResultMap">
+        select * from resume where adminId = #{adminId}
+    </select>
+    <select id="finResumeByUserId" parameterType="Integer" resultMap="BaseResultMap" >
+        select * from resume where user_id = #{userId}
+    </select>
+    <select id="finResumeByResumeId" parameterType="Integer" resultMap="BaseResultMap" >
+        select * from resume where resume_id = #{resumeId}
+    </select>
 </mapper>
