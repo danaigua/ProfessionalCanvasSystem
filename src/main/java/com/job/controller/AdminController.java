@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -78,17 +80,50 @@ public class AdminController extends ActionSupport  implements ServletRequestAwa
     private UserServiceImpl userService;
     @Resource
     private ResumeServiceImpl resumeService;
+    @Resource
+    private JobInfoServiceImpl jobInfoService;
 
     public String loginBackstage(){
+
         Admin admin1 = adminService.loginBackstage(admin);
         if (admin1!=null){
-            List<Resume> resumeList = resumeService.findresumeByAdmin(admin1.getAdminId());
+            /**
+             * 管理员的简历列表
+             */
+            List<Resume> resumeList = new ArrayList<Resume>();
+            /**
+             * 通过管理员id 查找工作
+             */
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("admin",admin1.getAdminId());
+            List<JobInfo> byAdminId = jobInfoService.findByAdminId(map);
+            /**
+             * 通过工作id查找简历
+             */
+            if (byAdminId.size() > 0){
+                for (int i = 0; i < byAdminId.size(); i++) {
+                    List<Resume> resumes = resumeService.finResumeByJobId(byAdminId.get(i).getId());
+                    for (int j = 0; j < resumes.size(); j++) {
+                        if(resumes.size() > 0){
+                            resumeList.add(resumes.get(j));
+                        }
+                    }
+                }
+            }
             //存入管理员对象
             ActionContext context = ActionContext.getContext();
             Map<String, Object> session = context.getSession();
             //将管理员存到session中
             session.put("currentAdmin",admin1);
             //将与管理员有关的简历放到session中
+            /**
+             * 通过管理员查找工作
+             * 通过工作查找简历
+             */
+
+            System.out.println(resumeList);
+
+
             session.put("resumeList",resumeList);
             System.out.println(admin1.getType());
             List<User> userList = userService.selectAll();
@@ -96,10 +131,8 @@ public class AdminController extends ActionSupport  implements ServletRequestAwa
             if (admin1.getType().equals("admin")) {
                 //查询所有的成员展示在成员管理,struts2会把他存入值栈中，然后用jsp调用
                 userList = userService.selectAll();
-//                System.out.println(1);
                 return "loginOri";
             }else{
-//                System.out.println(2);
                 return "loginSuper";
 
             }

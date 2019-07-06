@@ -21,7 +21,7 @@ public class ResumeServiceImpl implements IResumeService {
         return iResumeDao.resumeAdd(resume);
     }
 
-    public Resume resumelist(Resume resume) {
+    public List<Resume> resumelist(Resume resume) {
         return iResumeDao.resumelist(resume);
     }
 
@@ -35,5 +35,9 @@ public class ResumeServiceImpl implements IResumeService {
 
     public Resume finResumeByResumeId(Integer resumeId) {
         return iResumeDao.finResumeByResumeId(resumeId);
+    }
+
+    public List<Resume> finResumeByJobId(Integer jobId) {
+        return iResumeDao.finResumeByJobId(jobId);
     }
 }

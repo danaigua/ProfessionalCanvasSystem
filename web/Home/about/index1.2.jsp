@@ -55,12 +55,16 @@
 					<i class="linkImg gongsi"></i>
 					<a href="${pageContext.request.contextPath}/Home/about/company.jsp" class="entrance navLink">公司入口</a>
 				</div>
+				<div class="linckBox">
+					<i class="linkImg lauout"></i>
+					<a href="${pageContext.request.contextPath}/Home/about/company.jsp" class="entrance navLink">退出登陆</a>
+				</div>
 			</div>
 		</nav>
 
 	<section class="userdata">
 		
-							<!-- 基本信息 -->
+<!-- 基本信息 -->
 			<div class="basicBox">
 			<span class="basic_edit">编辑</span>
 			<div class="basic_bigbox">              <!-- 预览的框 -->

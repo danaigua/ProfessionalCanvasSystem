@@ -21,6 +21,8 @@ public class Resume {
     private String telephone;//求职者电话
     private String degree;//学历
 
+    private String jobId;//工作id
+
     public int getResumeId() {
         return resumeId;
     }
@@ -163,6 +165,14 @@ public class Resume {
 
     public void setDegree(String degree) {
         this.degree = degree;
+    }
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 }
 

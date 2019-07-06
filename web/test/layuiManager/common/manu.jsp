@@ -57,6 +57,12 @@
                     <dd><a href="${pageContext.request.contextPath}/test/layuiManager/adminManager/addAdmin.jsp">管理员添加</a></dd>
                 </dl>
             </li>
+            <li class="layui-nav-item  layui-nav-itemed">
+                <a href="javascript:;">简历管理<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/resume/resume.jsp">接收到的简历</a></dd>
+                </dl>
+            </li>
             <%--<li class="layui-nav-item"><a href="">用户日志管理</a></li>--%>
             <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/test/layuiManager/companyAudit/compantAuditList.jsp">公司审核</a></li>
         </ul>

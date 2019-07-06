@@ -7,7 +7,7 @@ import java.util.List;
 public interface IResumeService {
     int resumeUpdate(Resume resume);
     int resumeAdd(Resume resume);
-    Resume resumelist(Resume resume);
+    List<Resume> resumelist(Resume resume);
     /**
      * 在后台查出跟管理员有关的简历
      */
@@ -25,4 +25,10 @@ public interface IResumeService {
      * @return
      */
     Resume finResumeByResumeId(Integer resumeId);
+    /**
+     * 通过工作id查找简历列表
+     * @param jobId
+     * @return
+     */
+    List<Resume> finResumeByJobId(Integer jobId);
 }

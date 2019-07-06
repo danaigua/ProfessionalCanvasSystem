@@ -3,6 +3,7 @@ package com.job.service;
 import com.job.pojo.JobInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IJobInfoService {
     int addJobInfo(JobInfo jobInfo);
@@ -39,4 +40,12 @@ public interface IJobInfoService {
     List<JobInfo> jobList(int page,int limit);
     int jobDelete(int id);
     int jobUpdate(JobInfo jobInfo);
+
+    /**
+     * 通过管理员id查找简历信息实体
+     * @param page
+     * @param limit
+     * @return
+     */
+    List<JobInfo> findByAdminId(Map<String, Object> map);
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @Service("JobService")
 public class JobInfoServiceImpl implements IJobInfoService {
@@ -66,6 +67,11 @@ public class JobInfoServiceImpl implements IJobInfoService {
 
     public int jobUpdate(JobInfo jobInfo) {
         return iJobInfoDao.jobUpdate(jobInfo);
+    }
+
+    public List<JobInfo> findByAdminId(Map<String, Object> map) {
+
+        return iJobInfoDao.findByAdminId(map);
     }
 
 }

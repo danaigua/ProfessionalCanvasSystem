@@ -2,12 +2,32 @@ package com.job.controller;
 
 import com.job.pojo.Resume;
 import com.job.service.impl.ResumeServiceImpl;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 public class ResumeController extends ActionSupport {
     private Resume resume;
+    private String info;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
 
     public Resume getResume() {
         return resume;
@@ -32,7 +52,27 @@ public class ResumeController extends ActionSupport {
      */
     public String resumeCreate(){
         int i = resumeService.resumeAdd(resume);
+        if (i > 0){
+            info = "提交简历成功，请保持电话通畅，HR会在后台审核简历，审核之后将会以短信的方式给您来电进行第一次面试";
+        }else{
+            info = "修改失败";
+        }
+        System.out.println(info);
         System.out.println(1111111111);
+        return SUCCESS;
+    }
+    public String findResumeById(){
+        Resume resume = resumeService.finResumeByResumeId(id);
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String, Object> session = actionContext.getSession();
+        session.put("resume", resume);
+        return SUCCESS;
+    }
+    public String findResumeById1(){
+        Resume resume = resumeService.finResumeByResumeId(id);
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String, Object> session = actionContext.getSession();
+        session.put("resume", resume);
         return SUCCESS;
     }
 }

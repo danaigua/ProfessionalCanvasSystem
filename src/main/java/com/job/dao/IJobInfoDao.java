@@ -4,6 +4,7 @@ import com.job.pojo.JobInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IJobInfoDao {
     public int addJobInfo(JobInfo jobInfo);
@@ -23,4 +24,11 @@ public interface IJobInfoDao {
     public int jobDelete(@Param(value = "id")int id);
     //对工作信息的编辑和修改
     public int jobUpdate(JobInfo jobInfo);
+    /**
+     * 通过管理员id查找简历信息实体
+     * @param page
+     * @param limit
+     * @return
+     */
+    List<JobInfo> findByAdminId(Map<String, Object> map);
 }

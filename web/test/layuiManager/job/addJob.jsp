@@ -138,6 +138,7 @@
                             <label class="layui-form-label">工作地址：</label>
                             <div class="layui-input-block">
                                 <input type="text" name="jobInfo.Address" lay-verify="title" autocomplete="off" placeholder="请输入该岗位的工作地址" class="layui-input">
+                                <input type="hidden" name="jobInfo.adminId" value="${currentAdmin.adminId}" />
                             </div>
                             <br>
                             <div class="layui-input-block">

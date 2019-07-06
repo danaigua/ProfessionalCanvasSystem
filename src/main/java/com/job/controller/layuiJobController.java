@@ -1,5 +1,6 @@
 package com.job.controller;
 
+import com.job.pojo.Admin;
 import com.job.pojo.JobInfo;
 import com.job.service.impl.JobInfoServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
@@ -90,6 +91,9 @@ public class layuiJobController extends ActionSupport {
     private JobInfoServiceImpl JobService;
     //添加职位信息
     public String jobAdd(){
+        if (jobInfo.getAdminId() == null || jobInfo.getAdminId() == ""){
+            jobInfo.setAdminId("admin");
+        }
         int i = JobService.addJobInfo(jobInfo);
         return SUCCESS;
     }
@@ -106,7 +110,34 @@ public class layuiJobController extends ActionSupport {
         ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
         return SUCCESS;
     }
+    //列出职位表
+    public String listByAdminId(){
+        //1,获取session
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String, Object> session = actionContext.getSession();
+        Admin currentAdmin = (Admin) session.get("currentAdmin");
+        //2,获取adminid
+        String adminId = currentAdmin.getAdminId();
+        System.out.println(adminId);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("adminId", adminId);
+        List<JobInfo> jobInfos1 = JobService.findByAdminId(map);
+        page = (page - 1)*limit;
+        map.put("page", page);
+        map.put("limit", limit);
+        //3
+        List<JobInfo> jobInfos = JobService.findByAdminId(map);
+        //4
 
+        result = new HashMap<String, Object>();
+        result.put("code",0);
+        result.put("msg","");
+        result.put("count",jobInfos1.size());
+        JSONArray array = JSONArray.fromObject(jobInfos);
+        result.put("data",array);
+        ActionContext.getContext().getValueStack().set("jsonData", JSONObject.fromObject(result));
+        return SUCCESS;
+    }
     /**
      * 修改工作表格
      * @return

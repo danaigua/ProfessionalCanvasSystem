@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import javax.annotation.Resource;
 import java.util.List;
 
-public class JobController extends ActionSupport {
+public class  JobController extends ActionSupport {
     private List<JobInfo> jobs;
     private List<JobInfo> jobs2;
 

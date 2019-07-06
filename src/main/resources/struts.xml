@@ -266,6 +266,14 @@
         <action name="resumeCreate" class="com.job.controller.ResumeController" method="resumeCreate">
             <result name="success" type="redirect">/Home/job/resume.jsp</result>
         </action>
+        <!--后台：超级管理员：通过id查找简历-->
+        <action name="findResumeById" class="com.job.controller.ResumeController" method="findResumeById">
+            <result name="success" type="redirect">/test/layuiManager/resume/result.jsp</result>
+        </action>
+        <!--后台:普通管理员：通过id查找简历-->
+        <action name="findResumeById1" class="com.job.controller.ResumeController" method="findResumeById1">
+            <result name="success" type="redirect">/test/layuiManager/resume/resultByRoot.jsp</result>
+        </action>
         <!--公司后台的申请,审核-->
         <action name="companyAudit" class="com.job.controller.CompanyAuditController" method="companyAudit">
             <result name="success">/Home/about/company.jsp</result>
@@ -284,6 +292,12 @@
         </action>
         <!--展示公司审核的信息-->
         <action name="showCompanyAduit" class="com.job.controller.CompanyAuditController" method="show">
+            <result name="success" type="json">
+                <param name="root">jsonData</param>
+            </result>
+        </action>
+        <!--展示普通管理员下面的公司-->
+        <action name="listByAdminId" class="com.job.controller.layuiJobController" method="listByAdminId">
             <result name="success" type="json">
                 <param name="root">jsonData</param>
             </result>

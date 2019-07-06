@@ -24,7 +24,7 @@ public interface IResumeDao {
      * @param resume
      * @return
      */
-    Resume resumelist(Resume resume);
+    List<Resume> resumelist(Resume resume);
     /**
      * 在后台查出跟管理员有关的简历
      */
@@ -43,4 +43,11 @@ public interface IResumeDao {
      * @return
      */
     Resume finResumeByResumeId(Integer resumeId);
+
+    /**
+     * 通过工作id查找简历列表
+     * @param jobId
+     * @return
+     */
+    List<Resume> finResumeByJobId(Integer jobId);
 }

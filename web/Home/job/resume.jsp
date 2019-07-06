@@ -103,9 +103,11 @@
                   <textarea name="resume.workExperience" class="resume_input"></textarea>
               </td>
              <input type="hidden" value="${currentUser.userId}"  name="resume.userId" />
+             <input type="hidden" value="${jobInfo.id}"  name="resume.jobId" />
          </tr>
     </table>
-    <button type="submit" class="resume_submit">提交</button>
+    <button type="submit" class="resume_submit" onclick="alert('提交简历成功，请保持电话通畅，HR会在后台审核简历，审核之后将会以短信的方式给您来电进行第一次面试');">提交</button>
+     <p style="color: red; font-size: 20px;">${info}</p>
  </form>
 </div>
 
@@ -160,52 +162,5 @@
 </footer>
 <!--尾部结束-->
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-
-<!--<script type="text/javascript">-->
-     <!--$(document).ready(function () {-->
-          <!--var resumeInput = $(".resume_input");-->
-        <!--for(var i = 0; i < resumeInput.length; i ++) {-->
-               <!--var judge = function (k) {-->
-                   <!--resumeInput.eq(k).bind({-->
-                       <!--blur:function () {-->
-                             <!--if($(this).val() == "") {-->
-                                 <!--$(this).css({-->
-                                    <!--"color":"#f00"-->
-                                 <!--});-->
-                                 <!--$(this).val("输入不能为空!");-->
-                             <!--}  -->
-                       <!--},-->
-                       <!--focus:function () {-->
-                             <!--if($(this).val() == "输入不能为空!") {-->
-                                 <!--$(this).css({-->
-                                     <!--"color":"#000"-->
-                                 <!--});-->
-                                 <!--$(this).val("")-->
-                              <!--}-->
-                        <!--}-->
-                   <!--})-->
-          <!--}-->
-          <!--judge(i)-->
-        <!--}-->
-                     <!--// 点击提交弹出提交成功-->
-          <!---->
-         <!--$(".resume_submit").click(function () {-->
-            <!--var aa = true;-->
-            <!--for(var i = 0; i < resumeInput.length; i ++) {-->
-             <!--if(resumeInput.eq(i).val() == "输入不能为空!" || resumeInput.eq(i).val() == "") {-->
-                <!--alert("提交失败,输入不能为空");-->
-                <!--aa = false;-->
-                <!--break;-->
-             <!--}-->
-            <!--}-->
-            <!--if(aa){-->
-                <!--alert("提交成功!")-->
-             <!--}-->
-         <!--})-->
-                    <!---->
-        <!---->
-         <!---->
-     <!--})-->
-<!--</script>-->
 </body>
 </html>

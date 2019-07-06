@@ -21,7 +21,19 @@
             <li class="layui-nav-item  layui-nav-itemed">
                 <a href="javascript:;">求职资料管理<span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
-                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/job/addJob.jsp">增加求职资料</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/ordinaryManager.jsp">增加求职资料</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item  layui-nav-itemed">
+                <a href="javascript:;">职位资料管理<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/ordinary/ordinaryJobsManager.jsp">求职岗位管理</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item  layui-nav-itemed">
+                <a href="javascript:;">简历管理<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd><a href="${pageContext.request.contextPath}/test/layuiManager/resume/resume1.jsp">接收到的简历</a></dd>
                 </dl>
             </li>
         </ul>

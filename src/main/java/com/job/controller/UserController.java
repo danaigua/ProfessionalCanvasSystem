@@ -93,7 +93,7 @@ public class UserController extends ActionSupport implements ServletResponseAwar
          * 查找简历
          */
         resume.setUserId(user1.getUserId());
-        Resume resume1 = resumeService.resumelist(resume);
+        List<Resume> resumelist = resumeService.resumelist(resume);
         /**
          * 把自己以及发布的简历放在个人页面
          */
@@ -105,7 +105,7 @@ public class UserController extends ActionSupport implements ServletResponseAwar
         Map<String, Object> session = actionContext.getSession();
         //存到session中
         session.put("userAspriation", userAspriation1);
-        session.put("resume", resume1);
+        session.put("resume", resumelist.get(0));
         session.put("resumes", resumes);
         if (user1 == null) {
             this.error = "用户名密码错误";
