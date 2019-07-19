@@ -57,7 +57,7 @@
 				</div>
 				<div class="linckBox">
 					<i class="linkImg lauout"></i>
-					<a href="${pageContext.request.contextPath}/Home/about/company.jsp" class="entrance navLink">退出登陆</a>
+					<a href="${pageContext.request.contextPath}/userLogOut" class="entrance navLink">退出登陆</a>
 				</div>
 			</div>
 		</nav>

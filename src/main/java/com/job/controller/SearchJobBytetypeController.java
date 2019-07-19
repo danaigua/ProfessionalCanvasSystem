@@ -140,16 +140,17 @@ public class SearchJobBytetypeController extends ActionSupport {
         monitor.setSearchKeyWord(typeJob);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("searchKeyWord",typeJob);
-        Monitor monitor1 = monitorService.findMonitor(map);
-        if (monitor1 == null){
+        List<Monitor> monitors = monitorService.findMonitor(map);
+        System.out.println(monitors);
+        if (monitors.size() != 0){
+            monitors.get(0).setSearchKeyWord(null);
+            monitors.get(0).setSearchAddr(null);
+            monitors.get(0).setSearchAddrNo(null);
+            monitors.get(0).setSearchKeyWordNO(monitors.get(0).getSearchKeyWordNO() + 1);
+            monitorService.update(monitors.get(0));
+        }else {
             monitor.setSearchKeyWordNO(1);
             monitorService.addMonitor(monitor);
-        }else {
-            monitor1.setSearchKeyWord(null);
-            monitor1.setSearchAddr(null);
-            monitor1.setSearchAddrNo(null);
-            monitor1.setSearchKeyWordNO(monitor1.getSearchKeyWordNO() + 1);
-            monitorService.update(monitor1);
         }
 
 

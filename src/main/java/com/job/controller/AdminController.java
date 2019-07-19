@@ -95,7 +95,7 @@ public class AdminController extends ActionSupport  implements ServletRequestAwa
              * 通过管理员id 查找工作
              */
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("admin",admin1.getAdminId());
+            map.put("adminId",admin1.getAdminId());
             List<JobInfo> byAdminId = jobInfoService.findByAdminId(map);
             /**
              * 通过工作id查找简历

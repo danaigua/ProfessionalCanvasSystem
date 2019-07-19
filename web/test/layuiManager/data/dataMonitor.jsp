@@ -27,89 +27,106 @@
     <jsp:include page="../common/foot.jsp"></jsp:include>
 </div>
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/test/layuiManager/css/echarts.min.js"></script>
 <script src="${pageContext.request.contextPath}/test/layuiManager/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript">
-    // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
+    var obj1 = [];
+    var obj2 = [];
+    var brower = [];
+    var listname=[];
+    var listvalue=[] ;
+    var jsonbing;
+        $.ajax({
+            type:"post",
+            url:"getSearchKeyWordAndAddr",
+            dataType:'JSON',
+            success:function (data) {
+                if(data){
+                    for (prop in data) {
+                        // for (aaa in data[prop]) {
+                        //     obj1.push(data[prop][aaa].name);
+                        //     //console.log(obj1);
+                        //     obj2.push({"value": data[prop][aaa].value, "name": data[prop][aaa].name});
+                        //
+                        // }
+                        // obj2.push(data[prop]);
+                        // console.log(obj2);
+                        // obj2 = Array.prototype.slice.call(data[prop])
 
-    // 指定图表的配置项和数据
-    option = {
-        title: {
-            text: '本站点搜索量前五的关键词',
-            subtext: '近一个月',
-            x: 'center'
-        },
-        tooltip: {
-            trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
-        legend: {
-            orient: 'vertical',
-            x: 'left',
-            data: ['JAVA', 'PYTHON', '大数据', '运维', '人工智能']
-        },
-        toolbox: {
-            show: true,
-            feature: {
-                mark: {
-                    show: true
-                },
-                dataView: {
-                    show: true,
-                    readOnly: false
-                },
-                magicType: {
-                    show: true,
-                    type: ['pie', 'funnel'],
-                    option: {
-                        funnel: {
-                            x: '25%',
-                            width: '50%',
-                            funnelAlign: 'left',
-                            max: 335
-                        }
+                        obj2.push(data[prop].name);
+                        obj1.push({value:data[prop].value,name:data[prop].name});
                     }
-                },
-                restore: {
-                    show: true
-                },
-                saveAsImage: {
-                    show: true
                 }
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('main'));
+                option = {
+                    title: {
+                        text: '本站点搜索量前五的关键词',
+                        subtext: '近一个月',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: obj2
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            mark: {
+                                show: true
+                            },
+                            dataView: {
+                                show: true,
+                                readOnly: false
+                            },
+                            magicType: {
+                                show: true,
+                                type: ['pie', 'funnel'],
+                                option: {
+                                    funnel: {
+                                        x: '25%',
+                                        width: '50%',
+                                        funnelAlign: 'left',
+                                        max: 335
+                                    }
+                                }
+                            },
+                            restore: {
+                                show: true
+                            },
+                            saveAsImage: {
+                                show: true
+                            }
+                        }
+                    },
+                    calculable: true,
+                    series: [{
+                        name: '大数据智能推荐网站搜集',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '60%'],
+                        data: obj1
+                    }]
+                }; // 使用刚指定的配置项和数据显示图表。
+                console.log(option);
+                myChart.hideLoading();
+                myChart.setOption(option);
             }
-        },
-        calculable: true,
-        series: [{
-            name: '大数据智能推荐网站搜集',
-            type: 'pie',
-            radius: '55%',
-            center: ['50%', '60%'],
-            data: [{
-                value: 335,
-                name: 'JAVA'
-            },
-                {
-                    value: 310,
-                    name: 'PYTHON'
-                },
-                {
-                    value: 234,
-                    name: '大数据'
-                },
-                {
-                    value: 135,
-                    name: '运维'
-                },
-                {
-                    value: 111,
-                    name: '人工智能'
-                }
-            ]
-        }]
-    }; // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
+        });
+
+
+
+    console.log(obj1);
+    console.log(obj2);
+
 </script>
 <script type="text/javascript">
+
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main2'));
 

@@ -51,14 +51,11 @@ public class ResumeController extends ActionSupport {
      * @return
      */
     public String resumeCreate(){
-        int i = resumeService.resumeAdd(resume);
-        if (i > 0){
-            info = "提交简历成功，请保持电话通畅，HR会在后台审核简历，审核之后将会以短信的方式给您来电进行第一次面试";
-        }else{
-            info = "修改失败";
+        if (resume.getJobId() == null || "".equals(resume.getJobId())){
+            resume.setJobId(1);
         }
-        System.out.println(info);
-        System.out.println(1111111111);
+        int i = resumeService.resumeAdd(resume);
+
         return SUCCESS;
     }
     public String findResumeById(){
@@ -73,6 +70,13 @@ public class ResumeController extends ActionSupport {
         ActionContext actionContext = ActionContext.getContext();
         Map<String, Object> session = actionContext.getSession();
         session.put("resume", resume);
+        return SUCCESS;
+    }
+    public String findResumeById2(){
+        Resume resume = resumeService.finResumeByResumeId(id);
+        ActionContext actionContext = ActionContext.getContext();
+        Map<String, Object> session = actionContext.getSession();
+        session.put("resume1", resume);
         return SUCCESS;
     }
 }

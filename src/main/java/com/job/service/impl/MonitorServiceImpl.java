@@ -16,7 +16,7 @@ public class MonitorServiceImpl implements IMonitorService {
         return monitorDao.update(monitor);
     }
 
-    public Monitor findMonitor(Map<String, Object> map) {
+    public List<Monitor> findMonitor(Map<String, Object> map) {
         return monitorDao.findMonitor(map);
     }
 

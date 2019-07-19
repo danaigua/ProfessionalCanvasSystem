@@ -25,6 +25,10 @@
         <action name="ForgetPassword" class="com.job.controller.UserController" method="ForgetPassword">
             <result name="success" type="redirect">/Home/about/sonIn.html</result>
         </action>
+        <!--用户退出登陆-->
+        <action name="userLogOut" class="com.job.controller.UserController" method="userLogOut">
+            <result name="logOut" type="redirect">/Home/about/sonIn.html</result>
+        </action>
 
         <action name="LoginHomeIndex" class="com.job.controller.UserController" method="LoginHomeIndex">
             <result name="successLogin" type="redirect"></result>
@@ -273,6 +277,10 @@
         <!--后台:普通管理员：通过id查找简历-->
         <action name="findResumeById1" class="com.job.controller.ResumeController" method="findResumeById1">
             <result name="success" type="redirect">/test/layuiManager/resume/resultByRoot.jsp</result>
+        </action>
+        <!--前台:普通管理员：通过id查找简历-->
+        <action name="findResumeById2" class="com.job.controller.ResumeController" method="findResumeById2">
+            <result name="success" type="redirect">/Home/about/resultResume.jsp</result>
         </action>
         <!--公司后台的申请,审核-->
         <action name="companyAudit" class="com.job.controller.CompanyAuditController" method="companyAudit">

@@ -8,21 +8,24 @@ import com.job.service.impl.UserAspriationServiceImpl;
 import com.job.service.impl.UserServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
-public class UserController extends ActionSupport implements ServletResponseAware {
+public class UserController extends ActionSupport implements ServletRequestAware {
     private User user;
     private String error;
     private String Info;
     private List<User> userList;
-
+    private HttpServletRequest request;
 
     private HttpServletResponse response;
 
@@ -178,10 +181,19 @@ public class UserController extends ActionSupport implements ServletResponseAwar
          userList = userService.selectAll();
         return SUCCESS;
     }
+    public String userLogOut(){
+        HttpSession session=request.getSession();
+        session.removeAttribute("currentUser");
+        return "logOut";
+    }
     public String helloWorld(){
         return SUCCESS;
     }
     public void setServletResponse(HttpServletResponse response) {
         this.response = response;
+    }
+
+    public void setServletRequest(HttpServletRequest request) {
+        this.request = request;
     }
 }

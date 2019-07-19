@@ -17,7 +17,7 @@ public interface IMonitorDao {
      * 查找监听对象
      * @return
      */
-    public Monitor findMonitor(Map<String, Object> map);
+    public List<Monitor> findMonitor(Map<String, Object> map);
 
     /**
      * 添加监听对象

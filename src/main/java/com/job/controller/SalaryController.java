@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SalaryController extends ActionSupport {
@@ -49,15 +50,18 @@ public class SalaryController extends ActionSupport {
         if(analyzeSalary.getAddr() != null && analyzeSalary.getAddr() != ""){
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("searchAddr", analyzeSalary.getAddr());
-            Monitor monitor = monitorService.findMonitor(map);
+            List<Monitor> monitors = monitorService.findMonitor(map);
             Monitor monitor1 = new Monitor();
             monitor1.setSearchAddr(analyzeSalary.getAddr());
+            monitor1.setSearchKeyWord(null);
+            monitor1.setSearchKeyWordNO(null);
             monitor1.setSearchAddrNo(1);
-            if (monitor != null){
-                monitor.setSearchAddrNo(monitor.getSearchAddrNo()+1);
-                monitor.setSearchKeyWord(null);
-                monitor.setSearchKeyWordNO(null);
-                monitorService.addMonitor(monitor);
+            if (monitors != null){
+                monitors.get(0).setSearchAddrNo(monitors.get(0).getSearchAddrNo()+1);
+                monitors.get(0).setSearchAddr(null);
+                monitors.get(0).setSearchKeyWordNO(null);
+                monitors.get(0).setSearchKeyWord(null);
+                monitorService.update(monitors.get(0));
             }else{
                 monitorService.addMonitor(monitor1);
             }
